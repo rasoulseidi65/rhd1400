@@ -1,0 +1,47 @@
+
+<p-toast position="top-center" class="text-center"></p-toast>
+
+<form [formGroup]="formgrade" (ngSubmit)="onsub(formgrade.value)">
+  <p-panel header="فرم ثبت مقطع تحصیلی ">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          عنوان <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="title" placeholder=""/>
+        </div>
+        <div class="ui-grid-col-4">
+          <!--          <p-message severity="error" text="نام مدرس را وارد نمائید" *ngIf="!teacherForm.controls['firstName'].valid&&teacherForm.controls['firstName'].dirty"></p-message>-->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-6">
+          <button pButton type="submit" label="ثبت مقطع تحصیلی"></button>
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+    </div>
+  </p-panel>
+</form>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">ردیف</th>
+    <th scope="col">عنوان</th>
+    <th scope="col">حذف</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of listgrad;let i=index">
+    <th scope="row">{{i+1}}</th>
+    <td>{{item.title}}</td>
+    <td><a (click)="deletegrade(item._id)">حذف</a></td>
+  </tr>
+
+  </tbody>
+</table>
+

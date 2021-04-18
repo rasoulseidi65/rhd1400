@@ -1,0 +1,131 @@
+/*start-img*/
+.container-fluid .row-img{
+  margin-top: 10px;
+}
+/*end-img*/
+/*start-details-film*/
+.container-fluid .row-details-film .title-film{
+  border-bottom: 1px solid #eeeeee;
+  padding: 15px 0px 15px 15px;
+}
+.container-fluid .row-details-film .title-film span{
+  font-family:IRANSans_Bold;
+  font-size: 18px;
+  border-bottom: 1px solid #ffa331;
+  padding: 13px 0px 13px 13px;
+}
+.container-fluid .row-details-film .title-film span i{
+  margin-left: 5px;
+  color: #ffa331;
+}
+.container-fluid .row-details-film .body-film{
+  border: 1px solid #908b8b61;
+  box-shadow: 0px 0px 10px 4px #dddddd;
+  margin-top: 15px;
+}
+.container-fluid .row-details-film .body-film .panel-heading-film strong i{
+  background-color: #4cae4c;
+  border-radius: 100%;
+  padding: 10px;
+  color: #ffffff;
+  margin-right: -35px;
+  position: absolute;
+  margin-top: 10px;
+}
+.container-fluid .row-details-film .body-film .panel-heading-film{
+  border-bottom: 1px solid #eeeeee;
+  padding: 5px;
+}
+.container-fluid .row-details-film .body-film .panel-heading-film strong{
+  font-family: IRANSans_Light;
+}
+.container-fluid .row-details-film .body-film .panel-heading-film strong span{
+  font-family: IRANSans_Light;
+  font-size: 14px;
+  color: #4b4b4b;
+  font-weight: normal;
+}
+.container-fluid .row-details-film .body-film .panel-heading-film  a{
+  text-decoration: none;
+  color: #ffa331;
+  font-family: "IRANSansWeb(FaNum) Light";
+  font-size: 12px;
+}
+.container-fluid .row-details-film .body-film .panel-heading-film a i{
+  margin-right: 5px;
+}
+.container-fluid .row-details-film .body-film .panel-body-film .collapse ul li{
+  list-style-image: url("src/assets/bootstrap/img/film.png");
+  padding: 7px;
+  border-bottom: 1px solid #eeeeee;
+}
+.container-fluid .row-details-film .body-film .panel-body-film .collapse ul li p{
+  font-family: IRANSans_Light;
+  margin-left: 20px;
+}
+.container-fluid .row-details-film .body-film .panel-body-film .collapse ul li:hover{
+  background-color: #eeeeee;
+}
+.container-fluid .row-details-film .body-film .panel-body-film .collapse ul li span{
+  font-family: IRANSans_Light;
+  font-size: 14px;
+
+}
+.container-fluid .row-details-film .body-film .panel-body-film .collapse ul li a{
+  color: #000000;
+}
+.container-fluid .row-details-film .body-film .panel-body-film .collapse .panel-footer{
+  background: none;
+  border:none;
+}
+.container-fluid .row-details-film .body-film .panel-body-film .collapse .panel-footer p{
+  font-family:mitra-font;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 27px;
+}
+/*end-details-film*/
+/*start-description-period*/
+.container-fluid .row-description{
+  margin-top: 20px;
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px 0px 10px 10px;
+}
+.container-fluid .row-description .col-md-12{
+  padding: 0px;
+}
+.container-fluid .row-description span{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+  border-bottom: 1px solid #ffa331;
+  padding: 8px;
+}
+.container-fluid .row-description span i{
+  margin-left: 10px;
+  color: #ffa331;
+}
+.container-fluid .row-description-period .col-md-12{
+  text-align: justify;
+}
+.container-fluid .row-description-period p{
+  font-family: mitra-font;
+  line-height: 2;
+  font-size: 18px;
+}
+.container-fluid .row-description-period ul{
+  margin-top: 10px;
+}
+.container-fluid .row-description-period ul span{
+  font-family: IRANSans_Bold;
+}
+.container-fluid .row-description-period ul li{
+  padding: 10px;
+  list-style-image: url("/assets/bootstrap/img/falash.png");
+}
+.container-fluid .row-description-period ul li span{
+  font-family: mitra-font;
+  font-size: 18px;
+  text-align:justify ;
+}
+/*end-description-period*/
+

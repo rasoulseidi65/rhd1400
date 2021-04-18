@@ -1,0 +1,189 @@
+
+<p-toast position="top-center" class="text-center"></p-toast>
+<p-table [value]="paperModels" #dt [columns]="cols" [paginator]="true" [rows]="5">
+  <ng-template pTemplate="caption">
+    <div style="text-align: right">
+      <input class="input-filter" type="text" pInputText size="50" placeholder="جستجوی سراسری"
+             (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+      <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr class="title-table">
+      <th style="width: 5%" class="text-center">ردیف</th>
+      <th class="text-center">عنوان مقاله</th>
+      <th class="text-center">خلاصه مقاله</th>
+      <th style="width: 20%" class="text-center">نویسنده</th>
+      <th style="width: 20%" class="text-center">تاریخ</th>
+      <th style="width: 8%" class="text-center">زمان</th>
+      <th style="width: 6%" class="text-center">ویرایش</th>
+      <th style="width: 6%" class="text-center">حذف</th>
+
+    </tr>
+    <tr>
+      <th></th>
+      <th *ngFor="let col of cols" [ngSwitch]="col.field" style="width: 10%">
+        <input class="input-filter text-center" placeholder="جستجوی عنوان مقاله" *ngSwitchCase="'title'" pInputText
+               type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+        <input class="input-filter text-center" placeholder="جستجوی خلاصه مقاله" *ngSwitchCase="'abstract'" pInputText
+               type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+        <input class="input-filter text-center" placeholder="جستجوی نویسنده مقاله" *ngSwitchCase="'author'" pInputText
+               type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+        <input class="input-filter text-center" placeholder="جستجوی تاریخ مقاله" *ngSwitchCase="'date'" pInputText
+               type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-paper let-rowIndex="rowIndex">
+    <tr>
+      <td class="text-center">{{rowIndex + 1}}</td>
+      <td class="text-center">{{paper.title}}</td>
+      <td class="text-center">{{paper.abstract}}</td>
+      <td class="text-center">{{paper.author}}</td>
+      <td class="text-center">{{paper.date}}</td>
+      <td class="text-center">{{paper.time}}</td>
+      <td class="text-center"><i class="fas fa-edit fa-1x text-muted" (click)="showDialogEdit(paper._id)"></i>
+      </td>
+      <td class="text-center"><i class="fas fa-trash fa-1x text-danger" (click)="showDialogDelete(paper._id)"></i></td>
+    </tr>
+  </ng-template>
+
+</p-table>
+
+
+<p-dialog [(visible)]="display" [transitionOptions]="'3ms'">
+  <p-header>
+    حذف مقاله
+  </p-header>
+  <p id="text-delete-dialog">کاربر محترم از حذف مقاله مطمئین هستید؟
+  </p>
+  <br>
+
+  <p-footer>
+    <button class="ui-button-success ml-auto" pButton type="button" label="بله" (click)="onDestory()"></button>
+    <button class="ui-button-danger" pButton type="button" label="خیر" style="float: left" (click)="closeDialogDelete()"></button>
+  </p-footer>
+</p-dialog>
+
+<p-dialog [(visible)]="displayEdit" [style]="{width: '60vw'}">
+  <p-header>
+    فرم ویرایش مقاله
+  </p-header>
+  <form [formGroup]="userform" (ngSubmit)="onSubmit()">
+
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          عنوان مقاله <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="title" placeholder=""
+                 [(ngModel)]="ResultSearchPaper[0].title"/>
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message severity="error" text="نام مقاله را وارد نمائید"
+                     *ngIf="!userform.controls['title'].valid && userform.controls['title'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          نام نویسنده <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="author" placeholder=""
+                 [(ngModel)]="ResultSearchPaper[0].author"/>
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message severity="error" text="خلاصه مقاله"
+                     *ngIf="!userform.controls['author'].valid&&userform.controls['author'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          خلاصه مقاله <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <textarea pInputTextarea type="text" formControlName="abstract"
+                    [(ngModel)]="ResultSearchPaper[0].abstract"></textarea>
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message severity="error" text="خلاصه مقاله"
+                     *ngIf="!userform.controls['abstract'].valid&&userform.controls['abstract'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          تاریخ <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <dp-date-picker
+            dir="rtl"
+            formControlName="date"
+            mode="day"
+            [(ngModel)]="ResultSearchPaper[0].date"
+            theme="dp-material">
+          </dp-date-picker>
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message severity="error" text="تاریخ را وارد نمائید"
+                     *ngIf="!userform.controls['date'].valid&&userform.controls['date'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          زمان <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <dp-date-picker
+            dir="rtl"
+            formControlName="time"
+            mode="time"
+            [(ngModel)]="ResultSearchPaper[0].time"
+            theme="dp-material">
+          </dp-date-picker>
+          <!--          <input pInputText type="text" formControlName="time" placeholder=""/>-->
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message severity="error" text="تاریخ را وارد نمائید"
+                     *ngIf="!userform.controls['time'].valid&&userform.controls['time'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          تصویر <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-8">
+          <p-fileUpload name="myfile[]" url="./upload.php" uploadLabel="آپلود" chooseLabel="انتخاب تصویر"
+                        cancelLabel="انصراف"></p-fileUpload>
+        </div>
+        <div class="ui-grid-col-2">
+        </div>
+      </div>
+      <div class="ui-grid-row" style="margin-bottom:8rem">
+        <div class="ui-grid-col-2">
+          جزئیات مقاله:
+        </div>
+        <div class="ui-grid-col-8">
+          <quill-editor formControlName="detail" [innerHTML]="ResultSearchPaper[0].detail"
+                        [(ngModel)]="ResultSearchPaper[0].detail"></quill-editor>
+
+        </div>
+        <div class="ui-grid-col-2"></div>
+      </div>
+
+
+    </div>
+
+
+    <p-footer>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12"></div>
+        <div class="ui-grid-col-6">
+          <button pButton type="submit" label="ویرایش مقاله" [disabled]="!userform.valid"></button>
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+    </p-footer>
+  </form>
+</p-dialog>

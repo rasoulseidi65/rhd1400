@@ -1,0 +1,64 @@
+<app-top-menu></app-top-menu>
+<app-center-menu></app-center-menu>
+<app-menu></app-menu>
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="caption text-center">
+      <span> کاربر گرامی برای دسترسی آسانتر به نتیجه مورد نظر در کادر زیر اقدام فرمایید </span>
+    </div>
+    <div class="search">
+      <div class="ui-grid-row" dir="rtl">
+        <div class="ui-grid-col-6" dir="ltr">
+          <select class="form-control" (change)="getMajorTitle($event)" >
+            <option   *ngFor="let i of grade;let i = index" [ngValue]="i.label"
+            >{{i.label}}</option>
+          </select>
+        </div>
+        <div class="ui-grid-col-2">
+          مقطع تحصیلی<label style="color: red">*</label>:
+        </div>
+      </div>
+      <div class="ui-grid-row" dir="rtl">
+        <div class="ui-grid-col-6" dir="ltr">
+          <select class="form-control" (change)="setMajorID($event)" >
+            <option   *ngFor="let i of major;let i = index" [ngValue]="i.label"
+            >{{i.label}}</option>
+          </select>
+        </div>
+        <div class="ui-grid-col-2">
+          رشته تحصیلی<label style="color: red">*</label>:
+        </div>
+      </div>
+
+      <div class="ui-grid-col-6" >
+        <button pButton type="submit" label="جستجو" dir="ltr"></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-xl-3" *ngFor="let item of listshcool;" >
+      <div class="thumbnail thumbnail-body-film">
+        <a [routerLink]="['../questionDettail']">
+          <div class="panel-heading">
+            <img class="img-responsive" [src]="item.linkFile"  alt="">
+          </div>
+          <div class="panel-body">
+            <a href="#"><span><i class="fa fa-circle"></i> {{item.title}}</span></a>
+          </div>
+        </a>
+        <a >
+          <div class="panel-footer">
+            <img class="img-responsive img-circle" src="./../../../../assets/bootstrap/img/logo.png" alt="">
+            <span class="pull-left" >{{item.Grade[0].title}} {{item.title}}</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
+
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,196 @@
+
+/*start-information-teacher*/
+.container-fluid{
+  margin: 10px;
+
+}
+.container-fluid .row-archive-tech{
+  border: 1px solid #908b8b61;
+  box-shadow: 0px 0px 10px 4px #dddddd;
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-heading{
+  border-bottom: 1px solid #eeeeee;
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-heading span{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+  color: #000000;
+}
+.container-fluid .row-archive-tech .panel-group-tech  span i{
+  margin-left: 5px;
+  font-size: 16px;
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-body ul{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-body ul li{
+  padding: 10px;
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-body ul li>span{
+  font-family: IRANSans_Light;
+  font-size: 14px;
+  color: #000000;
+
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-body ul li>span>i{
+  margin-left: 5px;
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-body ul li>p{
+  float: left;
+  font-family: mitra-font;
+  font-size: 15px;
+  color: #4b4b4b;
+}
+/*end-information-teacher*/
+/*start-news*/
+.container-fluid .row-news{
+  border: 1px solid #908b8b61;
+  box-shadow: 0px 0px 10px 4px #dddddd;
+}
+.container-fluid .row-news .panel-group-news .panel-heading{
+  border-bottom: 1px solid #eeeeee;
+}
+.container-fluid .row-news .panel-group-news .panel-heading span{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+  color: #000000;
+}
+.container-fluid .row-news .panel-group-news .panel-heading span i{
+  margin-left: 5px;
+}
+.container-fluid .row-news .panel-group-news .panel-body{
+  border-bottom: 1px solid #eeeeee;
+}
+.container-fluid .row-news .panel-group-news .panel-body .col-md-8{
+  padding: 0px;
+}
+.container-fluid .row-news .panel-group-news .panel-body .col-md-8 a {
+  text-decoration: none;
+  color: #000000;
+}
+.container-fluid .row-news .panel-group-news .panel-body .col-md-8 a h6{
+  font-family: IRANSans_Bold;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.container-fluid .row-news .panel-group-news .panel-body .col-md-8 ul{
+  padding: 0px;
+}
+.container-fluid .row-news .panel-group-news .panel-body .col-md-8 ul li{
+  list-style: none;
+  line-height: 2;
+}
+.container-fluid .row-news .panel-group-news .panel-body .col-md-8 ul li span{
+  font-family: IRANSans_Light;
+  font-size: 14px;
+}
+.container-fluid .row-news .panel-group-news .panel-body .col-md-8 ul li a{
+ text-decoration: none;
+  color: #000000;
+  font-family: mitra-font;
+  font-size: 15px;
+}
+.container-fluid .row-news .panel-group-news .panel-body .col-md-8 ul li a i{
+  margin-right: 5px;
+}
+/*end-news*/
+/*start-support-user*/
+.container-fluid .row-archive-support{
+  border: 1px solid #908b8b61;
+  box-shadow: 0px 0px 10px 4px #dddddd;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-heading{
+  border-bottom: 1px solid #eeeeee;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-heading span{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+  color: #000000;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-heading span i{
+  margin-left: 5px;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-body ul{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-body ul li{
+  padding: 10px;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-body ul li strong{
+  font-family: IRANSans_Bold;
+  font-size: 14px;
+  color: #000000;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-body ul li span{
+  font-family:IRANSans_Light;
+  color: #4b4b4b;
+  font-size: 14px;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-body ul li i{
+  float: left;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-footer{
+  background: none;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-footer strong{
+  font-family: IRANSans_Bold;
+  font-size: 14px;
+  color: #000000;
+  text-align: justify;
+}
+/*end-support-user*/
+/*start-Instagram*/
+.container-fluid .row-instagram img{
+  padding: 0px;
+}
+/*end-Instagram*/
+/*start-link*/
+.container-fluid .row-link{
+  border: 1px solid #908b8b61;
+  box-shadow: 0px 0px 10px 4px #dddddd;
+}
+.container-fluid .row-link .panel-group-link{
+  margin: 0px;
+}
+.container-fluid .row-link .panel-group-link .panel-heading{
+  border-bottom: 1px solid #eeeeee;
+
+}
+.container-fluid .row-link .panel-group-link .panel-heading span{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+  color: #000000;
+}
+.container-fluid .row-link .panel-group-link .panel-heading span i{
+  margin-left: 5px;
+}
+.container-fluid .row-link .panel-group-link .panel-body ul{
+  padding: 0px;
+  margin: 0px;
+
+}
+.container-fluid .row-link .panel-group-link .panel-body ul li{
+  list-style: none;
+  padding: 10px;
+
+}
+.container-fluid .row-link .panel-group-link .panel-body ul li:hover{
+  background-color: #eeeeee;
+}
+.container-fluid .row-link .panel-group-link .panel-body ul li a{
+  font-family: "IRANSansWeb(FaNum) Light";
+  font-size: 14px;
+  color: #000000;
+  text-decoration: none;
+}
+.container-fluid .row-link .panel-group-link .panel-body ul li a i{
+  margin-left: 5px;
+}
+.container-fluid .row-link .panel-group-link .panel-body ul li:hover a{
+  color: #ffa331;
+}
+/*end-link*/

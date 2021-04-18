@@ -1,0 +1,78 @@
+.container-fluid {
+  height: 100vh;
+  background-image: url("../../../assets/bootstrap/img/21.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container-fluid .row-log-reg {
+  margin-top: 5px;
+}
+.container-fluid .row-log-reg .col-md-8{
+  margin-top: 20px;
+}
+.container-fluid .row-log-reg .col-md-8 .thumbnail{
+  padding: 0px;
+}
+.container-fluid .row-log-reg  .col-md-8 .thumbnail .panel-heading{
+  border-bottom: 1px solid #eeeeee;
+}
+.container-fluid .row-log-reg  .col-md-8 .thumbnail .panel-heading h4{
+  font-family: IRANSans_Bold;
+  font-size: 20px;
+  color: #858585;
+}
+.container-fluid .row-log-reg  .col-md-8 .thumbnail .panel-body .input-group .input-group-addon{
+  background: none;
+  border-top-right-radius:5px ;
+  border-bottom-right-radius: 5px;
+  border-left:none ;
+  border-right: 1px solid #d5d5d5;
+  border-top: 1px solid #d5d5d5;
+  border-bottom: 1px solid #d5d5d5;
+}
+.container-fluid .row-log-reg  .col-md-8 .thumbnail .panel-body .input-group input{
+  border-right:none ;
+  border-top-left-radius:5px ;
+  border-bottom-left-radius: 5px;
+  padding: 20px 0px;
+  border-left: 1px solid #d5d5d5;
+  border-top: 1px solid #d5d5d5;
+  border-bottom: 1px solid #d5d5d5;
+  outline: none;
+  box-shadow: none;
+}
+.container-fluid .row-log-reg  .col-md-8 .thumbnail .panel-body .input-group input::placeholder{
+  font-family: IRANSans_Light;
+}
+.container-fluid .row-log-reg  .col-md-8 .thumbnail .panel-body .col-sm-10{
+  text-align: right;
+}
+.container-fluid .row-log-reg  .col-md-8 .thumbnail .panel-body label{
+  font-family: IRANSans_Bold;
+}
+.container-fluid .row-log-reg  .col-md-8 .thumbnail .panel-body .checkbox{
+  font-family: IRANSans_Light;
+}
+.container-fluid .row-log-reg  .col-md-8 .thumbnail .panel-body a{
+  font-family: IRANSans_Light;
+  text-decoration: none;
+}
+.container-fluid .row-log-reg  .col-md-8 .thumbnail .panel-body .btn-block{
+  margin-top: 20px;
+  font-family: IRANSans_Bold;
+}
+.container-fluid .row-log-reg  .col-md-8 .thumbnail .panel-footer span{
+  font-family: IRANSans_Light;
+  font-size: 18px;
+}
+.container-fluid .row-log-reg  .col-md-8 .thumbnail .panel-footer a{
+  font-family: IRANSans_Light;
+  font-size: 14px;
+  margin-right: 5px;
+  text-decoration: none;
+  border-bottom: 2px dotted #eeeeee;
+}
+
+::ng-deep.ui-radiobutton-label{
+  font-family: IRANSans_Light;
+}

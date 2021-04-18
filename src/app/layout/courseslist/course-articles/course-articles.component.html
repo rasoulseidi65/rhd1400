@@ -1,0 +1,39 @@
+<app-top-menu></app-top-menu>
+<app-center-menu></app-center-menu>
+<app-menu></app-menu>
+<div class="container">
+  <div class="row row-article" >
+    <div class="col-sm-3" *ngFor="let item of listArticle">
+      <div class="thumbnail thumbnail-body " [routerLink]="['../../home/detailArticle',item._id]">
+        <div class="panel-heading">
+          <img class="img-responsive" src="{{item.image}}" alt="">
+        </div>
+        <div class="panel-body">
+          <a [routerLink]="['../../home/detailArticle',item._id]"><span><i class="fa fa-circle"></i>{{item.title}}</span></a>
+        </div>
+        <div class="panel-footer">
+          <div class="stats">
+            <div>
+              <div class="title">لایک</div>
+              <i class="fa fa-thumbs-up"></i>
+              <div class="value">12</div>
+            </div>
+            <div>
+              <div class="title">نمایش</div>
+              <i class="fas fa-eye"></i>
+              <div class="value">14</div>
+            </div>
+            <div>
+              <div class="title">تاریخ انتشار</div>
+              <i class="fa fa-calendar"></i>
+              <div class="value">{{item.date}}</div>
+            </div>
+          </div>
+          <a [routerLink]="['../../home/detailArticle',item._id]"><span>ادامه مطالب</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
+</div>
+<app-footer></app-footer>

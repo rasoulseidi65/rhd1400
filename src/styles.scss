@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+//@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+//@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+*{
+  cursor: pointer;
+}
+@font-face {
+  font-family: 'IRANSans_Bold';
+  src: url('/assets/bootstrap/fonts/IRANSansWeb(FaNum)_Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'IRANSans_Light';
+  src: url('/assets/bootstrap/fonts/IRANSansWeb(FaNum)_Light.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'mitra-font';
+  src: url('/assets/bootstrap/fonts/Far_Mitra.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+

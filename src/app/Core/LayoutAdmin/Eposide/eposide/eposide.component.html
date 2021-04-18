@@ -1,0 +1,134 @@
+<div class="ui-grid-row" style="margin-bottom:8rem">
+
+  <div class="ui-grid-col-12">
+    <form [formGroup]="eposideForm">
+      <p-panel>
+        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+             عنوان دوره مربوطه<label style="color: red">*</label>:
+            </div>
+            <div class="ui-grid-col-6" dir="ltr">
+              <select id="inputState1" class="form-control" formControlName="courseID" [(ngModel)]="eposide.courseID">
+                <option *ngFor="let i of course " [value]="i._id">{{i.title}}</option>
+
+              </select>
+            </div>
+
+            <div class="ui-grid-col-4">
+              <p-message style="text-align: right" severity="error" text="عنوان دوره را وارد نمائید" *ngIf="!eposideForm.controls['courseID'].valid && eposideForm.controls['courseID'].dirty"></p-message>
+            </div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              عنوان ویدئو <label style="color: red">*</label>:
+            </div>
+            <div class="ui-grid-col-6">
+              <input pInputText type="text" formControlName="title" placeholder="" [(ngModel)]="eposide.title"/>
+            </div>
+            <div class="ui-grid-col-4">
+              <p-message severity="error" text="عنوان ویدئو دوره آموزشی  را وارد نمائید"
+                         *ngIf="!eposideForm.controls['title'].valid&&eposideForm.controls['title'].dirty"></p-message>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              نوع دوره(رايگان-نقدي)<label style="color: red">*</label>:
+            </div>
+            <div class="ui-grid-col-6">
+              <input pInputText type="text" formControlName="type" placeholder="نوع دوره را وارد نمائيد"
+                     [(ngModel)]="eposide.type"/>
+            </div>
+            <div class="ui-grid-col-4">
+              <p-message severity="error" text="نوع دوره آموزشی  را وارد نمائید"
+                         *ngIf="!eposideForm.controls['type'].valid&&eposideForm.controls['type'].dirty"></p-message>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              لینک ویدئو دوره :
+            </div>
+            <div class="ui-grid-col-6">
+              <p-fileUpload name="myfile[]" customUpload="true"
+                            invalidFileSizeMessageDetail="حداکثر سایز ويدئو 40 مگابایت می باشد"
+                            invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد"
+                            multiple="multiple"
+                            accept="video/mp4 "
+                            (uploadHandler)="onUpload($event)" uploadLabel="آپلود ويدئو" chooseLabel="انتخاب ویدئو"
+                            cancelLabel="انصراف"></p-fileUpload>
+            </div>
+            <div class="ui-grid-col-2">
+            </div>
+          </div>
+
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              زمان ویدئو دوره :
+            </div>
+            <div class="ui-grid-col-6">
+              <input pInputText type="text" formControlName="time" placeholder="زمان ویدئو" [(ngModel)]="eposide.time"/>
+            </div>
+            <div class="ui-grid-col-2">
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              شماره جلسه :
+            </div>
+            <div class="ui-grid-col-6">
+              <input pInputText type="text" formControlName="number" placeholder="شماره جلسه " [(ngModel)]="eposide.number"/>
+            </div>
+            <div class="ui-grid-col-2">
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              توضیحات جلسه :
+            </div>
+            <div class="ui-grid-col-9">
+              <quill-editor formControlName="body" [style]="{'height':'320px'}"  [(ngModel)]="eposide.body"></quill-editor>
+              <!--              <p-editor [(ngModel)]="eposide.body" [style]="{'height':'320px'}"></p-editor>-->
+              <!--              <input pInputText type="text" formControlName="body" placeholder="زمان ویدئو" [(ngModel)]="eposide.body"/>-->
+            </div>
+
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+            </div>
+            <div class="ui-grid-col-2">
+              <button pButton type="submit" label="جلسه جدید "></button>
+
+            </div>
+            <div class="ui-grid-col-2">
+              <button pButton type="submit" label="ثبت جلسه" (click)="storeEposide()" ></button>
+
+            </div>
+          </div>
+        </div>
+        <hr/>
+        <p-table [value]="cols" [paginator]="true" [rows]="5">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>ردیف</th>
+              <th>عنوان فصل</th>
+              <th>عنوان مطلب</th>
+              <th>لینک فیلم</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-field let-rowIndex="rowIndex">
+            <tr>
+              <td class="text-center">{{rowIndex + 1}}</td>
+              <td>{{field.titlechapter}}</td>
+              <td>{{field.title}}</td>
+              <td>{{field.link}}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </p-panel>
+    </form>
+  </div>
+
+</div>

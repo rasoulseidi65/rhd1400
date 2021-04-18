@@ -1,0 +1,78 @@
+
+.container-fluid{
+  background-color: #eeeeee;
+  margin: 0px;
+  padding: 0px;
+  height: 58px;
+  border-bottom: 2px solid #ffffff;
+}
+.container-fluid .col-md-7,nav {
+  margin: 0px;
+  padding: 0px;
+}
+.container-fluid .navbar #top-menu ul li a{
+  color: #000000;
+  font-family: IRANSans_Bold;
+  font-size: 14px;
+  height: 58px;
+}
+.container-fluid .navbar #top-menu ul li a:hover{
+  color: #ff5000;
+  border-bottom: 2px solid #ff5000;
+}
+.container-fluid .row-top-menu-left ul{
+  margin-left: 10px;
+}
+.container-fluid .row-top-menu-left ul li{
+   border-left: 2px solid #ffffff;
+  width: 60px;
+}
+.container-fluid .row-top-menu-left ul li:first-child{
+  border-right: 2px solid #ffffff;
+}
+.container-fluid .row-top-menu-left ul li a{
+  height: 56px;
+  color: #03af8c;
+  position: relative;
+  font-family: IRANSans_Bold;
+  font-size: 11px;
+  padding: unset;
+  text-align: center;
+}
+.container-fluid .row-top-menu-left ul li a .fa-user{
+  margin-right: 5px;
+}
+.container-fluid .row-top-menu-left ul li a .fa-key{
+  margin-right: -13px;
+}
+.container-fluid .row-top-menu-left ul li a .fa-shopping-cart{
+  margin-right: -5px;
+}
+.container-fluid .row-top-menu-left ul li a:hover{
+  background: none;
+}
+.container-fluid .row-top-menu-left ul li a span{
+  color: #ffffff;
+  background-color: #03af8c;
+  border-radius: 100%;
+  text-align: center;
+  padding: 12px;
+  font-size: 20px;
+  position: absolute;
+  margin-top: 30px;
+  width: 45px;
+  height: 45px;
+  left: 5px;
+}
+@media (max-width:  770px) {
+  .container-fluid .row-top-menu-left ul{
+    margin-left: 10px;
+    display: inline-flex;
+    margin-top: 0px;
+  }
+}
+@media (max-width:  770px) {
+  .container-fluid #top-menu-right{
+    display: none;
+  }
+}

@@ -1,0 +1,74 @@
+<app-top-menu></app-top-menu>
+<app-center-menu></app-center-menu>
+<app-menu></app-menu>
+<div class="row" >
+  <div class="col-md-4 col-sm-12" *ngFor="let item of listCourse">
+    <div class="center">
+      <div class="card">
+        <div class="additional">
+          <div class="user-card">
+            <div class="level center text-center">
+             {{item.level}}
+            </div>
+            <div class="points center text-center">
+              {{item.price}} تومان
+            </div>
+            <img class="img-responsive" src="{{item.image}}" style="height: 100%;width: 100%; margin-top: -31px; padding-bottom
+      : 31px;"/>
+          </div>
+          <div class="more-info">
+            <img src="../../../../assets/bootstrap/img/bay.png" style="margin-top: 10px; margin-right:140px;height: 60px;width: 60px;border-radius: 50px"/>
+            <h1 style="margin-right:30px">مدرس:  میلاد مقدس</h1>
+            <div class="coords">
+            </div>
+            <div  style="margin-right:50px;margin-top:10px">
+              <div class="ui-g">
+                <div class="ui-g-6">
+
+                  <button pButton type="button" icon="pi pi-shopping-cart" class="ui-blockui btn-cartshop ui-button-rounded ui-button-success" iconPos="right"  label=" سبد خرید"></button>
+                </div>
+                <div class="ui-g-6">
+                  <button pButton type="button"  class="ui-blockui btn-cartshop ui-button-rounded ui-button-success"   label="مشاهده جزئیات"></button>
+
+                  <!--<i class="pi pi-download"-->
+                </div>
+              </div>
+            </div>
+            <div class="stats">
+              <div>
+                <div class="title">زمان</div>
+                <i class="fa fa-clock"></i>
+                <div class="value">{{item.timeCourse}}</div>
+              </div>
+              <div>
+                <div class="title">تعداد فصل</div>
+                <i class="fas fa-book-reader"></i>
+                <div class="value">{{item.Number}}</div>
+              </div>
+              <div>
+                <div class="title">تاریخ انتشار</div>
+                <i class="fa fa-calendar"></i>
+                <div class="value">{{item.date}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="general">
+          <h1>{{item.title}}</h1>
+          <hr/>
+          <p class="text-center" style="margin-right:150px;color: #000000;text-align: justify;
+  text-justify: inter-word;">{{item.abstract}}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
+
+<app-footer></app-footer>
+
+
+
+

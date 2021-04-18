@@ -1,0 +1,58 @@
+/*start-comment*/
+.container  .caption{
+  text-align: center;
+  margin-top: 30px;
+}
+.container .caption span{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+  color: #03af8c;
+}
+.container  .caption a{
+  font-family: IRANSans_Bold;
+  text-decoration: none;
+  color: #000000;
+  margin-left: 30px;
+}
+.container  .caption a i{
+  margin-right: 5px;
+}
+.container .row-comment{
+  border: 1px solid #eeeeee;
+  margin-top: 10px;
+}
+.container .row-comment .row-comment-right a{
+  text-decoration: none;
+  line-height: 2;
+}
+.container .row-comment .row-comment-right a span{
+  font-family: IRANSans_Bold;
+  color: #000000;
+}
+.container .row-comment .row-comment-right a span i{
+  margin-left: 5px;
+}
+.container .row-comment .row-comment-right h6{
+  display: inline;
+  color: #ffffff;
+  padding: 7px 5px 7px 20px;
+  background-color: #4b4b4b;
+  margin-left: 10px;
+  line-height: 3;
+  font-family: IRANSans_Light;
+  border-top-left-radius:8px ;
+  border-top-right-radius: 8px;
+}
+.container .row-comment .row-comment-right h6 i{
+  margin-left: 5px;
+}
+.container .row-comment .row-comment-left{}
+.container .row-comment .row-comment-left span{
+  display: inline-grid;
+  text-align: center;
+  padding: 5px 35px;
+  line-height: 3;
+  font-family: IRANSans_Light;
+}
+.container .row-comment .row-comment-left span i{}
+/*end-comment*/

@@ -1,0 +1,135 @@
+<p-toast position="top-center" class="text-center"></p-toast>
+
+<form [formGroup]="courseForm" (ngSubmit)="onSubmit(courseForm.value)">
+  <p-panel header="فرم ثبت مشخصات دوره آموزشی">
+    <div class=" ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          عنوان دوره آموزشی <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="title" placeholder=""/>
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message severity="error" text="عنوان دوره آموزشی  را وارد نمائید" *ngIf="!courseForm.controls['title'].valid&&courseForm.controls['title'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+      <div class="ui-grid-col-2">
+        نوع گروه آموزشی<label style="color: red">*</label>:
+      </div>
+      <div class="ui-grid-col-6" dir="ltr">
+        <p-dropdown [options]="categories" [showTransitionOptions]="'1ms'" [hideTransitionOptions]="'1ms'" formControlName="categories" [filter]="true"></p-dropdown>
+      </div>
+      <div class="ui-grid-col-4">
+        <p-message style="text-align: right" severity="error" text="خلاصه مقاله" *ngIf="!courseForm.controls['categories'].valid&&courseForm.controls['categories'].dirty"></p-message>
+      </div>
+    </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+         مدرس دوره آموزشی<label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6" dir="ltr">
+          <p-dropdown [options]="teachers" [showTransitionOptions]="'1ms'" [hideTransitionOptions]="'1ms'" formControlName="teacherID" [filter]="true"></p-dropdown>
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message style="text-align: right" severity="error" text="خلاصه مقاله" *ngIf="!courseForm.controls['teacherID'].valid&&courseForm.controls['teacherID'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          تعداد فصل <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <input type="text" pInputText pKeyFilter="num" formControlName="courseChapter" maxlength="10" >
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message severity="error" text="تعداد فصل را وارد نمائید" *ngIf="!courseForm.controls['courseChapter'].valid&&courseForm.controls['courseChapter'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          قیمت <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+                    <input pInputText type="text" value="1333" (keydown)="convertPrice($event)" pKeyFilter="num" formControlName="price" placeholder="" maxlength="11"/>
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message severity="error" text="قیمت(هزینه) را به درستی وارد نمائید" *ngIf="!courseForm.controls['price'].valid&&courseForm.controls['price'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          نوع طرح<label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6" dir="ltr">
+          <p-dropdown [options]="crash" [showTransitionOptions]="'1ms'" [hideTransitionOptions]="'1ms'" formControlName="type" [filter]="true"></p-dropdown>
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message style="text-align: right" severity="error" text="خلاصه مقاله" *ngIf="!courseForm.controls['type'].valid&&courseForm.controls['type'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+         زمان دوره:<label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6" dir="ltr">
+          <input type="text" pInputText formControlName="timeCourse" >
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message style="text-align: right" severity="error" text="زمان دوره را وارد کنید" *ngIf="!courseForm.controls['timeCourse'].valid&&courseForm.controls['timeCourse'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          تعداد مشاهده <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <input type="text" pInputText pKeyFilter="num" formControlName="viewCount" >
+
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message severity="error" text="تعداد مشاهده را به درستی وارد نمائید" *ngIf="!courseForm.controls['viewCount'].valid&&courseForm.controls['viewCount'].dirty"></p-message>
+        </div>
+      </div>
+
+
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          تصویر دوره آموزشی :
+        </div>
+        <div class="ui-grid-col-6">
+          <p-fileUpload name="myfile[]" customUpload="true"
+                        invalidFileSizeMessageDetail="حداکثر سایز عکس 2 مگابایت می باشد"
+                        invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد"
+                        multiple="multiple"
+                        accept="image/jpeg,image/png " maxFileSize="2000000"
+                        (uploadHandler)="onUpload($event)" uploadLabel="آپلود عکس" chooseLabel="انتخاب عکس"
+                        cancelLabel="انصراف"></p-fileUpload>
+        </div>
+        <div class="ui-grid-col-2">
+        </div>
+      </div>
+      <div class="ui-grid-row" style="margin-bottom:8rem">
+        <div class="ui-grid-col-2">
+          جزئیات دوره آموزشی:
+        </div>
+        <div class="ui-grid-col-8">
+          <quill-editor formControlName="detail"></quill-editor>
+
+        </div>
+        <div class="ui-grid-col-2"></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-6">
+          <button pButton type="submit" label="ثبت دوره جدید"></button>
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+
+    </div>
+  </p-panel>
+</form>
+

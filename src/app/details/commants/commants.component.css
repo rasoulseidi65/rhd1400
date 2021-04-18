@@ -1,0 +1,115 @@
+/*start-comments-description*/
+.container-fluid-comments{
+  margin-top: 30px;
+}
+.container-fluid-comments .row-comments-description{
+  border: 1px solid #908b8b61;
+  box-shadow: 0px 0px 10px 4px #dddddd;
+  margin-top: 30px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+.container-fluid-comments .row-comments-description .caption span{
+  position: relative;
+  background-color: #15acd9;
+  font-family: IRANSans_Bold;
+  color: #ffffff;
+  padding: 20px 0px;
+  text-align: center;
+  top: -20px;
+  box-shadow: 0px 10px 8px 0px #4e4f5280;
+}
+.container-fluid-comments .row-comments-description .panel-body{
+  font-family: IRANSans_Light;
+  color: #000000;
+}
+.container-fluid-comments .row-comments-description .panel-body form .col-md-8 .form-group .input-group-addon{
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+.container-fluid-comments .row-comments-description .panel-body form .col-md-8 .form-group input{
+  padding-right: 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ced4da;
+  border-radius: 0;
+  outline: 0;
+  box-shadow: none;
+  font-family: IRANSans_Bold;
+}
+.container-fluid-comments .row-comments-description .panel-body form .input-group {
+  width: 100%;
+}
+.container-fluid-comments .row-comments-description .panel-body form .input-group textarea{
+  height: 120px;
+  font-family: IRANSans_Bold;
+  outline: none;
+  box-shadow: none;
+}
+.container-fluid-comments .row-comments-description .panel-body form .input-group button{
+  margin-top: 15px;
+}
+.container-fluid-comments .row-comments-users{
+  margin-top: 30px;
+}
+.container-fluid-comments .row-comments-users .row-description-user{
+  border: 1px solid #d6d2d261;
+  margin: 15px;
+  border-radius: 8px;
+  padding-top: 15px;
+}
+.container-fluid-comments .row-comments-users .row-description-user .col-xs-2 span{
+  font-family: IRANSans_Bold;
+  padding: 10px;
+}
+.container-fluid-comments .row-comments-users .row-description-user .col-xs-2 a{
+  margin: 30px;
+  text-decoration: none;
+  color: #000;
+  display: inline-grid;
+  font-family: IRANSans_Light;
+}
+.container-fluid-comments .row-comments-users .row-description-user .col-xs-2 a span{
+  padding: 0;
+}
+.container-fluid-comments .row-comments-users .row-description-user .col-xs-2 img{
+  margin-bottom:20px;
+}
+.container-fluid-comments .row-comments-users .row-description-user .col-xs-10 span{
+  font-family: IRANSans_Bold;
+  margin-top: 15px;
+}
+.container-fluid-comments .row-comments-users .row-description-user .col-xs-10 p{
+  font-family: mitra-font;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 2;
+}
+.container-fluid-comments .row-comments-users .row-description-admin{
+  background-color: #f9f9fe;
+  border: 1px solid #d6d2d261;
+  margin: 15px;
+  border-radius: 8px;
+  padding-top: 15px;
+}
+.container-fluid-comments .row-comments-users .row-description-admin h6{
+  font-family: IRANSans_Bold;
+  color: #ffa331;
+  margin-right: 10px;
+  font-size: 18px;
+}
+.container-fluid-comments .row-comments-users .row-description-admin span{
+  font-family: IRANSans_Light;
+  color: #000000;
+  margin-right: 10px;
+}
+.container-fluid-comments .row-comments-users .row-description-admin p{
+  font-family: mitra-font;
+  font-size: 18px;
+  margin: 10px;
+  text-align: justify;
+  line-height: 2;
+  color: #000000;
+}
+/*end-comment-description*/

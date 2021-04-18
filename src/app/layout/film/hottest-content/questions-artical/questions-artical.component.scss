@@ -1,0 +1,12 @@
+:host::ng-deep .container .row span , th {
+  font-family:IRANSans_Bold;
+}
+:host::ng-deep .container .row td {
+  font-family:IRANSans_Light;
+}
+:host::ng-deep .container .row  a {
+  background: #16e838;
+  padding: 5px;
+  color: #ffffff;
+  text-decoration: none;
+}

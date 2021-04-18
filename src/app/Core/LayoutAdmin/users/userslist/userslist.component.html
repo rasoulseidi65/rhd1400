@@ -1,0 +1,47 @@
+<p-table [value]="userModels" #dt [columns]="cols" [paginator]="true" [rows]="5">
+  <ng-template pTemplate="caption">
+    <div class="text-right">لیست کاربرها</div>
+    <div style="text-align: left" class="ui-table-globalfilter-container">
+      <input  class="input-filter" type="text" pInputText size="50" placeholder="جستجوی سراسری" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr class="title-table">
+      <th style="width: 5%" class="text-center">ردیف</th>
+      <th style="width: 25%" class="text-center">نام مدرس</th>
+      <th style="width: 25%" class="text-center">نام خانوادگی</th>
+      <th style="width: 25%" class="text-center">شماره همراه</th>
+      <th style="width: 25%" class="text-center">مدرک</th>
+      <th style="width: 25%" class="text-center">رشته تحصیلی</th>
+      <th style="width: 6%" class="text-center">ویرایش</th>
+      <th style="width: 6%" class="text-center">حذف</th>
+
+    </tr>
+    <tr>
+      <th></th>
+      <th *ngFor="let col of cols" [ngSwitch]="col.field" style="width: 10%">
+        <input  class="input-filter text-center" placeholder="جستجوی نام مدرس" *ngSwitchCase="'firstName'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+        <input class="input-filter text-center " placeholder="جستجوی فامیلی" *ngSwitchCase="'lastName'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+        <input class="input-filter text-center" placeholder="جستجوی  شماره همراه" *ngSwitchCase="'mobile'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+        <input  class="input-filter text-center" placeholder="جستجوی  مدرک" *ngSwitchCase="'madrak'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+        <input  class="input-filter text-center" placeholder="جستجوی  رشته" *ngSwitchCase="'field'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-teacher let-rowIndex="rowIndex">
+    <tr>
+      <td class="text-center">{{rowIndex + 1}}</td>
+      <td class="text-center">{{teacher.firstname}}</td>
+      <td class="text-center">{{teacher.lastName}}</td>
+      <td class="text-center">{{teacher.mobile}}</td>
+      <td class="text-center">{{teacher.madrak}}</td>
+      <td class="text-center">{{teacher.field}}</td>
+      <td  class="text-center"><i class="fas fa-edit fa-1x text-muted" ></i>
+      </td>
+      <td  class="text-center"><i class="fas fa-trash fa-1x text-danger" ></i></td>
+    </tr>
+  </ng-template>
+
+</p-table>

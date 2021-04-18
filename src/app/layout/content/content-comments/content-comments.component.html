@@ -1,0 +1,94 @@
+<!--start-comment-description-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1" *ngFor="let item of listComment">
+      <div class="row comme-use">
+        <ul class="media-list">
+          <li class="media ">
+            <div class="pull-right">
+              <a><img class=" media-object" src="/assets/bootstrap/img/default.png"></a>
+            </div>
+            <div class="media-body" >
+              <h4 class="media-heading">
+                 {{item.fullName}} میگه :
+                <h6 class="pull-left">{{item.date}}</h6>
+              </h4>
+              <p>{{item.text}}</p>
+              <!--nested media object-->
+              <div class="media media-admin">
+                <div class="pull-right">
+                  <a><img class=" media-object" src="/assets/bootstrap/img/default.png"></a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading"><h6 class="pull-left">1367/31/06</h6>رسول صیدی پیری:</h4>
+                  <p style="color:#ff5000">سلام دوس عزیز این دوره مربوط به هیچ قشر خاصی یا فرد خاسی نیست باتید خود ما در این خسوس کار کنیم و زحمت بکشیم تا به اون چیزی که میخوایم برسم </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-4">
+      <nav>
+        <ul class="pagination pagination-sm">
+          <li>
+            <a href="#" name="previous">
+              <span>&laquo;</span>
+            </a>
+          </li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">6</a></li>
+          <li><a href="#">7</a></li>
+          <li><a href="#">8</a></li>
+          <li><a href="#">9</a></li>
+          <li><a href="#">11</a></li>
+          <li><a href="#">12</a></li>
+          <li>
+            <a href="#" name="next">
+              <span>&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 ">
+      <div class="row rowcommen">
+        <div class="caption ">
+          <span class="col-xs-10 col-xs-offset-1">نظرات کاربران</span>
+        </div>
+        <div class="panel-body">
+          <form [formGroup]="commentForm ">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="form-group  input-group">
+                <span class="input-group-addon"><i class="fas fa-user-graduate"></i></span>
+                <input class="form-control" formControlName="fullName"  type="text" placeholder="نام ونام خانوادگی">
+              </div>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+              <div class="input-group form-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                <input class="form-control" formControlName="email" type="email"  placeholder="ایمیل">
+              </div>
+            </div>
+            <div class="form-group input-group ">
+              <textarea class="form-control " formControlName="text" type="text"  placeholder="عبارت مورد نظر را وارد کنید"></textarea>
+              <br>
+            </div>
+            <button (click)="onSubmit()"  class="btn btn-primary pull-left" >ارسال</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!--end-comment-description-->

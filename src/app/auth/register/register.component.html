@@ -1,0 +1,67 @@
+<app-top-menu></app-top-menu>
+
+<p-toast [style]="{marginTop: '80px',fontFamily:'IRANSans_Bold'}" position="top-center"></p-toast>
+<div class="container-fluid">
+  <div class="row text-center row-log-reg">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="thumbnail">
+          <div class="panel-heading">
+            <h4>ثبت نام در همراه دانش</h4>
+          </div>
+          <div class="panel-body">
+            <form  class="form-horizontal" [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
+
+              <div class="col-md-10 col-md-offset-1" style="text-align: right">
+                <label>نام </label>
+                <div class="input-group form-group">
+                  <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                  <input class="form-control" type="text" formControlName="firstName" placeholder="نام ">
+                </div>
+
+              </div>
+              <div class="col-md-10 col-md-offset-1" style="text-align: right">
+                <label>نام خانوادگی: </label>
+                <div class="input-group form-group">
+                  <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                  <input class="form-control" type="text" formControlName="lastName" placeholder=" نام خانوادگی">
+                </div>
+
+              </div>
+              <div class="col-md-10 col-md-offset-1" style="text-align: right">
+                <label>ایمیل</label>
+                <div class="input-group form-group">
+                  <span class="input-group-addon"><i class="fas fa-envelope"></i></span>
+                  <input class="form-control" type="email" formControlName="email"  placeholder="ایمیل خود را وارد کنید">
+                </div>
+              </div>
+              <div class="col-md-10 col-md-offset-1" style="text-align: right">
+                <label>شماره موبایل </label>
+                <div class="input-group form-group">
+                  <span class="input-group-addon"><i class="fas fa-phone"></i></span>
+                  <input class="form-control" type="text"  pKeyFilter="num" formControlName="mobile" placeholder="شماره موبایل وارد شود" maxlength="11">
+                </div>
+              </div>
+              <div class="col-md-10 col-md-offset-1" style="text-align: right">
+                <label>رمز عبور</label>
+                <div class="input-group form-group">
+                  <span class="input-group-addon"><i class="fas fa-lock"></i></span>
+                  <input pPassword class="form-control" type="password" formControlName="password" placeholder="رمز عبور"/>
+                </div>
+              </div>
+              <div class="col-md-10 col-md-offset-1">
+                <button class="btn-block" pButton type="submit" icon="pi pi-check" label="ثبت نام" [disabled]="!userform.valid"></button>
+              </div>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <span>قبلا در همراه دانش ثبت نام کرده اید؟</span>
+            <a routerLink="./login">وارد شوید</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

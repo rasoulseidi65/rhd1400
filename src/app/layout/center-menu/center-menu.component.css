@@ -1,0 +1,40 @@
+.container-fluid{
+  background-color: #f5f3f4;
+  height: 150px;
+}
+.container-fluid .row-center-menu img{
+  margin-top: 45px;
+  margin-right: 75px;
+  float: right;
+}
+.container-fluid .row-center-menu h2{
+  font-family: IRANSans_Bold;
+  font-size: 26px;
+  margin-top: 40px;
+  color: #ff5000;
+}
+.container-fluid .row-center-menu h6{
+  font-family:IRANSans_Light;
+  color: #b9b9b9;
+}
+.container-fluid .row-center-menu-left{
+  margin-top: 30px;
+}
+.container-fluid .row-center-menu-left ul{
+  margin-left: 20px;
+}
+.container-fluid .row-center-menu-left ul li{
+  padding-left: 20px;
+  text-align: center;
+}
+.container-fluid .row-center-menu-left ul li span{
+  font-family: IRANSans_Bold;
+}
+.container-fluid .row-center-menu-left ul li span>span{
+  color:#ff5000 ;
+}
+@media (max-width: 770px) {
+  .container-fluid .col-md-5 .row-center-menu-left{
+    display: none;
+  }
+}

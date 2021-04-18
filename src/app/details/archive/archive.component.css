@@ -1,0 +1,235 @@
+/*start-information-teacher*/
+.container-fluid{
+  margin: 10px 0px 10px 10px;
+}
+.container-fluid-techer{
+  position: fixed;
+
+}
+.container-fluid .row-archive-tech{
+  border: 1px solid #908b8b61;
+  box-shadow: 0px 0px 10px 4px #dddddd;
+  height: 120px;
+
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-heading{
+  border-bottom: 1px solid #eeeeee;
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-heading span{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+  color: #000000;
+}
+.container-fluid .row-archive-tech .panel-group-tech  span i{
+  margin-left: 5px;
+  font-size: 16px;
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-body{
+  direction: rtl;
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-body img{
+  width: 50px;
+  height: 50px;
+  float: right;
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-body span{
+  float: right;
+  font-family: "IRANSansWeb(FaNum) Light";
+  color: #000000;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-body a{
+  text-decoration: none;
+  font-family: "IRANSansWeb(FaNum) Light";
+  float: left;
+  border-bottom: 1px solid #ffa331;
+  color: #ffa331;
+  background: none;
+  margin-top: 16px;
+  padding: 0px;
+}
+.container-fluid .row-archive-tech .panel-group-tech .panel-body a:hover{
+  color: #000000;
+}
+
+/*end-information-teacher*/
+/*start-information-film*/
+.container-fluid .row-archive-information{
+  border: 1px solid #908b8b61;
+  box-shadow: 0px 0px 10px 4px #dddddd;
+
+}
+.container-fluid .row-archive-information .panel-group-information .panel-heading{
+  border-bottom: 1px solid #eeeeee;
+}
+.container-fluid .row-archive-information .panel-group-information .panel-heading span{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+  color: #000000;
+}
+.container-fluid .row-archive-information .panel-group-information .panel-heading span i{
+  margin-left: 5px;
+  font-size: 16px;
+}
+.container-fluid .row-archive-information .panel-group-information .panel-body ul{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.container-fluid .row-archive-information .panel-group-information .panel-body ul li{
+  padding: 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+.container-fluid .row-archive-information .panel-group-information .panel-body ul li>span{
+  font-family: IRANSans_Light;
+  font-size: 14px;
+  color: #000000;
+
+}
+.container-fluid .row-archive-information .panel-group-information .panel-body ul li>span>i{
+  margin-left: 5px;
+}
+.container-fluid .row-archive-information .panel-group-information .panel-body ul li>p{
+  float: left;
+  font-family: mitra-font;
+  font-size: 15px;
+  color: #4b4b4b;
+}
+.container-fluid .row-archive-information .panel-group-information .panel-footer{
+  background: none;
+}
+.container-fluid .row-archive-information .panel-group-information .panel-footer button{
+ font-size: 16px;
+  font-size: 18px;
+  border: none;
+  padding: 10px 0px;
+  color: #ffffff;
+  bottom: 10px;
+  font-family: "IRANSansWeb(FaNum) Light";
+}
+.container-fluid .row-archive-information .panel-group-information .panel-footer button i{
+  margin-left: 25px;
+}
+/*end-information-film*/
+/*start-support-user*/
+.container-fluid .row-archive-support{
+  border: 1px solid #908b8b61;
+  box-shadow: 0px 0px 10px 4px #dddddd;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-heading{
+  border-bottom: 1px solid #eeeeee;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-heading span{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+  color: #000000;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-heading span i{
+  margin-left: 5px;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-body ul{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-body ul li{
+  padding: 10px;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-body ul li strong{
+  font-family: IRANSans_Bold;
+  font-size: 14px;
+  color: #000000;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-body ul li span{
+  font-family: IRANSans_Light;
+  color: #4b4b4b;
+  font-size: 14px;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-body ul li i{
+  float: left;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-footer{
+  background: none;
+}
+.container-fluid .row-archive-support .panel-group-support .panel-footer strong{
+  font-family: IRANSans_Bold;
+  font-size: 14px;
+  color: #000000;
+  text-align: justify;
+}
+/*end-support-user*/
+/*start-register-period*/
+.container-fluid .row-register-period {
+  border: 1px solid #908b8b61;
+  box-shadow: 0px 0px 10px 4px #dddddd;
+}
+.container-fluid .row-register-period .panel-group-period{
+  margin: 0px;
+}
+.container-fluid .row-register-period .panel-group-period .panel-heading{
+  border-bottom: 1px solid #eeeeee;
+
+}
+.container-fluid .row-register-period .panel-group-period .panel-heading span{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+  color: #000000;
+}
+.container-fluid .row-register-period .panel-group-period .panel-heading span i{
+  margin-left: 5px;
+}
+.container-fluid .row-register-period .panel-group-period .panel-body a{
+  font-family: IRANSans_Light;
+  padding: 15px;
+}
+.container-fluid .row-register-period .panel-group-period .panel-body a i{
+  margin-left: 35px;
+}
+/*end-register-period*/
+/*start-link*/
+.container-fluid .row-link{
+  border: 1px solid #908b8b61;
+  box-shadow: 0px 0px 10px 4px #dddddd;
+}
+.container-fluid .row-link .panel-group-link{
+  margin: 0px;
+}
+.container-fluid .row-link .panel-group-link .panel-heading{
+  border-bottom: 1px solid #eeeeee;
+
+}
+.container-fluid .row-link .panel-group-link .panel-heading span{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+  color: #000000;
+}
+.container-fluid .row-link .panel-group-link .panel-heading span i{
+  margin-left: 5px;
+}
+.container-fluid .row-link .panel-group-link .panel-body ul{
+  padding: 0px;
+  margin: 0px;
+
+}
+.container-fluid .row-link .panel-group-link .panel-body ul li{
+  list-style: none;
+  padding: 10px;
+
+}
+.container-fluid .row-link .panel-group-link .panel-body ul li:hover{
+  background-color: #eeeeee;
+}
+.container-fluid .row-link .panel-group-link .panel-body ul li a{
+  font-family: IRANSans_Light;
+  font-size: 14px;
+  color: #000000;
+  text-decoration: none;
+}
+.container-fluid .row-link .panel-group-link .panel-body ul li a i{
+  margin-left: 5px;
+}
+.container-fluid .row-link .panel-group-link .panel-body ul li:hover a{
+  color: #ffa331;
+}
+/*end-link*/

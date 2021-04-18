@@ -1,0 +1,50 @@
+<!--start-img-->
+<div class="container-fluid">
+  <div class="row row-img">
+    <div class="col-md-12">
+      <img class="img-responsive col-xs-12" src="/assets/bootstrap/img/media.jpg" alt="">
+    </div>
+  </div>
+</div>
+<!--end-img-->
+<!--start-details-film-->
+<div class="container-fluid">
+  <div class="row row-details-film">
+    <div class="title-film col-xs-10 col-xs-offset-1">
+      <span class="title"><i class="fas fa-tag"></i>سر فصل دوره تخصصی انگولار پروژه محور</span>
+    </div>
+    <div class="body-film col-xs-10 col-xs-offset-1" *ngFor="let item of data['Episode']">
+      <div class="panel-heading panel-heading-film">
+        <strong class="panel-title"><i class="fas fa-check-circle"></i>{{item.title}}</strong>
+        <a class="pull-left " href="{{item.videoUrl}}"><i class="glyphicon glyphicon-download-alt"></i></a>
+        <span class="pull-left">{{item.time}}</span>
+        <span class="pull-left">{{item.type}}</span>
+      </div>
+      <div class="panel-footer" [innerHTML]="item.body">
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--end-details-film-->
+<!--start-details-film-->
+
+<!--end-details-film-->
+<!--start-description-period-->
+<div class="container-fluid">
+  <div class="row row-description">
+    <div class="col-md-12">
+      <span><i class="fas fa-user-graduate"></i>توضیحات در مورد دوره</span>
+    </div>
+  </div>
+  <div class="row row-description-period">
+    <div class="col-md-12" [innerHTML]="data['detail']">
+
+    </div>
+  </div>
+</div>
+<!--end-description-period-->
+<!--start-description-period-->
+
+
+

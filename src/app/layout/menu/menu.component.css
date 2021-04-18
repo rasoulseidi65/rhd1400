@@ -1,0 +1,54 @@
+.container-fluid{
+  margin: 0;
+  padding: 0;
+  background-color: #04af8d;
+}
+.container-fluid  .navbar-header-custom button{
+  background-color: #ff7800;
+  border: #ffffff;
+}
+.container-fluid  .navbar-header-custom button .icon-bar{
+  background-color: #ffffff;
+}
+.container-fluid .row-menu-right ul{
+  margin: 0px;
+}
+.container-fluid .row-menu-right ul li{
+  border-right: 2px solid #009c7d;
+}
+.container-fluid .row-menu-right ul li:last-child{
+  border-left: 2px solid #009c7d;
+}
+.container-fluid .row-menu-right ul li a{
+  color: #ffffff;
+  font-family: IRANSans_Light;
+}
+.container-fluid .row-menu-right ul li a:hover{
+  background-color: #ff7800;
+}
+.container-fluid .row-menu-left ul{
+  padding: 0px;
+  margin-left: 10px;
+}
+.container-fluid .row-menu-left ul li{
+  margin-top: 2px;
+  border-left: 2px solid #009c7d;
+  padding: 1px;
+  width: 50px;
+  transform: skew(-20deg);
+}
+.container-fluid .row-menu-left ul li:first-child{
+  border-right: 2px solid #009c7d;
+}
+.container-fluid .row-menu-left ul li a{
+  margin: 0px;
+  padding: 0px;
+}
+.container-fluid .row-menu-left ul li a:hover{
+  background: none;
+}
+@media (max-width: 1012px) {
+  .container-fluid .col-md-4{
+    display: none;
+  }
+}

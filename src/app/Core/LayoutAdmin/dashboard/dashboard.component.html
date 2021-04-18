@@ -1,0 +1,121 @@
+<mat-sidenav-container class="sidenav-container" dir="rtl">
+  <mat-sidenav
+      #drawer
+      class="sidenav"
+      fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)"
+  >
+    <mat-toolbar class="title-sidebar">پنل مدیریت</mat-toolbar>
+    <hr style="margin-top: -10px"/>
+    <mat-nav-list>
+      <a mat-list-item class="" [routerLink]="['/admin/panel']">
+        <i class="pi pi-home pl-auto"></i>
+        صفحه اصلی </a
+      >
+
+      <p-accordion>
+        <p-accordionTab header="مديريت مدرس ها" [selected]="true">
+          <mat-list>
+            <mat-list-item routerLink="./newTeacher">ثبت مدرس جدید</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="./listTeacher">لیست مدرس ها</mat-list-item>
+
+          </mat-list>
+        </p-accordionTab>
+        <p-accordionTab header="مديريت کاربرهاا" [selected]="true">
+          <mat-list>
+
+            <mat-list-item routerLink="./listUsers">لیست کاربرها</mat-list-item>
+
+          </mat-list>
+        </p-accordionTab>
+        <p-accordionTab header="مديريت دوره های آموزشی">
+          <mat-list>
+            <mat-list-item routerLink="./newCourses">ثبت دوره جدید</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="./listCourses">لیست دوره های آموزشی</mat-list-item>
+<!--            eposide-->
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="./eposide">ثبت جلسه دوره</mat-list-item>
+
+          </mat-list>
+        </p-accordionTab>
+        <p-accordionTab header="مديريت مقاله ها">
+          <mat-list>
+            <mat-list-item routerLink="./newpaper">مقاله جدید</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="./paperlist">لیست مقالات</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Item 3</mat-list-item>
+          </mat-list>
+        </p-accordionTab>
+        <p-accordionTab header="مدیریت نظرات">
+          <mat-list>
+            <mat-list-item>پاسخ نظرات</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Item 2</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Item 3</mat-list-item>
+          </mat-list>
+        </p-accordionTab>
+        <p-accordionTab header="مدارس و دانشگاه">
+          <mat-list>
+            <mat-list-item routerLink="./questions">ثبت سوالات </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="./grade">ثبت مقطع تحصیلی </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="./major">ثبت رشته تحصیلی </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="./handout">ثبت جزوه دانشگاهی </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>نمونه کارها</mat-list-item>
+            <mat-divider></mat-divider>
+          </mat-list>
+        </p-accordionTab>
+        <p-accordionTab>
+          <p-header>
+            <label class="text-center">تنظیمات</label>
+          </p-header>
+          <mat-list>
+            <mat-list-item>Item 1</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Item 2</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Item 3</mat-list-item>
+          </mat-list>
+        </p-accordionTab>
+
+      </p-accordion>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+
+    <p-toolbar>
+      <div class="ui-toolbar-group-right">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+        >
+          <div class="pi pi-bars"></div>
+        </button>
+      </div>
+
+      <div class="ui-toolbar-group-left">
+        <p-menubar [model]="items">
+          <img src="../../../../assets/img/avator.jpg" style="width: 45px;height:45px;border-radius: 50px">
+        </p-menubar>
+      </div>
+    </p-toolbar>
+
+
+    <ng-content></ng-content>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

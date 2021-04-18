@@ -1,0 +1,60 @@
+<app-top-menu></app-top-menu>
+
+
+<div class="container-fluid">
+  <div class="row text-center row-log-reg">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="thumbnail">
+          <div class="panel-heading">
+            <h4>ورود به همراه دانش</h4>
+          </div>
+          <div class="panel-body">
+            <form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
+
+
+              <div class="col-md-10 col-md-offset-1" style="text-align: right">
+<!--                <label>شماره همراه:</label>-->
+                <div class="input-group form-group">
+                  <span class="input-group-addon"><i class="fas fa-mobile"></i></span>
+                  <input class="form-control" formControlName="mobile" type="text"  placeholder="شماره همراه ">
+                </div>
+              </div>
+              <div class="col-md-10 col-md-offset-1" style="text-align: right">
+<!--                <label>گذر واژه:</label>-->
+                <div class="input-group form-group">
+                  <span class="input-group-addon"><i class="fas fa-lock"></i></span>
+                  <input pPassword class="form-control" formControlName="password" placeholder="گذر واژه" type="password"  promptLabel="رمز را وارد نمائید" weakLabel="ضعیف" mediumLabel="متوسط" strongLabel="قوی"/>
+                </div>
+              </div>
+              <div class="col-md-10 col-md-offset-1" style="text-align: right">
+              <p-captcha siteKey="6LfgqPkUAAAAAIv6uOHhcVY8Bba_Z6S5lcB1AgJf" language="fa" initCallback="loadCaptcha"></p-captcha>
+              </div>
+              <div class="col-md-10 col-md-offset-1">
+                <div class="checkbox">
+                  <a class="pull-left" href="#">فراموش کردن رمز عبور</a>
+                  <input class="pull-right" type="checkbox">
+                  <span>مرا به خاطر بسپار</span>
+                </div>
+              </div>
+              <div class="col-md-10 col-md-offset-1">
+                <button class="btn-block" pButton type="submit" icon="pi pi-check" label="ورود" [disabled]="!userform.valid"></button>
+              </div>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <span>کاربر جدید هستید؟</span>
+            <a href="#">ثبت نام در همراه دانش</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+
+
+
+

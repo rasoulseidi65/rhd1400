@@ -1,0 +1,119 @@
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+              <p-panel header=" لطفا اطلاعات خود را وارد کنید با شکر">
+                <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px" >
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-col-2">
+                      نام  <label style="color: red">*</label>:
+                    </div>
+                    <div class="ui-grid-col-6">
+                      <input pInputText type="text" [(ngModel)]="userInfo.firstName" formControlName="firstName" placeholder=""/>
+                    </div>
+                    <div class="ui-grid-col-4">
+                      <p-message severity="error" text="نام خود را وارد کنید"
+                                 *ngIf="!userForm.controls['firstName'].valid&&userForm.controls['firstName'].dirty"></p-message>
+                    </div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-col-2">
+                      نام خانوادگی  <label style="color: red">*</label>:
+                    </div>
+                    <div class="ui-grid-col-6">
+                      <input pInputText type="text" [(ngModel)]="userInfo.lastName" formControlName="lastName" placeholder=""/>
+                    </div>
+                    <div class="ui-grid-col-4">
+                      <p-message severity="error" text="نام خانوادگی  را وارد نمائید "
+                                 *ngIf="!userForm.controls['lastName'].valid&&userForm.controls['lastName'].dirty"></p-message>
+                    </div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-col-2">
+                      شماره همراه <label style="color: red">*</label>:
+                    </div>
+                    <div class="ui-grid-col-6">
+                      <!--          <p-inputMask  mask="(0999) 999-9999" formControlName="mobile" placeholder="(0912) 345-6789"></p-inputMask>-->
+                      <input pInputText type="text" pKeyFilter="num" [(ngModel)]="userInfo.mobile" formControlName="mobile" placeholder=""
+                             maxlength="11"/>
+                    </div>
+                    <div class="ui-grid-col-4">
+                      <p-message severity="error" text="شماره موبایل را به درستی وارد نمائید"
+                                 *ngIf="!userForm.controls['mobile'].valid&&userForm.controls['mobile'].dirty"></p-message>
+                    </div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-col-2">
+                      ایمیل <label style="color: red">*</label>:
+                    </div>
+                    <div class="ui-grid-col-6">
+                      <input type="text" pInputText pKeyFilter="email" [(ngModel)]="userInfo.email" formControlName="email">
+
+                    </div>
+                    <div class="ui-grid-col-4">
+                      <p-message severity="error" text="ایمیل را به درستی وارد نمائید"
+                                 *ngIf="!userForm.controls['email'].valid&&userForm.controls['email'].dirty"></p-message>
+                    </div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-col-2">
+                      استان  <label style="color: red">*</label>:
+                    </div>
+                    <div class="ui-grid-col-6">
+                      <input pInputText type="text" [(ngModel)]="userInfo.state" formControlName="state" placeholder=""/>
+                    </div>
+                    <div class="ui-grid-col-4">
+                      <p-message severity="error" text=" استان خود را وارد کنید"
+                                 *ngIf="!userForm.controls['state'].valid&&userForm.controls['state'].dirty"></p-message>
+                    </div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-col-2">
+                      شهر  <label style="color: red">*</label>:
+                    </div>
+                    <div class="ui-grid-col-6">
+                      <input pInputText type="text" [(ngModel)]="userInfo.city" formControlName="city" placeholder=""/>
+                    </div>
+                    <div class="ui-grid-col-4">
+                      <p-message severity="error" text=" شهر خود را وارد کنید"
+                                 *ngIf="!userForm.controls['city'].valid&&userForm.controls['city'].dirty"></p-message>
+                    </div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-col-2">
+                      آدرس  <label style="color: red">*</label>:
+                    </div>
+                    <div class="ui-grid-col-6">
+                      <input pInputText type="text" [(ngModel)]="userInfo.address" formControlName="address" placeholder=""/>
+                    </div>
+                    <div class="ui-grid-col-4">
+                      <p-message severity="error" text="آدرس خود را وارد کنید"
+                                 *ngIf="!userForm.controls['address'].valid&&userForm.controls['address'].dirty"></p-message>
+                    </div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-col-2">
+                      تصویر پروفایل :
+                    </div>
+                    <div class="ui-grid-col-8">
+                      <p-fileUpload name="myfile[]"  customUpload="true"
+                                    invalidFileSizeMessageDetail="حداکثر سایز عکس 2 مگابایت می باشد"
+                                    invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد"
+                                    multiple="multiple"
+                                    accept="image/jpeg,image/png " maxFileSize="2000000"
+                                    (uploadHandler)="onUpload($event)" uploadLabel="آپلود عکس" chooseLabel="انتخاب عکس"
+                                    cancelLabel="انصراف"></p-fileUpload>
+                    </div>
+                    <div class="ui-grid-col-2">
+                    </div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-col-2"></div>
+                    <div class="ui-grid-col-6">
+                      <button pButton type="submit" label="ثبت اطلاعات" ></button>
+                    </div>
+                    <div class="ui-grid-col-4"></div>
+                  </div>
+
+                </div>
+              </p-panel>
+            </form>
+

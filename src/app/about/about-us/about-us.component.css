@@ -1,0 +1,19 @@
+/*star-about-us*/
+.container{
+  text-align: center;
+}
+.container .row-about-top .caption{
+  margin-top: 40px;
+  font-family: IRANSans_Bold;
+  font-size: 24px;
+}
+.container .row-about-down{
+  font-family: IRANSans_Light;
+  line-height: 2;
+  text-align: justify;
+  margin-top: 40px;
+}
+.container .row-about-down span{
+  font-family: IRANSans_Bold;
+}
+/*end-about-us*/

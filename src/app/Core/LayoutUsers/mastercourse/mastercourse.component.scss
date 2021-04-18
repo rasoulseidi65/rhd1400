@@ -1,0 +1,57 @@
+:host::ng-deep span.ui-panel-title.ng-tns-c14-7.ng-star-inserted {
+  font-family: 'IRANSans_Bold';
+}
+:host::ng-deep .card{
+  border: 1px solid #9d9d9d;
+  margin-bottom: 10px;
+}
+:host::ng-deep .card-header {
+  font-family: 'IRANSans_Bold';
+  background: #ddd;
+  padding: 7px;
+  margin-bottom: 5px;
+}
+:host::ng-deep .ui-fluid .ui-multiselect {
+  font-family: 'IRANSans_Light' !important;
+  margin-bottom: 10px;
+}
+:host::ng-deep .ui-multiselect-panel .ui-multiselect-items .ui-multiselect-item {
+  margin: 0;
+  padding: 0.429em 0.857em;
+  border: 0 none;
+  color: #333333;
+  background-color: transparent;
+  border-radius: 0;
+  font-family: 'IRANSans_Light';
+  direction: ltr;
+  float: right;
+}
+:host::ng-deep .p-field-checkbox {
+  font-family: 'IRANSans_Light';
+}
+:host::ng-deep input.ui-inputtext.ui-corner-all.ui-state-default.ui-widget {
+  font-family: 'IRANSans_Light';
+}
+:host::ng-deep .ui-grid-row {
+  margin-bottom: 10px;
+}
+:host::ng-deep textarea::placeholder{
+  font-family: IRANSans_Light;
+}
+:host::ng-deep .p-field-radiobutton {
+  display: inline-block;
+  margin-left: 30px !important;
+  font-family: 'IRANSans_Light';
+}
+:host::ng-deep thead {
+  font-family: 'IRANSans_Bold';
+}
+:host::ng-deep tbody{
+  font-family: IRANSans_Light;
+}
+:host::ng-deep tbody tr td a{
+  background: #03af8c;
+  padding: 4px 9px;
+  border-radius: 15px;
+  color: #FFFFFF;
+}

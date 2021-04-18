@@ -1,0 +1,27 @@
+.container .row .panel-default{
+  margin-top: 10px;
+  border: 1px solid #eeeeee;
+}
+.container .row .panel-default .panel-heading .row{
+  font-family: IRANSans_Bold;
+}
+.container .row .panel-default .panel-heading .row .col-md-6 a{
+  font-family: IRANSans_Light;
+  font-size: 15px;
+  text-decoration: none;
+  color: #FFFFFF;
+  background:#44bd32;
+  padding: 5px;
+}
+.container .row .panel-default .panel-heading .row .col-md-6 a:hover{
+  color: #3e3e3e;
+}
+.container .row .panel-default .panel-body .col-md-12 .table thead{
+  font-family: IRANSans_Bold;
+}
+.container .row .panel-default .panel-body .col-md-12 .table thead tr th{
+  text-align: center;
+}
+.container .row .panel-default .panel-body .col-md-12 .table tbody tr th{
+  font-family: IRANSans_Light;
+}

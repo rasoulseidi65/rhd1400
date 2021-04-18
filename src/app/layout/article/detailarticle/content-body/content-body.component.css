@@ -1,0 +1,45 @@
+/*start-img*/
+.container-fluid .row-img{
+  margin-top: 10px;
+}
+/*end-img*/
+/*start-description-period*/
+.container-fluid .row-description{
+  margin-top: 20px;
+  border-bottom: 2px solid #eeeeee;
+  padding: 10px 0px 10px 10px;
+}
+.container-fluid .row-description .col-md-12{
+  padding: 0px;
+}
+.container-fluid .row-description span{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+  border-bottom: 2px solid #ffa331;
+  padding: 8px;
+}
+.container-fluid .row-description-period .col-md-12{
+  text-align: justify;
+}
+.container-fluid .row-description-period p{
+  font-family: mitra-font;
+  line-height: 2;
+  font-size: 18px;
+}
+.container-fluid .row-description-period ul{
+  margin-top: 10px;
+}
+.container-fluid .row-description-period ul span{
+  font-family: IRANSans_Bold;
+}
+.container-fluid .row-description-period ul li{
+  padding: 10px;
+  list-style-image: url("/assets/bootstrap/img/falash.png");
+}
+.container-fluid .row-description-period ul li span{
+  font-family: mitra-font;
+  font-size: 18px;
+  text-align:justify ;
+}
+/*end-description-period*/
+

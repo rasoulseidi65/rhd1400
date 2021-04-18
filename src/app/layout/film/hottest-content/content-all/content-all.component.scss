@@ -1,0 +1,87 @@
+.container .row{
+  direction: rtl;
+}
+.container .caption span {
+  line-height: 2;
+  font-family:IRANSans_Bold;
+  font-size: 18px;
+}
+.container  .thumbnail-body-film{
+  border: none;
+}
+.container .thumbnail-body-film a{
+  text-decoration: none;
+}
+.container  .thumbnail-body-film .panel-heading{
+  border-bottom: none;
+  padding: 0px;
+  position: relative;
+}
+.container  .thumbnail-body-film .panel-heading a{
+  position: absolute;
+  font-family: IRANSans_Light;
+  top: 5px;
+  color: #ffffff;
+  z-index: 999999;
+  margin-right: 10px;
+}
+.container  .thumbnail-body-film .panel-heading img {
+  width: 100%;
+}
+.container .thumbnail-body-film .panel-body{
+  background-color:#03af8c ;
+}
+.container  .thumbnail-body-film .panel-body a{
+  text-decoration: none;
+}
+.container  .thumbnail-body-film .panel-body a span{
+  font-family:IRANSans_Light;
+  color: #ffffff;
+  font-size: 14px;
+}
+.container  .thumbnail-body-film .panel-body a span i{
+  margin-left: 10px;
+  font-size: 18px;
+}
+.container  .panel-footer{
+  background-color: #ff7800;
+  margin: 0px 3px;
+  box-shadow: 0px 5px 7px -5px #000 inset;
+  border-bottom-left-radius:7px ;
+  border-bottom-right-radius:7px ;
+  height: 40px;
+  color: #ffffff;
+  border-top: none;
+}
+.container   .panel-footer img{
+  width: 40px;
+  height: 40px;
+  border: 3px solid #ffffff;
+  position: absolute;
+}
+.container   .panel-footer span{
+  text-decoration: none;
+  font-family: IRANSans_Light;
+  color: #ffffff;
+}
+@media (max-width: 760px) {
+  .container .row{
+    display: block;
+  }
+}
+:host::ng-deep .ui-grid-col-2 {
+   width: auto;
+  font-family: IRANSans_Light;
+  direction: rtl;
+}
+:host::ng-deep .ui-grid-row {
+  line-height: 3;
+  float: right;
+  margin-right: 0px;
+  width: 50%;
+  direction: rtl;
+}
+:host::ng-deep .ui-grid-col-6 {
+  width: 70%;
+  direction: ltr;
+}

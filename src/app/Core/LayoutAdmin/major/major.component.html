@@ -1,0 +1,78 @@
+
+<p-toast position="top-center" class="text-center"></p-toast>
+
+<form [formGroup]="formmajor" (ngSubmit)="onsub(formmajor.value)">
+  <p-panel header="فرم ثبت رشته تحصیلی ">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          مقطع تحصیلی<label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6" dir="ltr">
+          <select class="form-control" (change)="setGradeID($event)" >
+            <option   *ngFor="let i of mardak;let i = index" [ngValue]="i.label"
+            >{{i.label}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          رشته تحصیلی <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="title" placeholder=""/>
+        </div>
+        <div class="ui-grid-col-4">
+          <!--          <p-message severity="error" text="نام مدرس را وارد نمائید" *ngIf="!teacherForm.controls['firstName'].valid&&teacherForm.controls['firstName'].dirty"></p-message>-->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          آپلود فایل :
+        </div>
+        <div class="ui-grid-col-8">
+          <p-fileUpload name="myfile[]" customUpload="true"
+                        invalidFileSizeMessageDetail="حداکثر سایز عکس 2 مگابایت می باشد"
+                        invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد"
+                        multiple="multiple"
+                        maxFileSize="2000000"
+                        uploadLabel="آپلود فایل" chooseLabel="انتخاب فایل"
+                        (uploadHandler)="onUpload($event)"
+                        cancelLabel="انصراف"></p-fileUpload></div>
+        <div class="ui-grid-col-2">
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-6">
+          <button pButton type="submit" label="ثبت رشته تحصیلی"></button>
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+    </div>
+  </p-panel>
+</form>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">ردیف</th>
+    <th scope="col">مقطع تحصیلی</th>
+    <th scope="col">رشته تحصیلی</th>
+    <th scope="col">تصاویر</th>
+    <th scope="col">حذف</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of listmajor;let i=index">
+    <th scope="row">{{i+1}}</th>
+    <td>{{item.Grade[0]['title']}}</td>
+    <td>{{item.title}}</td>
+    <td><img [src]="item.image" style="width: 50px;height: 50px"></td>
+    <td><a (click)="deletemajor(item._id)">حذف</a></td>
+  </tr>
+
+  </tbody>
+</table>
+
+

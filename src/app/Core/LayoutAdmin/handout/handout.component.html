@@ -1,0 +1,136 @@
+
+<p-toast position="top-center" class="text-center"></p-toast>
+
+<form [formGroup]="formhandout" (ngSubmit)="onsub(formhandout.value)">
+  <p-panel header="فرم ثبت جزوه">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          عنوان <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="title" placeholder=""/>
+        </div>
+        <div class="ui-grid-col-4">
+          <!--          <p-message severity="error" text="نام مدرس را وارد نمائید" *ngIf="!teacherForm.controls['firstName'].valid&&teacherForm.controls['firstName'].dirty"></p-message>-->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          نوسینده <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="author" placeholder=""/>
+        </div>
+        <div class="ui-grid-col-4">
+          <!--          <p-message severity="error" text="نام مدرس را وارد نمائید" *ngIf="!teacherForm.controls['firstName'].valid&&teacherForm.controls['firstName'].dirty"></p-message>-->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          قیمت <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" pKeyFilter="num" formControlName="price" placeholder=""/>
+        </div>
+        <div class="ui-grid-col-4">
+          <!--          <p-message severity="error" text="نام مدرس را وارد نمائید" *ngIf="!teacherForm.controls['firstName'].valid&&teacherForm.controls['firstName'].dirty"></p-message>-->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          تعداد صفحه هات <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <input type="text" pInputText pKeyFilter="num" formControlName="countPage" maxlength="10" >
+        </div>
+        <div class="ui-grid-col-4">
+          <!--          <p-message severity="error" text="کد ملی را وارد نمائید" *ngIf="!teacherForm.controls['nationalCode'].valid&&teacherForm.controls['nationalCode'].dirty"></p-message>-->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          مقطع تحصیلی<label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6" dir="ltr">
+          <select class="form-control" (change)="setGradeID($event)" >
+            <option   *ngFor="let i of grade;let i = index" [ngValue]="i.label"
+            >{{i.label}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          رشته تحصیلی<label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6" dir="ltr">
+          <select class="form-control" (change)="setMajorID($event)" >
+            <option   *ngFor="let i of major;let i = index" [ngValue]="i.label"
+            >{{i.label}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          آپلود فایل :
+        </div>
+        <div class="ui-grid-col-8">
+          <p-fileUpload name="myfile[]" customUpload="true"
+                        formControlName="linkFile"
+                        invalidFileSizeMessageDetail="حداکثر سایز عکس 2 مگابایت می باشد"
+                        invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد"
+                        multiple="multiple"
+                        maxFileSize="2000000"
+                        uploadLabel="آپلود فایل" chooseLabel="انتخاب فایل"
+                        (uploadHandler)="onUpload($event)"
+                        cancelLabel="انصراف"></p-fileUpload>        </div>
+        <div class="ui-grid-col-2">
+        </div>
+      </div>
+      <div class="ui-grid-row" style="margin-bottom:8rem">
+        <div class="ui-grid-col-2">
+          توضیحات
+        </div>
+        <div class="ui-grid-col-8">
+          <quill-editor formControlName="text"></quill-editor>
+
+        </div>
+        <div class="ui-grid-col-2"></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-6">
+          <button pButton type="submit" label="ثبت جزوه"></button>
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+
+    </div>
+  </p-panel>
+</form>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">ردیف</th>
+    <th scope="col">عنوان</th>
+    <th scope="col">نویسنده</th>
+    <th scope="col">مقطع</th>
+    <th scope="col">رشته</th>
+    <th scope="col">قیمت</th>
+    <th scope="col">حذف</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of listhandout;let i=index">
+    <th scope="row">{{i+1}}</th>
+    <td>{{item.title}}</td>
+    <td>{{item.author}}</td>
+    <td>{{item.Major[0]['title']}}</td>
+    <td>{{item.Major[0]['title']}}</td>
+    <td>{{item.price}}</td>
+    <td><a (click)="deletehandout(item._id)">حذف</a></td>
+  </tr>
+
+  </tbody>
+</table>

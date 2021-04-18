@@ -1,0 +1,191 @@
+<app-top-menu></app-top-menu>
+<app-center-menu></app-center-menu>
+<app-menu></app-menu>
+<div class="container">
+  <div class="caption">
+    <div class="col-sm-12">
+      <span>مدرس شود</span>
+    </div>
+    <div class="col-sm-8">
+      <p>در ایران پهناورمان استعدادهای نهفته‌ی فراوانی وجود دارد. بسیاری از افراد در موضوع یا موضوعات خاصی، مهارت‌های
+        خارق‌العاده‌ای دارند اما به دلیل محدودیت‌ها یا شرایط نامناسب امکان بهره‌برداری از آن توانمندی را نداشته‌اند و
+        نتوانسته‌اند از دانش خود کسب درآمد کنند.
+        همچنین بسیاری مشتاق و تشنه‌ی یادگیری و ترقی هستند اما به اساتید، منابع و محتوای کافی دسترسی ندارند.
+        اینکه ما بتوانیم متخصصانی را که ناشناخته مانده‌اند، پویاتر از قبل کنیم و شرایطی فراهم کنیم که استعدادهای خود را
+        بیش از پیش شکوفا کنند و دانش و مهارت‌های خود را در اختیار عموم مردم قرار دهند، گام مهمی در جهت پیشرفت جامعه
+        برداشته‌ایم. از سوی دیگر اگر قادر باشیم محدودیت‌ها را بشناسیم و بستری فراهم کنیم که همه افراد، از دور
+        افتاده‌ترین نقاط روستاها تا پهناورترین و پرجمعیت‌ترین شهرهای کشور به صورت عادلانه به همه منابع و محتواهای آموزشی
+        دسترسی پیدا کنند، نقش به سزایی در تولید علم و بکارگیری آن برای توسعه ایران‌زمین خواهیم داشت.
+        همراه دانش با در نظر گرفتن این وظایف بزرگ می‌کوشد فرصتی ایجاد کند که متخصصان و علاقمندان به یادگیری در یک فضای همیشه
+        قابل دسترس و مطمئن در ارتباط با یکدیگر قرار بگیرند.
+        اگر شما هم جزء افرادی هستید که در حوزه‌های گوناگون و علوم مختلف قادر به تدریس هستید، می‌توانید در جمع مدرسان
+        همراه دانش قرار بگیرید و پس از تولید دوره‌های آموزشی، آن‌ها را به فروش برسانید. </p>
+    </div>
+    <div class="col-sm-4">
+      <img alt="" class="img-responsive img-rounded" src="/assets/bootstrap/img/media.jpg">
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="row">
+    <div style="margin-bottom: 1em">
+      <button (click)="openPrev()" icon="pi pi-chevron-up" pButton style="margin-right:.25em" type="button"></button>
+      <button (click)="openNext()" icon="pi pi-chevron-down" pButton type="button"></button>
+    </div>
+    <p-accordion [activeIndex]="index">
+      <p-accordionTab header="مدرس کیست؟">
+        <p>منظور از مدرس در آکادمی آنلاین همراه دانش، فردی است که دوره‌های آموزشی را در قالب فایل‌های ویدئویی تولید و در
+          همراه دانش به فروش می‌رساند. به عبارت دیگر مدرس کسی است که موضوعی را که در آن تسلط کافی دارد، در ویدیویی تدریس و
+          ضبط می‌کند و در وب‌سایت به فروش می‌رساند.</p>
+        <br>
+        <img alt="" class="center-block img-rounded" src="/assets/bootstrap/img/media.jpg">
+      </p-accordionTab>
+      <p-accordionTab header="مرحله اول – ثبت‌نام در سایت">
+        <p>برای آنکه بتوانید در همراه دانش دوره‌های آموزشی خود را به منتشر کنید، باید عضو سایت باشید.
+          جهت ثبت‌نام در همراه دانش:
+          بر روی دکمه‌ی سبزرنگ «ثبت‌نام» در قسمت بالای سایت کلیک کنید.
+          در پنجره‌ای که گشوده می‌شود، مشخصات خود را به دقت وارد کنید. توجه کنید که همه اطلاعاتی که وارد می‌کنید، کاملا
+          صحیح باشند و از درج اطلاعات نادرست در این قسمت خودداری کنید.
+          پس از وارد کردن اطلاعات، در مقابل عبارت «من ربات نیستم» تیک بزنید. در برخی مواقع سوالی از شما پرسیده می‌شود که
+          باید به آن پاسخ درست بدهید.
+          بر روی دکمه‌ی ثبت‌نام کلیک کنید.
+          برای شما از طرف وب‌سایت همراه دانش ایمیلی ارسال می‌شود (این ایمیل ممکن است در قسمت Spam یا Bulk جعبه‌ی ایمیل‌های
+          دریافتی شما قرار گرفته باشد.) آن را باز کنید و سپس بر روی دکمه‌ی فعالسازی موجود در آن ایمیل کلیک کنید.
+          حساب کاربری شما فعال شده است و از این لحظه عضو سایت همراه دانش محسوب می‌شوید.</p>
+        <img alt="" class="center-block img-rounded" src="/assets/bootstrap/img/media.jpg">
+      </p-accordionTab>
+      <p-accordionTab header="مرحله دوم – آشنایی با قوانین فروش">
+        <p>پیش از اقدام به فروش هر دوره‌ی آموزشی، باید با قوانین فروش محصولات در همراه دانش آشنا باشید. فروش در همراه دانش به این
+          معنی است که شما این قوانین را مطالعه کرده‌اید و به رعایت آن‌ها متعهد شده‌اید.
+          قوانین فروش در همراه دانش را می‌توانید اینجا مطالعه کنید.</p>
+        <img alt="" class="center-block img-rounded" src="/assets/bootstrap/img/media.jpg">
+      </p-accordionTab>
+      <p-accordionTab header="مرحله سوم – رعایت استانداردها و استفاده از فایل‌های مورد نیاز">
+        <p>شما نمی‌توانید هر ویدیویی را با هر ویژگی و کیفیتی به عنوان دوره‌ی آموزشی در همراه دانش به فروش برسانید. در راستای
+          حفظ نظم سایت و راحتی خریداران، همه دوره‌های آموزشی باید بر اساس اصولی معین و در قالبی مشخص به فروش برسند.
+          بنابراین پیش از تولید و ارسال هر ویدئو، باید استانداردهایی را رعایت کنید، در غیراینصورت محصول شما توسط ناظران
+          همراه دانش تائید نخواهد شد. همچنین پیش از آپلود کردن ویدیوی آموزشی خود، به ابزارهایی نیاز دارد. استانداردهای تهیه
+          دوره‌ی آموزشی را اینجا بخوانید و فایل‌های موردنیازتان را از این صفحه دریافت کنید. </p>
+        <img alt="" class="center-block img-rounded" src="/assets/bootstrap/img/media.jpg">
+      </p-accordionTab>
+      <p-accordionTab header="مرحله چهارم– آشنایی با نحوه‌ی ارسال محصول ">
+        <p>مراحل ارسال یک دوره‌ی آموزشی به همراه دانش بسیار ساده است و تنها با طی کردن چند مرحله‌ی ساده و سریع می‌توانید
+          ویدئوهای مورد نظر خود را در همراه دانش آپلود کنید. در یک آموزش ویدیویی به صورت کامل به شما توضیح داده‌ایم که چگونه
+          می‌توانید یک دوره‌ی آموزشی را در همراه دانش آپلود کنید و به فروش برسانید.
+          این ویدئو را از اینجا مشاهده کنید. </p>
+        <img alt="" class="center-block img-rounded" src="/assets/bootstrap/img/media.jpg">
+      </p-accordionTab>
+      <p-accordionTab header="مرحله پنجم – قیمت‌گذاری محصولات">
+        <p>مراحل ارسال یک دوره‌ی آموزشی به همراه دانش بسیار ساده است و تنها با طی کردن چند مرحله‌ی ساده و سریع می‌توانید
+          ویدئوهای مورد نظر خود را در همراه دانش آپلود کنید. در یک آموزش ویدیویی به صورت کامل به شما توضیح داده‌ایم که چگونه
+          می‌توانید یک دوره‌ی آموزشی را در همراه دانش آپلود کنید و به فروش برسانید.
+          این ویدئو را از اینجا مشاهده کنید. </p>
+        <img alt="" class="center-block img-rounded" src="/assets/bootstrap/img/media.jpg">
+      </p-accordionTab>
+    </p-accordion>
+  </div>
+  <div class="row row-form">
+
+    <p-toast [style]="{marginTop: '80px',fontFamily:'IRANSans_Bold'}" position="top-center"></p-toast>
+    <form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
+      <p-panel header="ثبت نام اولیه مدرس">
+        <div class="p-fluid forms-grid">
+          <div class="row">
+            <div class="col-md-6 col-lg-6">
+              <div class="ui-g">
+                <div class="ui-g-3">
+                  <label>نام ونام خانوادگی:</label>
+
+                </div>
+                <div class="ui-g-6">
+                  <input pInputText style="width: 100%" type="text" formControlName="firstname" placeholder=""/>
+
+                </div>
+                <div class="ui-g-3">
+                  <p-message severity="error" text="نام و نام خانوادگی را وارد نمائید"
+                             *ngIf="!userform.controls['firstname'].valid&&userform.controls['firstname'].dirty"></p-message>
+
+                </div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-3">
+                  <label>ایمیل:</label>
+
+                </div>
+                <div class="ui-g-6">
+                  <input pInputText  style="width: 100%" type="text" formControlName="email" placeholder=""/>
+
+                </div>
+                <div class="ui-g-3">
+                  <p-message severity="error" text="ایمیل را به درستی وارد نمائید"
+                             *ngIf="!userform.controls['email'].valid&&userform.controls['email'].dirty"></p-message>
+
+                </div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-3">
+                  <label>شماره همراه:</label>
+
+                </div>
+                <div class="ui-g-6">
+                  <input pInputText style="width: 100%" type="text" formControlName="mobile" placeholder=""/>
+
+                </div>
+                <div class="ui-g-3">
+                  <p-message severity="error" text="شماره همراه را وارد نمائید"
+                             *ngIf="!userform.controls['mobile'].valid&&userform.controls['mobile'].dirty"></p-message>
+
+                </div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-3">
+                  <label>رمز ورود:</label>
+
+                </div>
+                <div class="ui-g-6"  >
+                  <input  pPassword  style="width: 100%"  formControlName="password" type="password"  promptLabel="رمز را وارد نمائید" weakLabel="ضعیف" mediumLabel="متوسط" strongLabel="قوی"/>
+
+                </div>
+                <div class="ui-g-3">
+                  <p-message severity="error" text="رمز را وارد نمائید"
+                             *ngIf="!userform.controls['password'].valid&&userform.controls['password'].dirty"></p-message>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-6 col-lg-6">
+              <div class="ui-g">
+                <div class="ui-g-2">
+                  <label>توضیحات:</label>
+                </div>
+                <div class="ui-g-10 ui-grid-col-12">
+                  <textarea rows="5" cols="30" pInputTextarea style="width: 100%"
+                            placeholder="لطفا توضیحات راجب مهارت و تخصصی در هر زمینه ای دارین به صور کامل شرح دهید"></textarea>
+                </div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-2"> <label>رزومه کاری:</label> </div>
+                <div class="ui-g-10 ui-grid-col-12">
+                  <p-fileUpload name="myfile[]" customUpload="true" (uploadHandler)="onUpload($event)"
+                                uploadLabel="آپلود رزومه"
+                                chooseLabel="انتخاب رزومه" cancelLabel="انصراف"></p-fileUpload>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:20px" *ngIf="submitted">
+            Form Submitted
+            <br>
+
+          </div>
+        </div>
+        <p-footer>
+
+          <button class="" pButton type="submit" icon="pi pi-check" label="ثبت نام" [disabled]="!userform.valid"></button>
+
+        </p-footer>
+      </p-panel>
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,49 @@
+<form [formGroup]="userAcuunt" (ngSubmit)="onSubmit(userAcuunt.value)">
+  <p-panel header="استاد گرامی لطفا یکی از اطلاعات بانکی خود را جهت واریز پول وارد نمایید با تشکر">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+      <div class="ui-grid-row">
+  <div class="ui-grid-col-2">
+    شبا <label style="color: red">*</label>:
+  </div>
+  <div class="ui-grid-col-6">
+    <p-inputMask mask="99-9999-9999-9999-9999-9999-99"  placeholder="99-9999-9999-9999-9999-9999-99"  formControlName="BankAccount"></p-inputMask>
+  </div>
+  <div class="ui-grid-col-4">
+    <p-message severity="error" text="شبا را به درستی وارد نمائید"
+               *ngIf="!userAcuunt.controls['BankAccount'].valid&&userAcuunt.controls['BankAccount'].dirty"></p-message>
+  </div>
+</div>
+      <div class="ui-grid-row">
+  <div class="ui-grid-col-2">
+    حساب بانکی <label style="color: red">*</label>:
+  </div>
+  <div class="ui-grid-col-6">
+    <p-inputMask mask="9999-9999-9999-9"  placeholder="9999-9999-9999-9"  formControlName="BankAccount"></p-inputMask>
+  </div>
+  <div class="ui-grid-col-4">
+    <p-message severity="error" text="شماره حساب را به درستی وارد نمائید"
+               *ngIf="!userAcuunt.controls['BankAccount'].valid&&userAcuunt.controls['BankAccount'].dirty"></p-message>
+  </div>
+</div>
+      <div class="ui-grid-row">
+  <div class="ui-grid-col-2">
+    حساب روی کارت <label style="color: red">*</label>:
+  </div>
+  <div class="ui-grid-col-6">
+    <p-inputMask mask="9999-9999-9999-9999"  placeholder="9999-9999-9999-9999"  formControlName="BankAccount"></p-inputMask>
+  </div>
+  <div class="ui-grid-col-4">
+    <p-message severity="error" text="شماره کارت را به درستی وارد نمائید"
+               *ngIf="!userAcuunt.controls['BankAccount'].valid&&userAcuunt.controls['BankAccount'].dirty"></p-message>
+  </div>
+</div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-6">
+          <button pButton type="submit" label="ثبت اطلاعات" [disabled]="!userAcuunt.valid"></button>
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+    </div>
+  </p-panel>
+</form>

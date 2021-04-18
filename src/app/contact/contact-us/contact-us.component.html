@@ -1,0 +1,166 @@
+<app-top-menu></app-top-menu>
+<app-center-menu></app-center-menu>
+<app-menu></app-menu>
+<!--start-contact-us-->
+<div class="row container-fluid">
+  <div class="col-md-6 col-lg-6">
+    <div class="row row-contact-right text-center">
+      <p-toast [style]="{marginTop: '80px'}"></p-toast>
+
+      <form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
+        <p-panel header="این فرم جهت ثبت درخواست شما فراهم شده که توسط کارشناسان تیم بررسی میشود.">
+          <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-3">
+                نام و نام خانوادگی *:
+              </div>
+              <div class="ui-grid-col-7">
+                <input pInputText type="text" formControlName="firstname" placeholder=""/>
+              </div>
+              <div class="ui-grid-col-2">
+                <p-message severity="error" text="نام و نام خانوادگی را وارد نمائید" *ngIf="!userform.controls['firstname'].valid&&userform.controls['firstname'].dirty"></p-message>
+              </div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-3">
+                شماره همراه *:
+              </div>
+              <div class="ui-grid-col-7">
+                <p-inputMask mask="(0999) 999-9999" pKeyFilter="num" formControlName="mobile"></p-inputMask>
+<!--                <input pInputText pKeyFilter="num" type="text" formControlName="mobile" placeholder=""/>-->
+              </div>
+              <div class="ui-grid-col-2">
+                <p-message severity="error" text="شماره همراه را وارد نمائید" *ngIf="!userform.controls['mobile'].valid&&userform.controls['mobile'].dirty"></p-message>
+              </div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-3">
+                 ایمیل *:
+              </div>
+              <div class="ui-grid-col-7">
+                <input pInputText type="text" formControlName="email" placeholder=""/>
+              </div>
+              <div class="ui-grid-col-2">
+                <p-message severity="error" text="ایمیل را وارد نمائید" *ngIf="!userform.controls['email'].valid&&userform.controls['email'].dirty"></p-message>
+              </div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-3">
+                موضوع:
+              </div>
+              <div class="ui-grid-col-7">
+                <p-dropdown [options]="subject" formControlName="subject"></p-dropdown>              </div>
+              <div class="ui-grid-col-2">
+                <p-message severity="error" text="موضوع درخواستی را وارد نمائید" *ngIf="!userform.controls['subject'].valid&&userform.controls['subject'].dirty"></p-message>
+              </div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-3">
+                متن:
+              </div>
+              <div class="ui-grid-col-7">
+                <textarea pInputTextarea type="text" formControlName="text"></textarea>
+              </div>
+              <div class="ui-grid-col-2">
+                <p-message severity="error" text="متن درخواستی را وارد نمائید" *ngIf="!userform.controls['text'].valid&&userform.controls['text'].dirty"></p-message>
+              </div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-4"></div>
+              <div class="ui-grid-col-4">
+                <button pButton type="submit" label="ثبت درخواست" [disabled]="!userform.valid"></button>
+              </div>
+              <div class="ui-grid-col-4"></div>
+            </div>
+
+          </div>
+        </p-panel>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-6" >
+    <p-panel  [style]="{marginTop: '50px'}">
+      <p-header><span><i class="fas fa-headphones fa-5x text-center"></i></span></p-header>
+      <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-2">
+            <span><i class="fas fa-phone "></i></span>
+          </div>
+          <div class="ui-grid-col-3">
+            <span>تلفن:</span>
+          </div>
+          <div class="ui-grid-col-7">
+            <span class="pull-right">09169651136-09166996165</span>
+          </div>
+
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-2">
+            <span><i class="fas fa-fax"></i></span>
+          </div>
+          <div class="ui-grid-col-3">
+            <span>فاکس</span>
+          </div>
+          <div class="ui-grid-col-7">
+            <span>021-33264585_021-33261221</span>
+          </div>
+
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-2">
+            <span><i class="fas fa-map-marker-alt"></i></span>
+          </div>
+          <div class="ui-grid-col-3">
+            <span>نشانی</span>
+          </div>
+          <div class="ui-grid-col-7">
+
+            <span>لرستان-الشتر-خیابان امام خمینی کوچه یاس 4 پلاک 1 طبقه اول </span>
+          </div>
+
+        </div>
+
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-2">
+            <span><i class="fas fa-headphones"></i></span>
+          </div>
+          <div class="ui-grid-col-3">
+            <span>مراجع</span>
+          </div>
+          <div class="ui-grid-col-7">
+            <span>به جز روزهای تعطیل 7 روز هفته 24 ساعت در خدمت شما عزیزان و سروران گرامی میباشیم</span>
+          </div>
+
+        </div>
+
+      </div>
+    </p-panel>
+  </div>
+</div>
+<!--end-contact-us-->
+<app-footer></app-footer>
+<!--<div class="row row-contact-left">-->
+<!--  <div class="caption">-->
+<!--    <span><i class="fas fa-headphones"></i></span>-->
+<!--    <p>تماس با ما</p>-->
+<!--  </div>-->
+<!--  <div class="panel-body">-->
+<!--    <div class="col-md-2">-->
+<!--      <span><i class="fas fa-phone"></i>تلفن</span>-->
+<!--      <span><i class="fas fa-fax"></i>فکس</span>-->
+<!--      <span><i class="fas fa-envelope"></i>ایمیل</span>-->
+<!--      <span><i class="fas fa-map-marker-alt"></i>نشانی</span>-->
+<!--      <span><i class="fas fa-headphones"></i>مراجع</span>-->
+<!--    </div>-->
+<!--    <div class="col-md-10">-->
+<!--      <ul>-->
+<!--        <li><span class="pull-right">09169651136-0916000000</span></li>-->
+<!--        <li><span>021-33264585_021-33261221</span></li>-->
+<!--        <li><span>HD724@info.com</span></li>-->
+<!--        <li><span>تهران-خیابان ولیعصر خیابان مختاری کوچه حسین زاده پلاک 32 واحد4 </span></li>-->
+<!--        <li><span>به جز روزهای تعطیل 7 روز هفته 24 ساعت در خدمت شما عزیزان و سروران گرامی میباشیم</span></li>-->
+<!--      </ul>-->
+<!--      <span></span>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

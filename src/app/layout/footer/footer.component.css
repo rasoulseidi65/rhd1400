@@ -1,0 +1,191 @@
+/*start-footer-top*/
+.container-fluid{
+  border-top: 6px solid #009c7d;
+  margin-top: 15px;
+}
+.container-fluid .row-address{
+  margin-top: 10px;
+}
+.container-fluid .row-address .caption span{
+  padding: 5px 15px;
+  font-family: IRANSans_Bold;
+  border-bottom: 4px solid #009c7d;
+  font-size: 15px;
+  color: #009c7d;
+}
+.container-fluid .row-address ul{
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+.container-fluid .row-address ul li{
+  padding: 10px 0px;
+}
+.container-fluid .row-address ul li span{
+  font-family: IRANSans_Bold;
+  font-size: 12px;
+}
+.container-fluid .row-address ul li span i{
+  margin-left: 5px;
+  color: #ff7800;
+  font-size: 16px;
+}
+.container-fluid .row-emil{
+  margin-top: 10px;
+}
+.container-fluid .row-emil .caption span{
+  padding: 5px 15px;
+  font-family: IRANSans_Bold;
+  border-bottom: 4px solid #009c7d;
+  font-size: 15px;
+  color: #009c7d;
+}
+.container-fluid .row-emil p{
+  margin-top: 15px;
+  font-family: IRANSans_Light;
+  font-size: 14px;
+  text-align: justify;
+}
+.container-fluid .row-emil .form-group {
+  background-color: #009c7d;
+  padding: 5px 15px 5px 5px;
+  border-radius: 35px;
+}
+.container-fluid .row-emil .form-group input{
+  background-color:transparent;
+  padding: 15px 0px;
+  border-radius: 35px;
+  line-height: 0;
+  outline: 0;
+  box-shadow: none;
+  border: none;
+  color: #ffffff;
+  font-family: IRANSans_Light;
+}
+.container-fluid .row-emil .form-group input::placeholder{
+  color: #ffffff;
+
+}
+.container-fluid .row-emil .form-group .input-group-btn button{
+  background-color: #ff7800;
+  font-family: IRANSans_Light;
+  border-radius: 50px;
+  color: #ffffff;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+}
+.container-fluid .row-emil .center-block img{
+  width: 80px;
+  height: 80px;
+  margin-right: 35px;
+}
+.container-fluid .row-service{
+   margin-top: 10px;
+   margin-right: 10px;
+ }
+.container-fluid .row-service .caption span{
+  padding: 5px 15px;
+  font-family: IRANSans_Bold;
+  border-bottom: 4px solid #009c7d;
+  font-size: 15px;
+  color: #009c7d;
+}
+.container-fluid .row-service ul{
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+.container-fluid .row-service ul li{
+  padding: 5px 0px;
+}
+.container-fluid .row-service ul li a{
+  text-decoration: none;
+  font-family: IRANSans_Bold;
+  color: #000000;
+  font-size: 12px;
+}
+.container-fluid .row-service ul li a i{
+  margin-left: 5px;
+  color: #ff7800;
+  font-size: 16px;
+}
+.container-fluid .row-learn{
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.container-fluid .row-learn .caption span{
+  padding: 5px 15px;
+  font-family: IRANSans_Bold;
+  border-bottom: 4px solid #009c7d;
+  font-size: 15px;
+  color: #009c7d;
+}
+.container-fluid .row-learn ul{
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+.container-fluid .row-learn ul li{
+  padding: 5px 0px;
+}
+.container-fluid .row-learn ul li a{
+  text-decoration: none;
+  font-family: IRANSans_Bold;
+  color: #000000;
+  font-size: 12px;
+}
+.container-fluid .row-learn ul li a i{
+  margin-left: 5px;
+  color: #ff7800;
+  font-size: 16px;
+}
+/*end-footer-top*/
+/*start-footer-center*/
+.container-fluid-center{
+ background-color: #009c7d;
+}
+.container-fluid-center .container{
+  margin-top: -6px;
+  border-top: 3px solid #00ffe4;
+}
+.container-fluid-center .container .row-center{
+  margin-top: 20px;
+}
+.container-fluid-center .container .row-center span{
+  text-align: left;
+  margin-top: 30px;
+  color: #fff;
+  font-family: IRANSans_Bold;
+}
+.container-fluid-center .container .row-center p{
+  border-right: 3px solid #ff7800;
+  padding: 0px 5px;
+  line-height: 2;
+  text-align: justify;
+  color: #ffffff;
+  font-family: IRANSans_Light;
+}
+.container-fluid-center .container .row-center img{
+  padding: 15px 10px;
+}
+/*end-footer-center*/
+/*start-footer-down*/
+.container-footer-down {
+  background-color: #00896e;
+  padding: 0px;
+  margin: 0px;
+  border-top: 3px solid #00ffe4;
+  text-align: center;
+}
+.container-footer-down .container .row{
+  padding: 6px 0px;
+}
+.container-footer-down .container .row span{
+  font-family: IRANSans_Light;
+  color: #ffffff;
+
+}
+/*end-footer-down*/

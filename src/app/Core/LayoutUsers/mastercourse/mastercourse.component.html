@@ -1,0 +1,368 @@
+<form [formGroup]="courseForm" (ngSubmit)="onSubmit(courseForm.value)">
+  <p-panel header=" لطفا اطلاعات دوره مورد نظر خود را وارد کنید با شکر">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+
+      <div class="card">
+        <div class="card-header">
+          انتخاب موضوع
+        </div>
+        <div class="card-body" dir="rtl">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2" style="font-family: IRANSans_Light">
+              عنوان دروه <label style="color: red">*</label>:
+            </div>
+            <div class="ui-grid-col-6">
+              <input pInputText type="text" formControlName="title" placeholder=""/>
+            </div>
+            <!--        <div class="ui-grid-col-5">-->
+            <!--          <p-message severity="error" text="نام خود را وارد کنید"-->
+            <!--                     *ngIf="!courseForm.controls['title'].valid&&courseForm.controls['title'].dirty"></p-message>-->
+            <!--        </div>-->
+          </div>
+         <div class="ui-grid-row">
+        <div class="ui-grid-col-2" style="font-family: IRANSans_Light">
+          دسته بندی  <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <p-dropdown [options]="categories" [showTransitionOptions]="'1ms'" [hideTransitionOptions]="'1ms'" formControlName="categories" [filter]="true"></p-dropdown>
+
+        </div>
+<!--        <div class="ui-grid-col-5">-->
+<!--          <p-message severity="error" text="نام خود را وارد کنید"-->
+<!--                     *ngIf="!courseForm.controls['categories'].valid&&courseForm.controls['categories'].dirty"></p-message>-->
+<!--        </div>-->
+      </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2" style="font-family: IRANSans_Light">
+              تصویر دوره<label style="color: red">*</label>:
+            </div>
+            <div class="ui-grid-col-6">
+            <p-fileUpload   (uploadHandler)="onUpload($event)" customUpload="true"
+                          invalidFileSizeMessageDetail="حداکثر سایز عکس 2 مگابایت می باشد"
+                          invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد"
+                          accept="image/jpeg,image/png "
+                          multiple="multiple"  maxFileSize="1000000" uploadLabel="آپلود عکس" chooseLabel="انتخاب عکس"
+                          cancelLabel="انصراف">
+
+            </p-fileUpload>
+            </div>
+<!--            <div class="ui-grid-col-5">-->
+<!--              <p-message severity="error" text="نام خود را وارد کنید"-->
+<!--                         *ngIf="!TechForm.controls['image'].valid&&TechForm.controls['image'].dirty"></p-message>-->
+<!--            </div>-->
+          </div>
+      </div>
+    </div>
+      <div class="card">
+        <div class="card-header">
+          مشخصات
+        </div>
+        <div class="card-body" dir="rtl">
+         <div class="ui-grid-row">
+        <div class="ui-grid-col-2" style="font-family: IRANSans_Light">
+          نوع دوره  <label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <div class="p-field-radiobutton">
+            <p-radioButton name="city2" formControlName="type" value="رایگان" inputId="city2"></p-radioButton>
+            <label>رایگان</label>
+          </div>
+          <div class="p-field-radiobutton">
+            <p-radioButton name="city2" formControlName="type" value="پولی"  inputId="city3"></p-radioButton>
+            <label>پولی</label>
+          </div>
+        </div>
+<!--        <div class="ui-grid-col-5">-->
+<!--          <p-message severity="error" text="نام خود را وارد کنید"-->
+<!--                     *ngIf="!courseForm.controls['type'].valid&&courseForm.controls['type'].dirty"></p-message>-->
+<!--        </div>-->
+      </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2" style="font-family: IRANSans_Light">
+              قیمت پایه <label style="color: red">*</label>:
+            </div>
+            <div class="ui-grid-col-6">
+              <div class="p-col-10 p-md-4">
+                <div class="p-inputgroup">
+                  <input type="text" pKeyFilter="num" formControlName="price" pInputText placeholder="قیمت به ریال وارد شود">
+                </div>
+              </div>
+            </div>
+<!--            <div class="ui-grid-col-5">-->
+<!--              <p-message severity="error" text="نام خود را وارد کنید"-->
+<!--                         *ngIf="!courseForm.controls['price'].valid&&courseForm.controls['price'].dirty"></p-message>-->
+<!--            </div>-->
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2" style="font-family: IRANSans_Light">
+              قیمت پشتیبانی <label style="color: red">*</label>:
+            </div>
+            <div class="ui-grid-col-6">
+              <div class="p-col-10 p-md-4">
+                <div class="p-inputgroup">
+                  <input type="text" pKeyFilter="num" formControlName="priceSupport" pInputText placeholder="قیمت به ریال وارد شود">
+                </div>
+              </div>
+            </div>
+<!--            <div class="ui-grid-col-5">-->
+<!--              <p-message severity="error" text="نام خود را وارد کنید"-->
+<!--                         *ngIf="!courseForm.controls['priceSupport'].valid&&courseForm.controls['priceSupport'].dirty"></p-message>-->
+<!--            </div>-->
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2" style="font-family: IRANSans_Light">
+              زمان دوره <label style="color: red">*</label>:
+            </div>
+            <div class="ui-grid-col-6">
+              <div class="p-col-10 p-md-4">
+                <div class="p-inputgroup">
+                  <input type="text" formControlName="timeCourse" pInputText placeholder="12 ساعت 45 دقیقه">
+                </div>
+              </div>
+            </div>
+<!--            <div class="ui-grid-col-5">-->
+<!--              <p-message severity="error" text="نام خود را وارد کنید"-->
+<!--                         *ngIf="!courseForm.controls['timeCourse'].valid&&courseForm.controls['timeCourse'].dirty"></p-message>-->
+<!--            </div>-->
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2" style="font-family: IRANSans_Light">
+              حجم دوره <label style="color: red">*</label>:
+            </div>
+            <div class="ui-grid-col-6">
+              <div class="p-col-10 p-md-4">
+                <div class="p-inputgroup">
+                  <input type="text" formControlName="sizeCourse" pInputText placeholder="8گیگ 54مگابایت">
+                </div>
+              </div>
+            </div>
+<!--            <div class="ui-grid-col-5">-->
+<!--              <p-message severity="error" text="نام خود را وارد کنید"-->
+<!--                         *ngIf="!courseForm.controls['sizeCourse'].valid&&courseForm.controls['sizeCourse'].dirty"></p-message>-->
+<!--            </div>-->
+          </div>
+
+        </div>
+    </div>
+      <div class="card">
+        <div class="card-header">
+          توضیحات
+        </div>
+        <div class="card-body" dir="rtl">
+         <div class="ui-grid-row">
+        <div class="ui-grid-col-2" style="font-family: IRANSans_Light">
+          توضیح مختصر و کوتاه<label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <textarea pInputTextarea formControlName="abstract" rows="7" cols="60"  placeholder="لطفا در چند خط توضیح دهید"></textarea>
+        </div>
+<!--        <div class="ui-grid-col-5">-->
+<!--          <p-message severity="error" text="نام خود را وارد کنید"-->
+<!--                     *ngIf="!courseForm.controls['abstract'].valid&&courseForm.controls['abstract'].dirty"></p-message>-->
+<!--        </div>-->
+      </div>
+         <div class="ui-grid-row">
+        <div class="ui-grid-col-2" style="font-family: IRANSans_Light">
+          توضیحات تکمیلی<label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <div class="ui-grid-row" style="margin-bottom:10rem">
+              <quill-editor formControlName="detail"></quill-editor>
+          </div>
+        </div>
+<!--        <div class="ui-grid-col-5">-->
+<!--          <p-message severity="error" text="نام خود را وارد کنید"-->
+<!--                     *ngIf="!courseForm.controls['detail'].valid&&courseForm.controls['detail'].dirty"></p-message>-->
+<!--        </div>-->
+      </div>
+        </div>
+    </div>
+      <div class="card">
+        <div class="card-header">
+          نوع سطح
+        </div>
+        <div class="card-body" dir="rtl">
+         <div class="ui-grid-row">
+        <div class="ui-grid-col-2" style="font-family: IRANSans_Light">
+         سطح<label style="color: red">*</label>:
+        </div>
+        <div class="ui-grid-col-6">
+          <div class="p-field-radiobutton">
+            <p-radioButton name="city" formControlName="level" value="مقدماتی" inputId="city1"></p-radioButton>
+            <label>مقدماتی</label>
+          </div>
+          <div class="p-field-radiobutton">
+            <p-radioButton name="city" formControlName="level" value="متوسط"  inputId="city2"></p-radioButton>
+            <label>متوسط</label>
+          </div>
+          <div class="p-field-radiobutton">
+            <p-radioButton name="city" formControlName="level" value="پیشرفته"  inputId="city3"></p-radioButton>
+            <label>پیشرفته</label>
+          </div>
+          <div class="p-field-radiobutton">
+            <p-radioButton name="city" formControlName="level" value="حرفه ای"  inputId="city4"></p-radioButton>
+            <label>حرفه ای</label>
+          </div>
+        </div>
+      </div>
+        </div>
+    </div>
+      <form [formGroup]="episodeForm">
+      <div class="card">
+        <div class="card-header">
+          سرفصلها
+        </div>
+        <div class="card-body" dir="rtl">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              عنوان ویدئو <label style="color: red">*</label>:
+            </div>
+            <div class="ui-grid-col-6">
+              <input pInputText type="text" formControlName="title" placeholder="" />
+            </div>
+<!--            <div class="ui-grid-col-4">-->
+<!--              <p-message severity="error" text="عنوان ویدئو دوره آموزشی  را وارد نمائید"-->
+<!--                         *ngIf="!courseForm.controls['title'].valid&&courseForm.controls['title'].dirty"></p-message>-->
+<!--            </div>-->
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              نوع دوره(رايگان-نقدي)<label style="color: red">*</label>:
+            </div>
+            <div class="ui-grid-col-6">
+              <input pInputText type="text" formControlName="type" placeholder="نوع دوره را وارد نمائيد"
+                     />
+            </div>
+<!--            <div class="ui-grid-col-4">-->
+<!--              <p-message severity="error" text="نوع دوره آموزشی  را وارد نمائید"-->
+<!--                         *ngIf="!courseForm.controls['type'].valid&&courseForm.controls['type'].dirty"></p-message>-->
+<!--            </div>-->
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              لینک ویدئو دوره :
+            </div>
+            <div class="ui-grid-col-6">
+              <p-fileUpload  name="myfile[]" customUpload="true"
+                            invalidFileSizeMessageDetail="حداکثر سایز ويدئو 40 مگابایت می باشد"
+                            invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد"
+                            multiple="multiple"
+                             (uploadHandler)="onUploadVideo($event)"
+                             uploadLabel="آپلود ويدئو" chooseLabel="انتخاب ویدئو"
+                            cancelLabel="انصراف"></p-fileUpload>
+            </div>
+            <div class="ui-grid-col-2">
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              زمان ویدئو دوره :
+            </div>
+            <div class="ui-grid-col-6">
+              <input pInputText type="text" formControlName="time"  placeholder="زمان ویدئو" />
+            </div>
+            <div class="ui-grid-col-2">
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              شماره جلسه :
+            </div>
+            <div class="ui-grid-col-6">
+              <input pInputText type="text" formControlName="Number"  placeholder="شماره جلسه " />
+            </div>
+            <div class="ui-grid-col-2">
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              توضیحات جلسه :
+            </div>
+            <div class="ui-grid-col-9">
+              <quill-editor  [style]="{'height':'320px'}" formControlName="body" ></quill-editor>
+              <!--              <p-editor [(ngModel)]="eposide.body" [style]="{'height':'320px'}"></p-editor>-->
+              <!--              <input pInputText type="text" formControlName="body" placeholder="زمان ویدئو" [(ngModel)]="eposide.body"/>-->
+            </div>
+
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+            </div>
+            <div class="ui-grid-col-2">
+              <button pButton type="button" (click)="addEpisode()" label="ثبت جلسه "></button>
+
+            </div>
+          </div>
+        </div>
+        <div class="card-footer" style="margin-top: 20px">
+          <table class="table table-hover" *ngIf="listEpisodeFlag" >
+            <thead >
+            <tr>
+              <th scope="col">ردیف</th>
+              <th scope="col">عنوان ویدیو</th>
+              <th scope="col"> نقدی/رایگان</th>
+              <th scope="col">زمان ویدیو</th>
+              <th scope="col">شماره جلسه</th>
+              <th scope="col">حذف</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of lisEpisode;let i=index">
+              <th scope="row">{{i + 1}}</th>
+              <td>{{item.title}}</td>
+              <td>{{item.type}}</td>
+              <td>{{item.time}}</td>
+              <td>{{item.Number}}</td>
+              <td (click)="postEpisod(i)"><a>
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+                </svg>
+              </a></td>
+            </tr>
+            </tbody>
+          </table>
+          <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
+        </div>
+    </div>
+      </form>
+      <div class="card">
+        <div class="card-header">
+          تگ های سئو
+        </div>
+        <div class="card-body" dir="rtl">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2" style="font-family: IRANSans_Light">
+              عنوان تگ<label style="color: red">*</label>:
+            </div>
+            <div class="ui-grid-col-6">
+              <input pInputText type="text" formControlName="titleTag" placeholder="عنوان دوره خود را وارد کنید"/>
+            </div>
+<!--            <div class="ui-grid-col-5">-->
+<!--              <p-message severity="error" text="نام خود را وارد کنید">-->
+<!--                         *ngIf="!courseForm.controls['titleTag'].valid&&courseForm.controls['titleTag'].dirty"></p-message>-->
+<!--            </div>-->
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2" style="font-family: IRANSans_Light">
+              کلمات کلیدی تگ<label style="color: red">*</label>:
+            </div>
+            <div class="ui-grid-col-6">
+              <textarea pInputTextarea formControlName="keyTag" [rows]="3" [cols]="70" placeholder=" کلمات کلیدی خود را وارد کنید بعد از هر کلمه enter را فشار دهید"></textarea>
+
+            </div>
+<!--            <div class="ui-grid-col-5">-->
+<!--              <p-message severity="error" text="نام خود را وارد کنید"-->
+<!--                         *ngIf="!courseForm.controls['keyTag'].valid&&courseForm.controls['keyTag'].dirty"></p-message>-->
+<!--            </div>-->
+          </div>
+        </div>
+      </div>
+      <div class="ui-grid-col-2">
+        <button pButton pRipple type="submit" label="ثبت دوره"></button>
+      </div>
+    </div>
+  </p-panel>
+</form>
+

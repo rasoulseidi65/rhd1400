@@ -1,0 +1,101 @@
+<app-header dir="rtl"></app-header>
+<p-toast [baseZIndex]="999999999" dir="rtl" position="center"></p-toast>
+
+<nav aria-label="breadcrumb" dir="rtl">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">صفحه اصلی</a></li>
+    <li class="breadcrumb-item active" aria-current="page">سفارش محصول</li>
+  </ol>
+</nav>
+<form [formGroup]="formGroup" class="pc">
+
+  <mat-horizontal-stepper labelPosition="bottom" linear #stepper1 formArrayName="formArray" dir="rtl"
+                          class="white border-stepper mb-5">
+    <mat-step formGroupName="0" [stepControl]="formArray?.get([0])">
+
+      <ng-template matStepLabel>لیست سفارشات </ng-template>
+
+      <div>
+        <button matStepperNext class="mt-5 p-button-danger" pButton type="button" label="مرحله بعدی"
+                icon="pi pi-angle-left" iconPos="right"   [disabled]="formArray.get([0]).invalid"></button>
+      </div>
+
+    </mat-step>
+    <mat-step formGroupName="1" [stepControl]="formArray?.get([1])" >
+
+      <ng-template matStepLabel>ورود/ثبت نام</ng-template>
+
+
+      <div>
+        <button matStepperNext class="mt-5 p-button-danger float-left" pButton type="button" label="مرحله بعدی"
+                icon="pi pi-angle-left" iconPos="left" ></button>
+
+        <!--          <button matStepperNext class="btn primary-color btn-rounded float-left text-white"-->
+        <!--                  [disabled]="formArray.get([1]).invalid"-->
+        <!--          >مرحله بعدی <i class="fab fa-1x text-white fa-angle-left ml-3"></i>-->
+        <!--          </button>-->
+        <button matStepperPrevious class="mt-5 p-button-danger float-right" pButton type="button" label="برگشت "
+                icon="pi pi-angle-right" iconPos="left"></button>
+
+        <!--          <button matStepperPrevious class="btn primary-color btn-rounded  float-right text-white "><i-->
+        <!--            class="fas fa-1x text-white fa-angle-right mr-3"></i>برگشت-->
+        <!--          </button>-->
+      </div>
+
+    </mat-step>
+    <mat-step formGroupName="2" [stepControl]="formArray?.get([2])">
+
+      <ng-template matStepLabel>اطلاعات خریدار</ng-template>
+
+      <div>
+        <button matStepperNext class="mt-5 p-button-danger float-left" pButton type="button" label="مرحله بعدی"
+                icon="pi pi-angle-left" iconPos="right"  [disabled]="formArray.get([2]).invalid"></button>
+
+        <button matStepperPrevious class="mt-5 p-button-danger float-right" pButton type="button" label="برگشت "
+                icon="pi pi-angle-right" iconPos="left"></button>
+
+      </div>
+
+    </mat-step>
+    <mat-step formGroupName="3" [stepControl]="formArray?.get([3])" >
+      <ng-template matStepLabel>نحوه ارسال</ng-template>
+
+
+      <div>
+        <button matStepperNext class=" p-button-danger float-left" pButton type="button" label="بعدی"
+                icon="pi pi-angle-left" iconPos="right" [disabled]="formArray.get([3]).invalid"></button>
+
+        <button matStepperPrevious class="p-button-danger float-right" pButton type="button" label="برگشت"
+                icon="pi pi-angle-right" iconPos="left"></button>
+      </div>
+    </mat-step>
+    <mat-step formGroupName="4" [stepControl]="formArray?.get([4])">
+      <ng-template matStepLabel>پیش فاکتور</ng-template>
+
+      <div>
+        <button matStepperNext class=" p-button-danger float-left" pButton type="button" label="مرحله بعدی"
+                icon="pi pi-angle-left" iconPos="right" [disabled]="formArray.get([4]).invalid"></button>
+
+        <button matStepperPrevious class=" p-button-danger float-right" pButton type="button" label="برگشت"
+                icon="pi pi-angle-right" iconPos="left"></button>
+
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>پرداخت</ng-template>
+
+      <h4 class="text-success text-center mt-2">
+        کاربر محترم جهت پرداخت هزینه روی دکمه پرداخت کلیک کنید.
+      </h4>
+
+
+      <div>
+        <button class=" p-button-danger" pButton type="button" label="پرداخت " ></button>
+
+      </div>
+      <!--      </div>-->
+    </mat-step>
+  </mat-horizontal-stepper>
+</form>
+
+

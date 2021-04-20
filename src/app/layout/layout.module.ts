@@ -37,9 +37,10 @@ import {HottestContentComponent} from './film/hottest-content/hottest-content.co
 import {MostDownloadsComponent} from './film/most-downloads/most-downloads.component';
 import {MostPopularContentComponent} from './film/most-popular-content/most-popular-content.component';
 import { ContentAllComponent } from './film/hottest-content/content-all/content-all.component';
-import {MatGridListModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatDividerModule, MatGridListModule, MatIconModule, MatListModule} from '@angular/material';
 import {AllCantentComponent} from './film/all-cantent/all-cantent.component';
 import { QuestionsArticalComponent } from './film/hottest-content/questions-artical/questions-artical.component';
+import {DeviceDetectorService} from 'ngx-device-detector';
 
 
 
@@ -71,13 +72,20 @@ import { QuestionsArticalComponent } from './film/hottest-content/questions-arti
     CarouselModule,
     MatGridListModule,
     PaginatorModule,
-    InputTextModule
+    InputTextModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatListModule,
+    MatIconModule,
+
 
   ],
   exports: [IndexComponent,
     HeaderComponent,
     FilmComponent, ArticleComponent, CommentComponent,
     TopMenuComponent, CenterMenuComponent,MenuComponent,FooterComponent],
+  providers: [DeviceDetectorService],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],

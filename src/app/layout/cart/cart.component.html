@@ -1,101 +1,69 @@
-<app-header dir="rtl"></app-header>
-<p-toast [baseZIndex]="999999999" dir="rtl" position="center"></p-toast>
+<app-top-menu dir="rtl"></app-top-menu>
+<app-center-menu></app-center-menu>
+<!--<p-toast [baseZIndex]="999999999" dir="rtl" position="center"></p-toast>-->
 
-<nav aria-label="breadcrumb" dir="rtl">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">صفحه اصلی</a></li>
-    <li class="breadcrumb-item active" aria-current="page">سفارش محصول</li>
-  </ol>
-</nav>
-<form [formGroup]="formGroup" class="pc">
+<div class="container p-mt-3">
+  <div class="p-grid">
+    <div class="p-col-12 p-md-8 p-lg-8">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>سبد خرید من</mat-card-title>
 
-  <mat-horizontal-stepper labelPosition="bottom" linear #stepper1 formArrayName="formArray" dir="rtl"
-                          class="white border-stepper mb-5">
-    <mat-step formGroupName="0" [stepControl]="formArray?.get([0])">
+        </mat-card-header>
+        <mat-card-content>
+          <mat-divider class="dividerRight"></mat-divider>
+          <div class="card mb-3" style="max-width: 540px;" dir="rtl">
+            <div class="row g-0">
+              <div class="col-md-3">
+                <img src="../../../assets/bootstrap/img/logo.png" alt="...">
+              </div>
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title">دوره آموزشی آنگولار</h5>
+                  <p class="card-text">مدرس: میلاد مقدسی</p>
+                  <p class="card-text text-left"><small class="pi pi-trash" style="font-size: 20px"></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions dir="ltr" class="text-left">
+          <p class="text-left">195000 تومان </p>
 
-      <ng-template matStepLabel>لیست سفارشات </ng-template>
+        </mat-card-actions>
+      </mat-card>
 
-      <div>
-        <button matStepperNext class="mt-5 p-button-danger" pButton type="button" label="مرحله بعدی"
-                icon="pi pi-angle-left" iconPos="right"   [disabled]="formArray.get([0]).invalid"></button>
-      </div>
+    </div>
+    <div class="p-col-12 p-md-4 p-lg-4">
 
-    </mat-step>
-    <mat-step formGroupName="1" [stepControl]="formArray?.get([1])" >
+      <mat-card class="example-card">
+          <div class="p-d-flex p-flex-row" dir="rtl">
+            <div class="p-ml-auto text-muted"> قیمت محصول  :</div>
+            <div class="p-mr-3 text-muted">{{150000|number}}</div>
+          </div>
+        <mat-card-content>
+          <mat-divider></mat-divider>
+          <mat-card-title class="p-mt-3 text-muted">اگر کد تخفیف دارید وارد کنید:</mat-card-title>
+          <input type="text" name="coupon_code">
 
-      <ng-template matStepLabel>ورود/ثبت نام</ng-template>
+          <button mat-button type="button" class=" p-mt-3">ثبت</button>
+          <mat-divider class="p-mt-4"></mat-divider>
+          <div class="p-d-flex p-flex-row" dir="rtl">
+            <div class="p-ml-auto text-muted"> مبلغ قابل پرداخت:</div>
+            <div class="p-mr-3 text-muted">{{150000|number}}</div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class=" text-center">
+<!--           <button pButton type="button" label="ادامه فرآیند خرید" class="p-button-success"></button>-->
+            <button class="btn"  style="background-color: #ff5000;color: #ffffff;font-size: 14px">ادامه فرآیند خرید</button>
 
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
 
-      <div>
-        <button matStepperNext class="mt-5 p-button-danger float-left" pButton type="button" label="مرحله بعدی"
-                icon="pi pi-angle-left" iconPos="left" ></button>
-
-        <!--          <button matStepperNext class="btn primary-color btn-rounded float-left text-white"-->
-        <!--                  [disabled]="formArray.get([1]).invalid"-->
-        <!--          >مرحله بعدی <i class="fab fa-1x text-white fa-angle-left ml-3"></i>-->
-        <!--          </button>-->
-        <button matStepperPrevious class="mt-5 p-button-danger float-right" pButton type="button" label="برگشت "
-                icon="pi pi-angle-right" iconPos="left"></button>
-
-        <!--          <button matStepperPrevious class="btn primary-color btn-rounded  float-right text-white "><i-->
-        <!--            class="fas fa-1x text-white fa-angle-right mr-3"></i>برگشت-->
-        <!--          </button>-->
-      </div>
-
-    </mat-step>
-    <mat-step formGroupName="2" [stepControl]="formArray?.get([2])">
-
-      <ng-template matStepLabel>اطلاعات خریدار</ng-template>
-
-      <div>
-        <button matStepperNext class="mt-5 p-button-danger float-left" pButton type="button" label="مرحله بعدی"
-                icon="pi pi-angle-left" iconPos="right"  [disabled]="formArray.get([2]).invalid"></button>
-
-        <button matStepperPrevious class="mt-5 p-button-danger float-right" pButton type="button" label="برگشت "
-                icon="pi pi-angle-right" iconPos="left"></button>
-
-      </div>
-
-    </mat-step>
-    <mat-step formGroupName="3" [stepControl]="formArray?.get([3])" >
-      <ng-template matStepLabel>نحوه ارسال</ng-template>
-
-
-      <div>
-        <button matStepperNext class=" p-button-danger float-left" pButton type="button" label="بعدی"
-                icon="pi pi-angle-left" iconPos="right" [disabled]="formArray.get([3]).invalid"></button>
-
-        <button matStepperPrevious class="p-button-danger float-right" pButton type="button" label="برگشت"
-                icon="pi pi-angle-right" iconPos="left"></button>
-      </div>
-    </mat-step>
-    <mat-step formGroupName="4" [stepControl]="formArray?.get([4])">
-      <ng-template matStepLabel>پیش فاکتور</ng-template>
-
-      <div>
-        <button matStepperNext class=" p-button-danger float-left" pButton type="button" label="مرحله بعدی"
-                icon="pi pi-angle-left" iconPos="right" [disabled]="formArray.get([4]).invalid"></button>
-
-        <button matStepperPrevious class=" p-button-danger float-right" pButton type="button" label="برگشت"
-                icon="pi pi-angle-right" iconPos="left"></button>
-
-      </div>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>پرداخت</ng-template>
-
-      <h4 class="text-success text-center mt-2">
-        کاربر محترم جهت پرداخت هزینه روی دکمه پرداخت کلیک کنید.
-      </h4>
-
-
-      <div>
-        <button class=" p-button-danger" pButton type="button" label="پرداخت " ></button>
-
-      </div>
-      <!--      </div>-->
-    </mat-step>
-  </mat-horizontal-stepper>
-</form>
 
 

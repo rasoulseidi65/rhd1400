@@ -3,6 +3,10 @@ import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '
 import {MessageService} from 'primeng/api';
 
 
+export interface Section {
+  name: string;
+  updated: Date;
+}
 
 @Component({
   selector: 'app-cart',
@@ -12,6 +16,21 @@ import {MessageService} from 'primeng/api';
 })
 export class CartComponent implements OnInit {
   formGroup: FormGroup;
+
+  folders: Section[] = [
+    {
+      name: 'Photos',
+      updated: new Date('1/1/16'),
+    },
+    {
+      name: 'Recipes',
+      updated: new Date('1/17/16'),
+    },
+    {
+      name: 'Work',
+      updated: new Date('1/28/16'),
+    }
+  ];
   get formArray(): AbstractControl | null {
     return this.formGroup.get('formArray');
   }

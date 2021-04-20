@@ -189,8 +189,9 @@
 }
 .container-fluid .row-link .panel-group-link .panel-body ul li a i{
   margin-left: 5px;
+  color: #ff7800;
 }
 .container-fluid .row-link .panel-group-link .panel-body ul li:hover a{
-  color: #ffa331;
+  color: #ff7800;
 }
 /*end-link*/

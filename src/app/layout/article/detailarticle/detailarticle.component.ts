@@ -23,7 +23,6 @@ export class DetailarticleComponent implements OnInit {
     this.route.paramMap.subscribe(params =>
       this.articleID = params.get('id'));
     this.service.findArticle(this.articleID).subscribe((response) => {
-      console.log(response);
       if (response['success'] === true) {
         this.article = response['data'];
       }

@@ -29,6 +29,6 @@ export class PaperService {
   }
 
   destory(paperID: any): Observable<paper[]> {
-    return this.http.delete<paper[]>('http://api.hd724.com/api/v1/admin/article' + paperID);
+    return this.http.delete<paper[]>('http://api.hd724.com/api/v1/admin/article/' + paperID);
   }
 }

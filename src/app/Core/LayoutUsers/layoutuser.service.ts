@@ -15,7 +15,7 @@ export class LayoutuserService {
     return this.http.post('http://api.hd724.com/api/v1/admin/video', video);
   }
   registerCourse(data: any) {
-    return this.http.post('http://localhost:3125/api/v1/users/course', data);
+    return this.http.post('http://api.hd724.com/api/v1/users/course', data);
   }
   CourseUser(data:any) {
     return this.http.post('http://api.hd724.com/api/v1/users/courseUser',data);

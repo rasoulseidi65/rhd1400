@@ -1,0 +1,22 @@
+.container-fluid{
+  margin-top: 10px;
+}
+::ng-deep.ui-panel-titlebar{
+  background: #FF8800!important;
+  color: #fff!important;
+  font-size: 17px;
+  font-family: IRANSans_Bold;
+}
+::ng-deep .container-fluid .ui-accordion .header-cours a {
+  border-bottom: 1px solid #eeeeee!important;
+  color: #000000!important;
+  background-color: #eeeeee!important;
+
+}
+::ng-deep .container-fluid  .ui-accordion .ui-accordion-content {
+  background-color: #ffffff!important;
+  border: none!important;
+}
+::ng-deep .container-fluid  .ui-accordion .header-cours a .ui-accordion-toggle-icon {
+  color: #000000!important;
+}

@@ -34,11 +34,12 @@ export class MastercourseComponent implements OnInit {
   ngOnInit() {
     this.CreatFormCourse();
     this.creatFormEpisode();
-
+    alert(this.localstorage.userJson['_id'])
 
   }
 
   onSubmit(data: any) {
+
     this.courseForm.controls.userID.setValue(this.localstorage.userJson['_id']);
     let data1= {
       course: this.courseForm.value,

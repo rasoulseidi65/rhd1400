@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LayoutService} from '../../../layout.service';
 import {QuestionDetailModel} from './questionDetail.model';
+import {CartService} from '../../../../serviceCart/cart.service';
 
 
 @Component({
@@ -12,7 +13,8 @@ export class QuestionsArticalComponent implements OnInit {
   listquestion:any[];
   cols: any[];
   public QuestionDetail: QuestionDetailModel[] = [];
-  constructor( private service: LayoutService) { }
+  constructor( private service: LayoutService,
+  private serviceCart: CartService) { }
 
   ngOnInit() {
     this.cols = [
@@ -34,4 +36,7 @@ export class QuestionsArticalComponent implements OnInit {
       }
     });
  }
+  addCart(question: any) {
+      this.serviceCart.addToCart(question);
+  }
 }

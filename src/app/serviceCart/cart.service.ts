@@ -20,22 +20,18 @@ export class CartService {
     let local_Storage;
     let itemsInCart = [];
     this.items = {
-      product: Product,
-
+      cartList: Product,
     };
-
+    localStorage.removeItem('cartList');
     if (localStorage.getItem('cartList') === null) {
-      itemsInCart.push(this.items);
+      itemsInCart.push(this.items.cartList);
       localStorage.setItem('cartList', JSON.stringify(itemsInCart));
       subject.next('changed');
     } else {
       local_Storage = JSON.parse(localStorage.getItem('cartList'));
-
       for (var i in local_Storage) {
-        if (this.items['product']['cartList']._id === local_Storage[i]['product']['cartList']._id) {
-          let count = parseInt(local_Storage[i]['product']['number']);
-          count = count + 1;
-          this.items['product']['number'] = count;
+        if (Product['_id'] === local_Storage[i]._id) {
+          alert('mojodast')
           let index = parseInt(i);
           local_Storage.splice(index, 1);
           localStorage.setItem('cartList', JSON.stringify(local_Storage));
@@ -46,23 +42,25 @@ export class CartService {
     if (this.items) {
       itemsInCart.push(this.items);
     }
+    // tslint:disable-next-line:only-arrow-functions
     local_Storage.forEach(function(item) {
       itemsInCart.push(item);
     });
+
     localStorage.setItem('cartList', JSON.stringify(itemsInCart));
     subject.next('changed');
-
+console.log(JSON.parse(localStorage.getItem('cartList')));
 
   }
 
-  addToCart1(Product: any,count:any) {
+  addToCart1(Product: any, count: any) {
     let local_Storage;
     let itemsInCart = [];
     this.items = {
-      product: Product,
+      cartList: Product,
 
     };
-console.log(this.items['product']['cartList']._id)
+
     if (localStorage.getItem('cartList') === null) {
       itemsInCart.push(this.items);
       localStorage.setItem('cartList', JSON.stringify(itemsInCart));
@@ -93,6 +91,7 @@ console.log(this.items['product']['cartList']._id)
 
 
   }
+
   deleteItem(item) {
     console.log('Deleting : ', item['product']['cartList']._id);
     let shopping_cart;

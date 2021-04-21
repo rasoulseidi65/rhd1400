@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
       this.UsersService.register(this.userform.value).subscribe((response) => {
         if (response['success'] === true) {
           let data=response['data']
-          this.localstorage.saveCurrentUser(JSON.stringify(data));
+          this.localstorage.saveCurrentUser(this.userform.value);
           this.router.navigate(['/']);
           this.messageService.add({severity: 'success', summary: 'ثبت با موفقیت', detail: 'کاربر مشخصات با موفقیت ثبت شد'});
         } else {

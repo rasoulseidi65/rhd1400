@@ -25,7 +25,7 @@ export class MyCoursesComponent implements OnInit {
       userID: this.localstorage.userJson['_id']
     }
     this.Service.CourseUser(data).subscribe((response) => {
-      console.log(response)
+      console.log(response['data'])
       if (response['success'] === true) {
         this.listCourse = response['data'];
       }

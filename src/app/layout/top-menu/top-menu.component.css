@@ -699,3 +699,9 @@
 .sub-sub-title:hover, .sub-title:hover {
   color: #cc3333;
 }
+.countBadge{
+  color: #ff5000;
+  font-family: IRANSans_Bold;
+  font-size: 14px;
+  margin-top: -30px;
+}

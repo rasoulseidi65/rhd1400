@@ -20,47 +20,37 @@
         <li><a href="#"><span class="fa fa-search"></span>جستجو</a></li>
         <li><a routerLink="/teacher"><span class="fa fa-user"></span>مدرس شوید</a></li>
         <li><a routerLink="/auth/login"><span class="fa fa-key"></span>ورود</a></li>
-<!--        <li><a href="#"><span class="fa fa-shopping-cart"></span>فروشگاه</a></li>-->
         <div class="indicator" #basketDropDown (clickOutside)="closeBasketDropDown()"
              (mouseleave)="closeBasketDropDown()">
           <a class="indicator__button" (click)="toggleBasketDropDown()" (mouseover)="openBasketDropDown()">
               <span class="indicator__area">
               <ul class="nav navbar-nav">
-                <li><a href="#"><span class="fa fa-shopping-cart"></span>فروشگاه</a></li>
+                <li><a href="#"><span class="fa fa-shopping-cart"><label class="countBadge">{{countBadge}}</label></span>فروشگاه</a></li>
               </ul>
-                <!--                <span class="indicator__value">2</span>-->
               </span>
           </a>
           <div class="indicator__dropdown" style="max-height: 458px;">
             <div class="dropcart dropcart--style--dropdown">
               <div class="dropcart__body">
-
                 <div class="dropcart__products-list" >
-                  <div class="dropcart__product" >
+                  <div class="dropcart__product" *ngFor="let item of cartlist">
                     <div class="product-image dropcart__product-image">
                       <a class="product-image__body">
-                        <img src="../../../assets/bootstrap/img/logo.png" alt="" class="product-image__img">
+                        <img [src]="item['cartList'].linkFile" alt="" class="product-image__img">
                       </a>
                     </div>
                     <div class="dropcart__product-info">
                       <div class="dropcart__product-name">
-                        <a>دوره آموزش برنامه نویسی آنگولار</a>
+                        <a>{{item['cartList'].title}}</a>
                       </div>
                       <div class="dropcart__product-meta">
-<!--                        <span class="dropcart__product-quantity">2333</span>-->
-<!--                        ×-->
-<!--                        <span class="dropcart__product-quantity">تومان </span>-->
-
-                        <span class="dropcart__product-quantity">{{1900000|number}} تومان </span>
-                        <!--                          <span class="dropcart__product-price">{{item['product']['cartList'].price|number}}-->
-                        <!--                            تومان-->
-                        <!--                          </span>-->
+                        <span class="dropcart__product-quantity">{{item['cartList'].price|number}} تومان </span>
                       </div>
                     </div>
-                    <i class="fa fa-close fa-1x mr-auto" style="color:#c33" ></i>
+                    <i class="fa fa-close fa-1x mr-auto" style="color:#c33" (click)="onDeleteCart(item)"></i>
                   </div>
                 </div>
-                <div class="dropcart__products-list">
+                <div class="dropcart__products-list" *ngIf="lengthCartlist === 0">
                   <p class="text-center">
                     سبد خرید شما خالی است.
                   </p>
@@ -70,7 +60,7 @@
                     <tbody>
                     <tr>
                       <th>جمع کل</th>
-                      <td> 45454 تومان</td>
+                      <td> {{sumOfPrice|number}}</td>
                     </tr>
                     </tbody>
                   </table>

@@ -11,34 +11,35 @@
         </mat-card-header>
         <mat-card-content>
           <mat-divider class="dividerRight"></mat-divider>
-          <div class="card mb-3" style="max-width: 540px;" dir="rtl">
+          <div class="card mb-3" style="max-width: 540px;max-height: 200px" dir="rtl" *ngFor="let item of cartlist">
             <div class="row g-0">
-              <div class="col-md-3">
-                <img src="../../../assets/bootstrap/img/logo.png" alt="...">
+              <div class="col-md-3 p-mt-2">
+                <img [src]="item['cartList'].linkFile" alt="" class="product-image__img" style="width: 50px;height: 50px">
               </div>
               <div class="col-md-9">
                 <div class="card-body">
-                  <h5 class="card-title">دوره آموزشی آنگولار</h5>
+                  <h5 class="card-title">{{item['cartList'].title}}</h5>
                   <p class="card-text">مدرس: میلاد مقدسی</p>
-                  <p class="card-text text-left"><small class="pi pi-trash" style="font-size: 20px"></small></p>
+                  <p class="card-text text-left"><small class="pi pi-trash" style="font-size: 20px" (click)="onDeleteCart(item)"></small></p>
                 </div>
               </div>
             </div>
+            <mat-card-actions dir="ltr" class="text-left">
+              <p class="text-left sumOfPrice">{{item['cartList'].price|number}} تومان</p>
+
+            </mat-card-actions>
           </div>
         </mat-card-content>
-        <mat-card-actions dir="ltr" class="text-left">
-          <p class="text-left">195000 تومان </p>
 
-        </mat-card-actions>
       </mat-card>
 
     </div>
     <div class="p-col-12 p-md-4 p-lg-4">
 
       <mat-card class="example-card">
-          <div class="p-d-flex p-flex-row" dir="rtl">
+          <div class="p-d-flex p-flex-row sumOfPrice" dir="rtl">
             <div class="p-ml-auto text-muted"> قیمت محصول  :</div>
-            <div class="p-mr-3 text-muted">{{150000|number}}</div>
+            <div class="p-mr-3 text-muted">{{sumOfPrice|number}}</div>
           </div>
         <mat-card-content>
           <mat-divider></mat-divider>
@@ -47,15 +48,15 @@
 
           <button mat-button type="button" class=" p-mt-3">ثبت</button>
           <mat-divider class="p-mt-4"></mat-divider>
-          <div class="p-d-flex p-flex-row" dir="rtl">
+          <div class="p-d-flex p-flex-row sumOfPrice" dir="rtl">
             <div class="p-ml-auto text-muted"> مبلغ قابل پرداخت:</div>
-            <div class="p-mr-3 text-muted">{{150000|number}}</div>
+            <div class="p-mr-3 text-muted">{{sumOfPrice|number}}</div>
           </div>
         </mat-card-content>
         <mat-card-actions>
           <div class=" text-center">
 <!--           <button pButton type="button" label="ادامه فرآیند خرید" class="p-button-success"></button>-->
-            <button class="btn"  style="background-color: #ff5000;color: #ffffff;font-size: 14px">ادامه فرآیند خرید</button>
+            <button class="btn"  style="background-color: #ff5000;color: #ffffff;font-size: 14px" (click)="onPayment()">ادامه فرآیند خرید</button>
 
           </div>
         </mat-card-actions>

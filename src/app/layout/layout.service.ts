@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Teacher} from '../Core/LayoutAdmin/teacher/teacher.model';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,8 @@ export class LayoutService {
   }
   register(data: any): Observable<Teacher[]> {
     return this.http.post<Teacher[]>('http://api.hd724.com/api/v1/teacher/register', data);
+  }
+  onPayment(data: any): any {
+    return this.http.post('http://api.hd724.com/api/v1/users/payment', data);
   }
 }

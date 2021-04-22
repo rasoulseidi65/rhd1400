@@ -88,6 +88,7 @@
 }
 .container-fluid .row-description-period .col-md-12{
   text-align: justify;
+  font-family: IRANSans_Light;
 }
 .container-fluid .row-description-period p{
   font-family: mitra-font;

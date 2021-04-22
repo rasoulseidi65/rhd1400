@@ -6,6 +6,7 @@ import {DetailsComponent} from '../details/details.component';
 import {CartComponent} from './cart/cart.component';
 import {ContentAllComponent} from './film/hottest-content/content-all/content-all.component';
 import {QuestionsArticalComponent} from './film/hottest-content/questions-artical/questions-artical.component';
+import {CallBackComponent} from './call-back/call-back.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'questionDettail',
     component: QuestionsArticalComponent
+  },
+  {
+    path: 'call-back/:success',
+    component:  CallBackComponent
   },
 ];
 

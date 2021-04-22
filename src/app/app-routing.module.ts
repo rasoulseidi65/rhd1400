@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AuthGuard} from './auth/auth.guard';
+
 
 
 
@@ -56,6 +56,7 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+
   {
     path: '**',
     loadChildren: () => import('./error404/error404.module').then(m => m.Error404Module)

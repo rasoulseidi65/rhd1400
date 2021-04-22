@@ -41,6 +41,7 @@ import {MatButtonModule, MatCardModule, MatDividerModule, MatGridListModule, Mat
 import {AllCantentComponent} from './film/all-cantent/all-cantent.component';
 import { QuestionsArticalComponent } from './film/hottest-content/questions-artical/questions-artical.component';
 import {DeviceDetectorService} from 'ngx-device-detector';
+import {CallBackComponent} from './call-back/call-back.component';
 
 
 
@@ -53,7 +54,7 @@ import {DeviceDetectorService} from 'ngx-device-detector';
     CenterMenuComponent,MenuComponent,FooterComponent,
     CartComponent, CooperationComponent,HottestContentComponent,
     MostDownloadsComponent,MostPopularContentComponent,
-    ContentAllComponent,AllCantentComponent, QuestionsArticalComponent ],
+    ContentAllComponent,AllCantentComponent, QuestionsArticalComponent,CallBackComponent ],
   imports: [
     CommonModule,
     LayoutRoutingModule,
@@ -84,7 +85,7 @@ import {DeviceDetectorService} from 'ngx-device-detector';
   exports: [IndexComponent,
     HeaderComponent,
     FilmComponent, ArticleComponent, CommentComponent,
-    TopMenuComponent, CenterMenuComponent,MenuComponent,FooterComponent],
+    TopMenuComponent, CenterMenuComponent,MenuComponent,FooterComponent,CallBackComponent],
   providers: [DeviceDetectorService],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -7,16 +7,7 @@
   font-size: 17px;
   font-family: IRANSans_Bold;
 }
-::ng-deep .container-fluid .ui-accordion .header-cours a {
-  border-bottom: 1px solid #eeeeee!important;
-  color: #000000!important;
-  background-color: #eeeeee!important;
-
-}
-::ng-deep .container-fluid  .ui-accordion .ui-accordion-content {
-  background-color: #ffffff!important;
-  border: none!important;
-}
-::ng-deep .container-fluid  .ui-accordion .header-cours a .ui-accordion-toggle-icon {
-  color: #000000!important;
+::ng-deep .container-fluid th.ng-star-inserted {
+  font-family: IRANSans_Bold;
+  text-align: center;
 }

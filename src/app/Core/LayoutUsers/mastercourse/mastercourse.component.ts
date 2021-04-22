@@ -121,7 +121,7 @@ export class MastercourseComponent implements OnInit {
       ...this.episodeForm.value
     });
     this.listEpisodeFlag = true;
-    console.log(this.lisEpisode)
+
   }
 
   postEpisod(i: any) {

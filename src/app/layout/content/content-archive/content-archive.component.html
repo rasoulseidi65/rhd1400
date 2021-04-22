@@ -7,7 +7,7 @@
         <span class="panel-title"><i class="fas fa-chalkboard-teacher"></i>مدرس دوره</span>
       </div>
       <div class="panel-body">
-        <img class="img-circle img-responsive" src="/assets/bootstrap/img/default.png" alt=""><span>{{data['CustomerUser'][0]['firstName'] +data['CustomerUser'][0]['lastName']}}</span>
+        <img class="img-circle img-responsive" src="/assets/bootstrap/img/default.png" alt=""><span>{{data['CustomerUser'][0]['firstName'] +' '+data['CustomerUser'][0]['lastName']}}</span>
         <br><a class="panel-footer">اطلاعات بیشتر </a>
       </div>
     </div>
@@ -23,7 +23,7 @@
       </div>
       <div class="panel-body">
         <ul>
-          <li><span><i class="fas fa-user"></i>مدرس:</span><p>{{data['CustomerUser'][0]['firstName'] +data['CustomerUser'][0]['lastName']}}</p></li>
+          <li><span><i class="fas fa-user"></i>مدرس:</span><p>{{data['CustomerUser'][0]['firstName']+' ' +data['CustomerUser'][0]['lastName']}}</p></li>
           <li><span><i class="fas fa-th"></i>تعداد جلسات:</span><p>{{data['Episode'].length}}</p></li>
           <li><span><i class="fas fa-clock-o"></i>زمان:</span><p>{{data['timeCourse']}}</p></li>
           <li><span><i class="fas fa-hdd"></i>حجم:</span><p>{{data['sizeCourse']}}</p></li>

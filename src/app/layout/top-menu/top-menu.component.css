@@ -703,7 +703,8 @@
   color: #ff5000;
   font-family: IRANSans_Bold;
   position: relative;
-  top: -48px;
+  font-size: 14px;
+  top: -35px;
 }
 .btn{
   font-family: IRANSans_Bold;

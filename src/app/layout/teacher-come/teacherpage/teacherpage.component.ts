@@ -55,12 +55,10 @@ export class TeacherpageComponent implements OnInit {
       if (response['success'] === true) {
         this.pathCV = response['imagePath'];
         this.userform.get('CVpath').setValue( this.pathCV);
-
-        console.log(response);
         this.messageService.add({severity: 'success', summary: 'آپلود با موفقیت', detail: 'مدرس محترم: رزمه با موفقیت آپلود شد'});
 
       } else {
-        console.log(response);
+
       }
     });
   }

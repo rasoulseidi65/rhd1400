@@ -3,6 +3,7 @@ import {LayoutService} from '../../../layout.service';
 import {QuestionDetailModel} from './questionDetail.model';
 import {CartService} from '../../../../serviceCart/cart.service';
 import {MessageService} from 'primeng/api';
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -16,8 +17,10 @@ export class QuestionsArticalComponent implements OnInit {
   cols: any[];
   public QuestionDetail: QuestionDetailModel[] = [];
   constructor( private service: LayoutService,
-  private serviceCart: CartService) { }
+  private serviceCart: CartService,
+               private route: ActivatedRoute) { }
   displayBasic:boolean;
+  majorID:string;
   ngOnInit() {
     this.cols = [
       {field: 'title', header: 'عنوان'},
@@ -30,11 +33,16 @@ export class QuestionsArticalComponent implements OnInit {
     this.questionget();
   }
  questionget(){
-    this.service.getQuestion().subscribe((result)=>{
+   this.route.paramMap.subscribe(params =>
+     this.majorID = params.get('id'));
+   let data = {
+     majorID: this.majorID
+   };
+    this.service.findByMajorID(data).subscribe((result)=>{
       if (result['success'] === true){
         this.listquestion=result['data'];
         // this.QuestionDetail=result['data'];
-        // console.log( this.QuestionDetail)
+         console.log(result)
       }
     });
  }

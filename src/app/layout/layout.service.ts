@@ -46,4 +46,7 @@ export class LayoutService {
   onPayment(data: any): any {
     return this.http.post('http://api.hd724.com/api/v1/users/payment', data);
   }
+  findByMajorID(data: any): any {
+    return this.http.post('http://api.hd724.com/api/v1/admin/findByMajorID', data);
+  }
 }

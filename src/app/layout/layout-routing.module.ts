@@ -31,7 +31,7 @@ const routes: Routes = [
     component: CartComponent
   },
   {
-    path: 'questionDettail',
+    path: 'questionDettail/:id',
     component: QuestionsArticalComponent
   },
   {

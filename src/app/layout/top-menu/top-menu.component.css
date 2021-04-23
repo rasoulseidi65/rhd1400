@@ -702,8 +702,8 @@
 .countBadge{
   color: #ff5000;
   font-family: IRANSans_Bold;
-  font-size: 14px;
-  margin-top: -30px;
+  position: relative;
+  top: -48px;
 }
 .btn{
   font-family: IRANSans_Bold;

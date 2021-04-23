@@ -25,8 +25,8 @@
         <td>{{item.title}}</td>
         <td>{{item.count}}</td>
         <td>{{item.typeQuestion}}</td>
-        <td>{{item.price}}</td>
-        <td><p (click)="addCart(item)">اضافه به سبد خرید</p></td>
+        <td>{{item.price}}تومان</td>
+        <td><i (click)="addCart(item)" class="fas fa-shopping-cart"></i></td>
 
       </tr>
 
@@ -36,7 +36,41 @@
   <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
 
 </div>
+<div class="container">
+  <div class="row">
+    <div class="caption text-center">
+      <span>دانلود جزوات دانشگاهی</span>
+    </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">ردیف</th>
+        <th scope="col">عنوان</th>
+        <th scope="col">استاد</th>
+        <th scope="col">مقطع</th>
+        <th scope="col">رشته</th>
+        <th scope="col">قیمت</th>
+        <th scope="col">خرید</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of listquestion;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{item.title}}</td>
+        <td>رسول صیدی پیری</td>
+        <td>کارشناسی</td>
+        <td>حقوق</td>
+        <td>{{item.price}}تومان</td>
+        <td><i (click)="addCart(item)" class="fas fa-shopping-cart"></i></td>
 
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
+
+</div>
 
 <p-toast position="center"></p-toast>
 <p-dialog [(visible)]="displayBasic" [style]="{width: '30rem'}" [baseZIndex]="10000" dir="rtl">

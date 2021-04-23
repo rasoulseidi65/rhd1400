@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AdminService} from '../../../../Core/LayoutAdmin/admin.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {SelectItem} from 'primeng/api';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-content-all',
@@ -14,7 +15,9 @@ export class ContentAllComponent implements OnInit {
   grade: SelectItem[];
   major: SelectItem[];
   resultMajor:string[];
-  constructor(private service: AdminService , private fb: FormBuilder) {
+  type:string;
+  constructor(private service: AdminService , private fb: FormBuilder, private route: ActivatedRoute
+) {
     this.grade = [
       {label: 'انتخاب کنید', value: 'انتخاب کنبد'}
 
@@ -26,6 +29,8 @@ export class ContentAllComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params =>
+      this.type = params.get('type'));
     this.getlistshcool();
     this.getmajor();
     this.getgrade();
@@ -34,12 +39,12 @@ export class ContentAllComponent implements OnInit {
   getlistshcool(){
     this.service.GetMajor().subscribe((result)=>{
       if (result['success'] === true){
-        this.listshcool=result['data'];console.log(result)
+        this.listshcool=result['data'];
       }
     });
   }
   getMajorTitle(e){
-    console.log(this.resultMajor);
+
     this.major.splice(0,this.major.length);
     this.major.push({
       label:'انتخاب کنید',

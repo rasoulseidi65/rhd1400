@@ -23,7 +23,7 @@ const routes: Routes = [
     loadChildren: () => import('./article/detailarticle/detailarticle.module').then(m => m.DetailarticleModule)
   },
   {
-    path: 'content-all',
+    path: 'content-all/:type',
     component: ContentAllComponent
   },
   {

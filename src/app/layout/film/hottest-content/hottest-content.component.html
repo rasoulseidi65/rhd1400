@@ -29,15 +29,15 @@
         <ng-template carouselSlide>
 
           <div class="thumbnail thumbnail-body-film">
-            <a [routerLink]="['content-all']">
+            <a [routerLink]="['content-all','question']">
               <div class="panel-heading">
                 <img class="img-responsive" src="./../../../../assets/bootstrap/img/daneshga.jpg"  alt="">
               </div>
               <div class="panel-body">
-                <a href="#"><span><i class="fa fa-circle"></i>نمونه سوالات امتحانی دانشگاهی</span></a>
+                <a [routerLink]="['content-all','question']"><span><i class="fa fa-circle"></i>نمونه سوالات امتحانی دانشگاهی</span></a>
               </div>
             </a>
-            <a routerLink="/detail">
+            <a [routerLink]="['content-all','question']">
               <div class="panel-footer">
                 <img class="img-responsive img-circle" src="./../../../../assets/bootstrap/img/logo.png" alt="">
                 <span class="pull-left" >همراه دانش</span>
@@ -49,15 +49,15 @@
         <ng-template carouselSlide>
 
           <div class="thumbnail thumbnail-body-film">
-            <a [routerLink]="['content-all']">
+            <a [routerLink]="['content-all','handout']">
               <div class="panel-heading">
                 <img class="img-responsive" src="./../../../../assets/bootstrap/img/jozveh.jpg"  alt="">
               </div>
               <div class="panel-body">
-                <a href="#"><span><i class="fa fa-circle"></i>جزوه های درسی دانشگاه </span></a>
+                <a [routerLink]="['content-all','handout']"><span><i class="fa fa-circle"></i>جزوه های درسی دانشگاه </span></a>
               </div>
             </a>
-            <a routerLink="/detail">
+            <a [routerLink]="['content-all','handout']">
               <div class="panel-footer">
                 <img class="img-responsive img-circle" src="./../../../../assets/bootstrap/img/logo.png" alt="">
                 <span class="pull-left" >همراه دانش</span>

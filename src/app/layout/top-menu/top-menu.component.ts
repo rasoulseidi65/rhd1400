@@ -1,6 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {DeviceDetectorService} from 'ngx-device-detector';
 import {CartService} from '../../serviceCart/cart.service';
+import {Router} from '@angular/router';
+import {LocalStorageService} from '../../auth/localStorageLogin/local-storage.service';
 
 @Component({
   selector: 'app-top-menu',
@@ -8,16 +10,19 @@ import {CartService} from '../../serviceCart/cart.service';
   styleUrls: ['./top-menu.component.css']
 })
 export class TopMenuComponent implements OnInit {
-  @ViewChild('basketDropDown',{static: false}) basketDropDown: ElementRef;
-  @ViewChild('category',{static: false}) category: ElementRef;
-  @ViewChild('navBar',{static: false}) navBar: ElementRef;
+  @ViewChild('basketDropDown', {static: false}) basketDropDown: ElementRef;
+  @ViewChild('category', {static: false}) category: ElementRef;
+  @ViewChild('navBar', {static: false}) navBar: ElementRef;
   cartlist: any[] = [];
-  lengthCartlist= 0;
+  lengthCartlist = 0;
   sumOfPrice = 0;
   countBadge = 0;
   showCartList = true;
+
   constructor(private deviceService: DeviceDetectorService,
-              private serviceCart: CartService,) {
+              private serviceCart: CartService,
+              private route: Router,
+              private localstorage: LocalStorageService) {
   }
 
   ngOnInit(): void {
@@ -42,6 +47,7 @@ export class TopMenuComponent implements OnInit {
     this.basketDropDown.nativeElement.classList.remove('indicator-display');
     this.basketDropDown.nativeElement.classList.remove('indicator-open');
   }
+
   getAllPrice(): void {
     this.cartlist = this.serviceCart.getItems();
     this.sumOfPrice = 0;
@@ -52,7 +58,7 @@ export class TopMenuComponent implements OnInit {
       if (this.cartlist.length > 0) {
         for (let i = 0; i < this.cartlist.length; i++) {
           this.countBadge++;
-          this.sumOfPrice += Number(this.cartlist[i]['cartList'].price)
+          this.sumOfPrice += Number(this.cartlist[i]['cartList'].price);
           this.showCartList = false;
         }
       }
@@ -64,5 +70,15 @@ export class TopMenuComponent implements OnInit {
     this.serviceCart.deleteItem(item);
     this.cartlist = this.serviceCart.getItems();
     this.getAllPrice();
+  }
+
+  goPageCart() {
+    this.localstorage.getCurrentUser();
+    if (this.localstorage.userJson != null) {
+      this.route.navigate(['/home/cart']);
+    }
+    else{
+      this.route.navigate(['/auth/login']);
+    }
   }
 }

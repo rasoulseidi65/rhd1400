@@ -18,7 +18,7 @@ import {GalleriaModule} from 'primeng/galleria';
 import {
   AccordionModule,
   ButtonModule,
-  CardModule,
+  CardModule, DialogModule,
   InputTextareaModule, InputTextModule,
   OrderListModule, PaginatorModule,
   PanelModule,
@@ -79,6 +79,7 @@ import {CallBackComponent} from './call-back/call-back.component';
     MatDividerModule,
     MatListModule,
     MatIconModule,
+    DialogModule,
 
 
   ],

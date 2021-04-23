@@ -578,7 +578,7 @@
   line-height: 24px;
   padding: 16px 20px 0;
   font-family: IRANSans_Bold;
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .dropcart__totals table {
@@ -704,4 +704,7 @@
   font-family: IRANSans_Bold;
   font-size: 14px;
   margin-top: -30px;
+}
+.btn{
+  font-family: IRANSans_Bold;
 }

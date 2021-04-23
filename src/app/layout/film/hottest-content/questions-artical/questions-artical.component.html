@@ -16,7 +16,7 @@
         <th scope="col">تعداد سوال</th>
         <th scope="col">نوع سوالات</th>
         <th scope="col">قیمت</th>
-        <th scope="col">دانلود</th>
+        <th scope="col">خرید</th>
       </tr>
       </thead>
       <tbody>
@@ -26,7 +26,8 @@
         <td>{{item.count}}</td>
         <td>{{item.typeQuestion}}</td>
         <td>{{item.price}}</td>
-        <td><p (click)="addCart(item)">سبد خرید</p></td>
+        <td><p (click)="addCart(item)">اضافه به سبد خرید</p></td>
+
       </tr>
 
       </tbody>
@@ -37,51 +38,23 @@
 </div>
 
 
+<p-toast position="center"></p-toast>
+<p-dialog [(visible)]="displayBasic" [style]="{width: '30rem'}" [baseZIndex]="10000" dir="rtl">
+  <p-header>
+    <p>انجام شد</p>
+  </p-header>
+  <p class="text-right text-success mt-2">محصول با موفقیت به سبد خرید اضافه شد</p>
+  <p class="text-right textDialog">برای ثبت نهایی سفارش بر روی دکمه ی مشاهده سبد خرید کلیک کنید و برای افزودن دیگر
+    محصولات به سبد خرید، بر روی دکمه ی ادامه کلیک کنید.</p>
+  <hr style="margin-bottom: -15px"/>
+  <p-footer class="p-d-flex">
+    <button pButton pRipple type="button" (click)="displayBasic=false" label="ادامه"
+            class="p-button-danger p-ml-auto"></button>
+    <button pButton pRipple type="button" (click)="displayBasic=false" label="مشاهده سبد خرید"
+            class="p-button-danger" [routerLink]="['../cart']"></button>
 
-<!--<p-table [value]="QuestionDetail" #dt [columns]="cols" [paginator]="true" [rows]="5">-->
-<!--  <ng-template pTemplate="header">-->
-<!--    <tr class="title-table">-->
-<!--      <th style="width: 5%" class="text-center">ردیف</th>-->
-<!--      <th class="text-center">عنوان سوال</th>-->
-<!--      <th class="text-center">تعداد سوالات</th>-->
-<!--      <th class="text-center">نوع سوالات</th>-->
-<!--      <th class="text-center">مقطع تحصیلی</th>-->
-<!--      <th style="width: 20%" class="text-center">رشته تحصیلی</th>-->
-<!--      <th style="width: 20%" class="text-center">قیمت</th>-->
-<!--      <th style="width: 6%" class="text-center">خرید</th>-->
+  </p-footer>
+</p-dialog>
 
-<!--    </tr>-->
-<!--    <tr>-->
-<!--      <th></th>-->
-<!--      <th *ngFor="let col of cols" [ngSwitch]="col.field" style="width: 10%">-->
-<!--        <input class="input-filter text-center" placeholder="جستجوی عنوان سوال" *ngSwitchCase="'title'" pInputText-->
-<!--               type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">-->
-<!--        <input class="input-filter text-center" placeholder="جستجوی تعداد سوالات" *ngSwitchCase="'count'" pInputText-->
-<!--               type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">-->
-<!--        <input class="input-filter text-center" placeholder="جستجوی نوع سوالات" *ngSwitchCase="'typeQuestion'" pInputText-->
-<!--               type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">-->
-<!--        <input class="input-filter text-center" placeholder="جستجوی مقطع تحصیلی" *ngSwitchCase="'abstract'" pInputText-->
-<!--               type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">-->
-<!--        <input class="input-filter text-center" placeholder="جستجوی رشته تحصیلی" *ngSwitchCase="'author'" pInputText-->
-<!--               type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">-->
-<!--        <input class="input-filter text-center" placeholder="جستجوی قیمت" *ngSwitchCase="'price'" pInputText-->
-<!--               type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">-->
-
-<!--      </th>-->
-<!--    </tr>-->
-<!--  </ng-template>-->
-<!--  <ng-template pTemplate="body" let-paper let-rowIndex="rowIndex">-->
-<!--    <tr>-->
-<!--      <td class="text-center">{{rowIndex + 1}}</td>-->
-<!--      <td class="text-center">{{paper.title}}</td>-->
-<!--      <td class="text-center">{{paper.count}}</td>-->
-<!--      <td class="text-center">{{paper.typeQuestion}}</td>-->
-<!--      <td class="text-center">{{paper.grade[0]['title']}}</td>-->
-<!--      <td class="text-center">{{paper.Major[0]['title']}}</td>-->
-<!--      <td class="text-center">{{paper.price}}</td>-->
-<!--    </tr>-->
-<!--  </ng-template>-->
-
-<!--</p-table>-->
 
 <app-footer></app-footer>

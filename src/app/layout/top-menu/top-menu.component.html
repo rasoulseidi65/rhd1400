@@ -47,7 +47,7 @@
                         <span class="dropcart__product-quantity">{{item['cartList'].price|number}} تومان </span>
                       </div>
                     </div>
-                    <i class="fa fa-close fa-1x mr-auto" style="color:#c33" (click)="onDeleteCart(item)"></i>
+                    <i class="pi pi-trash fa-1x mr-auto" style="color:#c33" (click)="onDeleteCart(item)"></i>
                   </div>
                 </div>
                 <div class="dropcart__products-list" *ngIf="lengthCartlist === 0">
@@ -66,7 +66,7 @@
                   </table>
                 </div>
                 <div class="dropcart__buttons">
-                  <button class="btn"   [routerLink]="['/home/cart']" style="background-color: #03af8c;color: #ffffff;font-size: 14px"
+                  <button class="btn"  (click)="goPageCart()"  style="background-color: #03af8c;color: #ffffff;font-size: 14px"
                   >مشاهده سبد و تکمیل خرید
                   </button>
                 </div>

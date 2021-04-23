@@ -5,6 +5,7 @@ import {CartService} from '../../serviceCart/cart.service';
 import {LayoutService} from '../layout.service';
 import {LocalStorageService} from '../../auth/localStorageLogin/local-storage.service';
 import * as moment from 'jalali-moment';
+import {Router} from '@angular/router';
 
 export interface Section {
   name: string;
@@ -47,7 +48,8 @@ export class CartComponent implements OnInit {
 
   constructor(private serviceCart: CartService,
               private service: LayoutService,
-              private localstorage: LocalStorageService) {
+              private localstorage: LocalStorageService,
+              private route: Router) {
   }
 
   ngOnInit(): void {
@@ -82,20 +84,26 @@ export class CartComponent implements OnInit {
 
   onPayment() {
     this.localstorage.getCurrentUser();
-    this.payment.userID = this.localstorage.userJson['_id'];
-    this.payment.mobile = this.localstorage.userJson['mobile'];
-    this.payment.date = moment(Date.now()).locale('fa').format('YYYY/M/D');
-    this.payment.time = moment(Date.now()).locale('fa').format('HH:mm:ss');
-    this.payment.price = this.sumOfPrice.toString()
-    let data = {
-      product: JSON.parse(localStorage.getItem('cartList')),
-      user: this.payment,
-    };
-    this.service.onPayment(data).subscribe((response) => {
-      let url = response['data'];
-      console.log(response);
-      document.location.href = url;
-    });
+    this.localstorage.getCurrentUser();
+    if (this.localstorage.userJson != null) {
+      this.payment.userID = this.localstorage.userJson['_id'];
+      this.payment.mobile = this.localstorage.userJson['mobile'];
+      this.payment.date = moment(Date.now()).locale('fa').format('YYYY/M/D');
+      this.payment.time = moment(Date.now()).locale('fa').format('HH:mm:ss');
+      this.payment.price = this.sumOfPrice.toString();
+      let data = {
+        product: JSON.parse(localStorage.getItem('cartList')),
+        user: this.payment,
+      };
+      this.service.onPayment(data).subscribe((response) => {
+        let url = response['data'];
+        console.log(response);
+        document.location.href = url;
+      });
+    } else {
+      this.route.navigate(['/auth/login']);
+    }
+
   }
 }
 

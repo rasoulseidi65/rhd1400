@@ -32,6 +32,9 @@ mat-list-item{
 }
 .card-title{
   font-family: IRANSans_Bold;
+  text-align: center;
+  font-size: 16px;
+
 }
 input {
   background: #dedede;
@@ -49,4 +52,10 @@ input {
 }
 .btn{
   font-family: IRANSans_Bold;
+}
+.ecart{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  //width: 50%;
 }

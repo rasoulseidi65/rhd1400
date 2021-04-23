@@ -97,7 +97,6 @@ export class CartComponent implements OnInit {
       };
       this.service.onPayment(data).subscribe((response) => {
         let url = response['data'];
-        console.log(response);
         document.location.href = url;
       });
     } else {

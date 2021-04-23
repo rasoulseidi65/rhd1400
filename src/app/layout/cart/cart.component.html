@@ -2,7 +2,7 @@
 <app-center-menu></app-center-menu>
 <!--<p-toast [baseZIndex]="999999999" dir="rtl" position="center"></p-toast>-->
 
-<div class="container p-mt-3">
+<div class="container p-mt-3" *ngIf="countBadge">
   <div class="p-grid">
     <div class="p-col-12 p-md-8 p-lg-8">
       <mat-card class="example-card">
@@ -65,5 +65,19 @@
   </div>
 </div>
 
+<div class="container p-mt-3" *ngIf="!countBadge">
+  <mat-card class="example-card">
+    <mat-card-content>
 
+      <div class="card mb-3" dir="rtl" >
+            <div class="card-body">
+              <img class="ecart"  src="../../../assets/img/ecart.svg" width="120" alt="سبد خرید شما خالی است">
+              <h5 class="card-title text-muted">سبد خرید شما خالی است</h5>
+              <h6 class="card-title ">برای خرید دوره های آموزشی به <a routerLink="/">این صفحه</a> مراجعه کنید</h6>
+            </div>
+        </div>
+    </mat-card-content>
+
+  </mat-card>
+</div>
 

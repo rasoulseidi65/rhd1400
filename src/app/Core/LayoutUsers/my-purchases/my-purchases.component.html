@@ -14,20 +14,20 @@
             <table class="table  table-striped table-hover table-condensed table-responsive">
               <thead>
               <tr>
-                <th>شناسه سفارش</th>
+                <th>شناسه تراکنش</th>
                 <th>تاریخ خرید</th>
+                <th>زمان خرید</th>
                 <th>مبلغ</th>
                 <th>وضعیت</th>
-                <th>کد رهگیری</th>
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <th><a routerLink="../course">3210</a></th>
-                <th>1399/12/12</th>
-                <th>800000</th>
-                <th><span>پرداخت شده</span></th>
-                <th>123456789</th>
+              <tr *ngFor="let item of listbaske">
+                <th><a routerLink="../course">{{item.refID}}</a></th>
+                <th>{{item.date}}</th>
+                <th>{{item.time}}</th>
+                <th>{{item.price}}</th>
+                <th><span>{{item.success}}</span></th>
               </tr>
               </tbody>
             </table>

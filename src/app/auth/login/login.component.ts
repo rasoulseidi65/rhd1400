@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(value: string) {
     this.UserService.login(this.userform.value).subscribe((response) => {
-      console.log(response)
       if (response['success'] === true) {
        let data=response['data']
        this.localstorage.saveCurrentUser(JSON.stringify(data));

@@ -23,4 +23,9 @@ export class LayoutuserService {
   UpdateUser(data: any, id: any){
     return this.http.put('http://api.hd724.com/api/v1/users/updateUser/' +id , data);
   }
+  getbasket(id) {
+    return this.http.get('http://api.hd724.com/api/v1/users/basketList/'+ id);
+  }
 }
+//پوش کن هر چیزی اوکی شد.
+//من پوش کردم

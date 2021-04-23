@@ -13,6 +13,7 @@ export class TopMenuComponent implements OnInit {
   @ViewChild('basketDropDown', {static: false}) basketDropDown: ElementRef;
   @ViewChild('category', {static: false}) category: ElementRef;
   @ViewChild('navBar', {static: false}) navBar: ElementRef;
+  @ViewChild('accountDropDown',  {static: false}) accountDropDown: ElementRef;
   cartlist: any[] = [];
   lengthCartlist = 0;
   sumOfPrice = 0;
@@ -79,6 +80,19 @@ export class TopMenuComponent implements OnInit {
     }
     else{
       this.route.navigate(['/auth/login']);
+    }
+  }
+  toggleAccountDropDown(): void {
+    this.accountDropDown.nativeElement.classList.toggle('topbar-dropdown--opened');
+  }
+
+  closeAccountDropDown(): void {
+    this.accountDropDown.nativeElement.classList.remove('topbar-dropdown--opened');
+  }
+
+  openAccountDropDown(): void {
+    if (this.deviceService.isDesktop() === true) {
+      this.accountDropDown.nativeElement.classList.add('topbar-dropdown--opened');
     }
   }
 }

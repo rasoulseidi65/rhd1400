@@ -24,12 +24,12 @@ export class TeacherpageComponent implements OnInit {
 
   ngOnInit() {
     this.userform = this.fb.group({
-      'type': new FormControl('teacher'),
-      'firstname': new FormControl('', Validators.required),
-      'email': new FormControl('', Validators.compose([Validators.required, Validators.email])),
-      'mobile': new FormControl('', Validators.compose([Validators.required, Validators.minLength(11), Validators.maxLength(11)])),
-      'password': new FormControl('', [Validators.required]),
-      'CVpath': new FormControl('')
+      type: new FormControl('teacher'),
+      firstname: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.compose([Validators.required, Validators.email])),
+      mobile: new FormControl('', Validators.compose([Validators.required, Validators.minLength(11), Validators.maxLength(11)])),
+      password: new FormControl('', [Validators.required]),
+      CVpath: new FormControl('')
     });
   }
   onSubmit(value: string) {
@@ -51,15 +51,12 @@ export class TeacherpageComponent implements OnInit {
     for (let i = 0; i < event.files.length; i++) {
       formData.append('image', event.files[i], event.files[i]['name']);
     }
-
     this.UsersService.uploadFile(formData).subscribe((response) => {
       if (response['success'] === true) {
-
         this.pathCV = response['imagePath'];
-        this.userform.patchValue({
-          CVpath:   this.pathCV
-        });
+        this.userform.get('CVpath').setValue( this.pathCV);
 
+        console.log(response);
         this.messageService.add({severity: 'success', summary: 'آپلود با موفقیت', detail: 'مدرس محترم: رزمه با موفقیت آپلود شد'});
 
       } else {

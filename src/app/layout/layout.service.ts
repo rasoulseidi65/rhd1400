@@ -41,7 +41,7 @@ export class LayoutService {
     return this.http.post('http://api.hd724.com/api/v1/users/image', image);
   }
   register(data: any): Observable<Teacher[]> {
-    return this.http.post<Teacher[]>('http://api.hd724.com/api/v1/teacher/register', data);
+    return this.http.post<Teacher[]>('http://api.hd724.com/api/v1/users/register', data);
   }
   onPayment(data: any): any {
     return this.http.post('http://api.hd724.com/api/v1/users/payment', data);

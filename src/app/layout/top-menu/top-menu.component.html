@@ -20,6 +20,7 @@
         <li><a href="#"><span class="fa fa-search"></span>جستجو</a></li>
         <li><a routerLink="/teacher"><span class="fa fa-user"></span>مدرس شوید</a></li>
         <li><a routerLink="/auth/login"><span class="fa fa-key"></span>ورود</a></li>
+
         <div class="indicator" #basketDropDown (clickOutside)="closeBasketDropDown()"
              (mouseleave)="closeBasketDropDown()">
           <a class="indicator__button" (click)="toggleBasketDropDown()" (mouseover)="openBasketDropDown()">

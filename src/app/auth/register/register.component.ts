@@ -32,6 +32,7 @@ export class RegisterComponent implements OnInit {
       email: new FormControl('', Validators.compose([Validators.required, Validators.email])),
       mobile: new FormControl('', Validators.compose([Validators.required, Validators.minLength(11), Validators.maxLength(11)])),
       password: new FormControl('', [Validators.required]),
+      type: new FormControl('user'),
     });
   }
 
@@ -39,7 +40,6 @@ export class RegisterComponent implements OnInit {
     this.submitted = true;
       this.UsersService.register(this.userform.value).subscribe((response) => {
         if (response['success'] === true) {
-          let data=response['data']
           this.localstorage.saveCurrentUser(this.userform.value);
           this.router.navigate(['/']);
           this.messageService.add({severity: 'success', summary: 'ثبت با موفقیت', detail: 'کاربر مشخصات با موفقیت ثبت شد'});

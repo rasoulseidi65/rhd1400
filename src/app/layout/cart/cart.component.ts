@@ -7,6 +7,7 @@ import {LocalStorageService} from '../../auth/localStorageLogin/local-storage.se
 import * as moment from 'jalali-moment';
 import {Router} from '@angular/router';
 
+
 export interface Section {
   name: string;
   updated: Date;
@@ -49,7 +50,8 @@ export class CartComponent implements OnInit {
   constructor(private serviceCart: CartService,
               private service: LayoutService,
               private localstorage: LocalStorageService,
-              private route: Router) {
+              private route: Router,
+            ) {
   }
 
   ngOnInit(): void {

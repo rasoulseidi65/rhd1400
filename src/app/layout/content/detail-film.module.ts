@@ -11,20 +11,22 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ButtonModule} from 'primeng/button';
 import {MessageModule} from 'primeng/message';
 import {PanelModule} from 'primeng/panel';
+import {DialogModule} from 'primeng/dialog';
 
 
 @NgModule({
   declarations: [ContentArchiveComponent,ContentBodyComponent,ContentCommentsComponent,ContentComponent],
-  imports: [
-    CommonModule,
-    DetailFilmRoutingModule,
-    LayoutModule,
-    ReactiveFormsModule,
-    ButtonModule,
-    FormsModule,
-    MessageModule,
-    PanelModule
-  ],
+    imports: [
+        CommonModule,
+        DetailFilmRoutingModule,
+        LayoutModule,
+        ReactiveFormsModule,
+        ButtonModule,
+        FormsModule,
+        MessageModule,
+        PanelModule,
+        DialogModule
+    ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],

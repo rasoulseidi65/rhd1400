@@ -8,6 +8,7 @@ import {CartService} from '../../../serviceCart/cart.service';
 })
 export class ContentArchiveComponent implements OnInit {
   @Input() data: any;
+  displayBasic:boolean;
   constructor(private serviceCart:CartService) { }
 
   ngOnInit(): void {
@@ -17,14 +18,8 @@ export class ContentArchiveComponent implements OnInit {
     // },3000)
   }
   addCart(product: any): void {
-      const list = {
-        cartList: product,
-        number: 1
-      };
-      this.serviceCart.addToCart(list);
-      // this.messageService.add({severity: 'success', summary: ' سبد خرید ', detail: 'کالا به سبد خرید اضافه شد'});
-
-
+      this.serviceCart.addToCart(product);
+    this.displayBasic = true;
   }
 
 }

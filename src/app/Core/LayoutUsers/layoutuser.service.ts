@@ -27,5 +27,4 @@ export class LayoutuserService {
     return this.http.get('http://api.hd724.com/api/v1/users/basketList/'+ id);
   }
 }
-//پوش کن هر چیزی اوکی شد.
-//من پوش کردم
+

@@ -66,3 +66,10 @@
   display: none!important;
 
 }
+:host::ng-deep.container .row .table i.fas.fa-shopping-cart {
+  background: #009c7d;
+  padding:5px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 20px;
+}

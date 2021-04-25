@@ -3,7 +3,7 @@
 <app-menu></app-menu>
 <app-header></app-header>
 
-<div class="container">
+<div class="container" *ngIf="type=='question'">
   <div class="row">
     <div class="caption text-center">
       <span>دانلود نمونه سوالات امتحانی</span>
@@ -36,7 +36,7 @@
   <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
 
 </div>
-<div class="container">
+<div class="container" *ngIf="type=='handout'">
   <div class="row">
     <div class="caption text-center">
       <span>دانلود جزوات دانشگاهی</span>

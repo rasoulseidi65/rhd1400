@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LayoutService} from '../../../layout.service';
 import {QuestionDetailModel} from './questionDetail.model';
 import {CartService} from '../../../../serviceCart/cart.service';
@@ -13,15 +13,24 @@ import {ActivatedRoute} from '@angular/router';
   providers: [MessageService]
 })
 export class QuestionsArticalComponent implements OnInit {
-  listquestion:any[];
+  listquestion: any[];
   cols: any[];
   public QuestionDetail: QuestionDetailModel[] = [];
-  constructor( private service: LayoutService,
-  private serviceCart: CartService,
-               private route: ActivatedRoute) { }
-  displayBasic:boolean;
-  majorID:string;
+
+  constructor(private service: LayoutService,
+              private serviceCart: CartService,
+              private route: ActivatedRoute) {
+  }
+
+  displayBasic: boolean;
+  majorID: string;
+  type: string;
+
   ngOnInit() {
+    this.route.paramMap.subscribe(params =>
+      this.majorID = params.get('id'));
+    this.route.paramMap.subscribe(params =>
+      this.type = params.get('type'));
     this.cols = [
       {field: 'title', header: 'عنوان'},
       {field: 'count', header: 'تعداد سوال'},
@@ -30,24 +39,40 @@ export class QuestionsArticalComponent implements OnInit {
       {field: 'author', header: 'نویسنده'},
       {field: 'price', header: 'تاریخ'}
     ];
-    this.questionget();
+    if (this.type == 'handout') {
+      this.getHandout();
+    } else {
+      this.getQuestion();
+    }
   }
- questionget(){
-   this.route.paramMap.subscribe(params =>
-     this.majorID = params.get('id'));
-   let data = {
-     majorID: this.majorID
-   };
-    this.service.findByMajorID(data).subscribe((result)=>{
-      if (result['success'] === true){
-        this.listquestion=result['data'];
+
+  getQuestion() {
+
+    let data = {
+      majorID: this.majorID
+    };
+    this.service.findByMajorIDQuestion(data).subscribe((result) => {
+      if (result['success'] === true) {
+        this.listquestion = result['data'];
         // this.QuestionDetail=result['data'];
-         console.log(result)
+        console.log(result);
       }
     });
- }
+  }
+
+  getHandout() {
+    let data = {
+      majorID: this.majorID
+    };
+    this.service.findByMajorIDHandout(data).subscribe((result) => {
+      if (result['success'] === true) {
+        this.listquestion = result['data'];
+      }
+    });
+  }
+
   addCart(question: any) {
-      this.serviceCart.addToCart(question);
+    this.serviceCart.addToCart(question);
     this.displayBasic = true;
   }
 }

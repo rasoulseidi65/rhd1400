@@ -20,14 +20,13 @@
           <mat-list>
             <mat-list-item routerLink="./Purchases">خرید های من</mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item routerLink="./Courses">دورهای من</mat-list-item>
+            <mat-list-item routerLink="./Courses" *ngIf="userType==='teacher'">دورهای من</mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item routerLink="./sales">فروش های من</mat-list-item>
+            <mat-list-item routerLink="./sales" *ngIf="userType==='teacher'">فروش های من</mat-list-item>
           </mat-list>
         </p-accordionTab>
-        <p-accordionTab header="امور مالی">
+        <p-accordionTab header="امور مالی" *ngIf="userType==='teacher'">
           <mat-list>
-
             <mat-list-item routerLink="./accountBank"> تائید حساب بانکی</mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item routerLink="./transation">تراکنش ها</mat-list-item>
@@ -58,6 +57,12 @@
         <p-accordionTab header="تنظیمات پروفایل ">
           <mat-list>
             <mat-list-item routerLink="./UserSetting">وارد کردن مشخصات</mat-list-item>
+            <mat-divider></mat-divider>
+          </mat-list>
+        </p-accordionTab>
+        <p-accordionTab header="خروج ">
+          <mat-list>
+            <mat-list-item (click)="exitApp()">خروج</mat-list-item>
             <mat-divider></mat-divider>
           </mat-list>
         </p-accordionTab>

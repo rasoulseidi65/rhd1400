@@ -13,6 +13,7 @@ import {LocalStorageService} from '../../../auth/localStorageLogin/local-storage
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  private userType;
   items: MenuItem[];
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -21,9 +22,9 @@ export class DashboardComponent implements OnInit {
     );
 
   constructor(private breakpointObserver: BreakpointObserver,
-              private userService:UsersService,
-              private router:Router,
-              private localstorage:LocalStorageService) {
+              private userService: UsersService,
+              private router: Router,
+              private localstorage: LocalStorageService) {
   }
 
   ngOnInit(): void {
@@ -47,8 +48,14 @@ export class DashboardComponent implements OnInit {
         ]
       }
     ];
-    if(this.localstorage.getCurrentUser()===true){
+    if (this.localstorage.getCurrentUser() === true) {
+      this.userType = this.localstorage.userJson['type'];
       console.log(this.localstorage.userJson);
     }
+  }
+
+  exitApp() {
+    this.localstorage.removeCurrentUser();
+    this.router.navigate(['/']);
   }
 }

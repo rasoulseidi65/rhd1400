@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class LocalStorageService {
   public userJson: any;
   public userType: any;
 
-  constructor() {
+  constructor(private router:Router) {
 
   }
 
@@ -20,7 +21,7 @@ export class LocalStorageService {
 
   getCurrentUser(): boolean {
     this.userData = localStorage.getItem('currentUserHD');
-    console.log(localStorage.getItem('currentUserHD'))
+
     this.userJson = JSON.parse(this.userData);
     if (this.userData !== undefined && this.userData !== null) {
       this.userJson = JSON.parse(this.userData);
@@ -32,7 +33,8 @@ export class LocalStorageService {
 
   removeCurrentUser(): void {
     // alert('del');
-    localStorage.removeItem('currentUser');
+    localStorage.removeItem('currentUserHD');
+    this.router.navigate(['/']);
 
   }
 }

@@ -58,7 +58,7 @@
         <th scope="row">{{i+1}}</th>
         <td>{{item.title}}</td>
         <td>{{item.author}}</td>
-        <td>کارشناسی</td>
+        <td>{{item.Major[0].Grade[0].title}}</td>
         <td>{{item.Major[0].title}}</td>
         <td>{{item.price}}تومان</td>
         <td><i (click)="addCart(item)" class="fas fa-shopping-cart"></i></td>

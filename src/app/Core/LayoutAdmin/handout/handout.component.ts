@@ -101,15 +101,32 @@ export class HandoutComponent implements OnInit {
     });
   }
   setGradeID(e) {
-    let z = this.grade.filter(x => x.label === e.target.value);
+    let z = this.major.filter(x => x.label === e.target.value);
+    console.log(z)
     this.formhandout.get('gradeID').setValue(z[0].value);
 
   }
   setMajorID(e) {
     let result= this.major.filter(x => x.label === e.target.value);
     this.formhandout.get('majorID').setValue(result[0].value);
+  }
+  getMajorID(e){
+    this.major.splice(0,this.major.length);
+    this.major.push({
+      label:'انتخاب کنید',
+      value: 'انتخاب کنید'
+    });
+    let result = this.resultMajor.filter(x => x['Grade'][0].title === e.target.value);
+    for (let i = 0; i < result.length; i++) {
+
+      this.major.push({
+        label: result[i]['title'],
+        value: result[i]['_id']
+      });
+    }
 
   }
+
   getmajor() {
     this.servicehandout.GetMajor().subscribe((result) => {
       if (result['success'] === true) {

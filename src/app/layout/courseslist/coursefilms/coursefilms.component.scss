@@ -152,3 +152,59 @@
   font-size: 12px;
 
 }
+:host::ng-deep.p-dialog-title{
+  font-size: 13px!important;
+}
+.textDialog{
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 14px;
+  color: #cc3333;
+  font-family:IRANSans_Light;
+}
+:host::ng-deep.p-dialog .p-dialog-header {
+  color: #777777!important;
+  //padding: 0.2rem!important;
+  //padding-top: 15px!important;
+  font-family:IRANSans_Light;
+}
+:host::ng-deep.p-dialog .p-dialog-footer {
+  padding: 0.5rem!important;
+  font-family:IRANSans_Light;
+
+}
+:host::ng-deep.p-dialog .p-dialog-content {
+  margin-top: -15px!important;
+}
+:host::ng-deep.ui-dialog-resizable .ui-dialog-content {
+  overflow: visible!important;
+}
+:host::ng-deep.ui-dialog .ui-dialog-titlebar {
+  border: 1px solid #009c7d;
+  background-color: #009c7d;
+  color: #fff;
+  //padding: 1em;
+  font-weight: 700;
+  border-bottom: 0 none;
+  font-family:IRANSans_Bold;
+}
+.text-success{
+  font-family:IRANSans_Bold;
+}
+.p-button-danger{
+  font-family:IRANSans_Bold;
+  background-color: #ff7800;
+}
+:host::ng-deep.ui-button {
+  border: 1px solid #ff7800!important;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+:host::ng-deep.ui-button :hover{
+  border: 1px solid #ff7800!important;
+  background-color: #ff7800!important;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+:host::ng-deep.ui-dialog .ui-dialog-titlebar-icon span {
+  display: none!important;
+
+}

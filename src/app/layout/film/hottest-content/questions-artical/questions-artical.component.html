@@ -4,7 +4,7 @@
 <app-header></app-header>
 
 <div class="container" *ngIf="type=='question'">
-  <div class="row">
+  <div class="row" *ngIf="listquestion.length>0">
     <div class="caption text-center">
       <span>دانلود نمونه سوالات امتحانی</span>
     </div>
@@ -33,11 +33,14 @@
       </tbody>
     </table>
   </div>
+  <div class="alert alert-danger" *ngIf="listquestion.length<=0">
+    <p class="text-center"> نمونه سوالی برای این رشته  وجود ندارد</p>
+  </div>
   <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
 
 </div>
 <div class="container" *ngIf="type=='handout'">
-  <div class="row">
+  <div class="row" *ngIf="listquestion.length>0">
     <div class="caption text-center">
       <span>دانلود جزوات دانشگاهی</span>
     </div>
@@ -67,6 +70,9 @@
 
       </tbody>
     </table>
+  </div>
+  <div class="alert alert-danger" *ngIf="listquestion.length<=0">
+    <p class="text-center">جزوه ای برای این رشته  وجود ندارد</p>
   </div>
   <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
 

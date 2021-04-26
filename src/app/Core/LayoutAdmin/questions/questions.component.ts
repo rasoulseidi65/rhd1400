@@ -94,8 +94,6 @@ export class QuestionsComponent implements OnInit {
     this.schooles.get('majorID').setValue(result[0].value);
 
   }
-
-
   onUpload(event) {
     const formData = new FormData();
     for (let i = 0; i < event.files.length; i++) {
@@ -113,7 +111,6 @@ export class QuestionsComponent implements OnInit {
       }
     });
   }
-
   schooleget() {
     this.schoolserviec.getschoole().subscribe((response) => {
       if (response['success'] === true) {
@@ -121,7 +118,6 @@ export class QuestionsComponent implements OnInit {
       }
     });
   }
-
   shooldelete(id) {
     this.schoolserviec.deleteschoole(id).subscribe((result) => {
       if (result['success'] === true) {
@@ -130,7 +126,6 @@ export class QuestionsComponent implements OnInit {
       }
     });
   }
-
   getmaghta() {
     this.schoolserviec.getGrade().subscribe((result) => {
       if (result['success'] === true) {

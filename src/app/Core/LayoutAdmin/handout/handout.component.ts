@@ -125,4 +125,5 @@ export class HandoutComponent implements OnInit {
       }
     });
   }
+
 }

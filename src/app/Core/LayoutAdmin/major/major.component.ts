@@ -58,11 +58,7 @@ export class MajorComponent implements OnInit {
       }
     });
   }
-  setGradeID(e) {
-    let z = this.mardak.filter(x => x.label === e.target.value);
-    this.formmajor.get('gradeID').setValue(z[0].value);
 
-  }
   deletemajor(id){
     this.servicemajor.deleteMajor(id).subscribe((result)=>{
       if (result['success'] === true){
@@ -70,6 +66,11 @@ export class MajorComponent implements OnInit {
         this.getmajor();
       }
     });
+  }
+  setGradeID(e) {
+    let z = this.mardak.filter(x => x.label === e.target.value);
+    this.formmajor.get('gradeID').setValue(z[0].value);
+
   }
   getmajor(){
     this.servicemajor.GetMajor().subscribe((result)=>{

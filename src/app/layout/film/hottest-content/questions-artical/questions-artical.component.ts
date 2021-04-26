@@ -6,6 +6,7 @@ import {MessageService} from 'primeng/api';
 import {ActivatedRoute} from '@angular/router';
 
 
+
 @Component({
   selector: 'app-questions-artical',
   templateUrl: './questions-artical.component.html',
@@ -19,7 +20,8 @@ export class QuestionsArticalComponent implements OnInit {
 
   constructor(private service: LayoutService,
               private serviceCart: CartService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+            ) {
   }
 
   displayBasic: boolean;
@@ -53,6 +55,7 @@ export class QuestionsArticalComponent implements OnInit {
     };
     this.service.findByMajorIDQuestion(data).subscribe((result) => {
       if (result['success'] === true) {
+
         this.listquestion = result['data'];
         // this.QuestionDetail=result['data'];
         console.log(result);

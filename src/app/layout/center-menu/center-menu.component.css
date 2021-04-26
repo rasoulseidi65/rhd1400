@@ -3,9 +3,10 @@
   height: 150px;
 }
 .container-fluid .row-center-menu img{
-  margin-top: 45px;
+  margin-top: 20px;
   margin-right: 75px;
   float: right;
+  width: 100px;
 }
 .container-fluid .row-center-menu h2{
   font-family: IRANSans_Bold;

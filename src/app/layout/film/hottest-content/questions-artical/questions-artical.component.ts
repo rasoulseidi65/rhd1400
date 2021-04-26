@@ -70,6 +70,7 @@ export class QuestionsArticalComponent implements OnInit {
     this.service.findByMajorIDHandout(data).subscribe((result) => {
       if (result['success'] === true) {
         this.listquestion = result['data'];
+        console.log(result)
       }
     });
   }

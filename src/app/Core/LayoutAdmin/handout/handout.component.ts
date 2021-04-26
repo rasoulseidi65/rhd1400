@@ -102,7 +102,6 @@ export class HandoutComponent implements OnInit {
   }
   setGradeID(e) {
     let z = this.major.filter(x => x.label === e.target.value);
-    console.log(z)
     this.formhandout.get('gradeID').setValue(z[0].value);
 
   }

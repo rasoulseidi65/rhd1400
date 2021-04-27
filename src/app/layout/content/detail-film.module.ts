@@ -25,7 +25,8 @@ import {DialogModule} from 'primeng/dialog';
         FormsModule,
         MessageModule,
         PanelModule,
-        DialogModule
+        DialogModule,
+
     ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -47,5 +47,14 @@ export class AllCantentComponent implements OnInit {
       }
     });
   }
+  updateViewCount(id: any, count: any) {
+    let data = {
+      _id: id,
+      viewCount: count + 1
+    };
 
+    this.service.updateViewCountCourse(data).subscribe((response) => {
+
+    });
+  }
 }

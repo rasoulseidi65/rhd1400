@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LayoutService} from '../layout.service';
 
 @Component({
@@ -8,7 +8,9 @@ import {LayoutService} from '../layout.service';
 })
 export class ArticleComponent implements OnInit {
   listArticle: any[];
-  constructor(private service: LayoutService) { }
+
+  constructor(private service: LayoutService) {
+  }
 
   ngOnInit(): void {
     this.service.listArticle().subscribe((response) => {
@@ -19,4 +21,14 @@ export class ArticleComponent implements OnInit {
     });
   }
 
+  updateViewCount(id: any, count: any) {
+    let data = {
+      _id: id,
+      viewCount: count + 1
+    };
+
+    this.service.updateViewCountArticle(data).subscribe((response) => {
+
+    });
+  }
 }

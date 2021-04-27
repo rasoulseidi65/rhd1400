@@ -6,7 +6,7 @@
       <a class="pull-left" routerLink="/Courses/articles">همه<i class="fas fa-angle-left"></i></a>
     </div>
     <div class="col-sm-3" *ngFor="let item of listArticle">
-      <div class="thumbnail thumbnail-body "[routerLink]="['./detailArticle',item._id]">
+      <div class="thumbnail thumbnail-body "[routerLink]="['./detailArticle',item._id]" (click)="updateViewCount(item._id,item.viewCount)">
            <div class="panel-heading">
              <img class="img-responsive" [src]="item.image" alt="">
            </div>
@@ -14,7 +14,7 @@
              <a [routerLink]="['./detailArticle',item._id]"><span><i class="fa fa-circle"></i>{{item.title}}</span></a>
            </div>
         <div class="panel-footer">
-          <i class="fas fa-thumbs-up pull-right"><span style="font-family:IRANSans_Light;margin-left: 5px;">12</span></i>
+          <i class="fas fa-thumbs-up pull-right"><span style="font-family:IRANSans_Light;margin-left: 5px;">{{item.viewCount}}</span></i>
           <a  [routerLink]="['./detailArticle',item._id]"><span class="pull-left">ادامه مطالب</span></a>
         </div>
       </div>

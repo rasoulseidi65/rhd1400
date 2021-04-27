@@ -52,4 +52,10 @@ export class LayoutService {
   findByMajorIDHandout(data: any): any {
     return this.http.post('http://api.hd724.com/api/v1/admin/findByMajorIDHandout', data);
   }
+  updateViewCountArticle(data: any): any {
+    return this.http.put('http://api.hd724.com/api/v1/users/viewCount', data);
+  }
+  updateViewCountCourse(data: any): any {
+    return this.http.put('http://api.hd724.com/api/v1/users/viewCountCourse', data);
+  }
 }

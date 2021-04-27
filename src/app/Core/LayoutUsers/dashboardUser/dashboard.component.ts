@@ -13,7 +13,7 @@ import {LocalStorageService} from '../../../auth/localStorageLogin/local-storage
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  private userType;
+  public userType;
   items: MenuItem[];
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(

@@ -43,6 +43,7 @@ import {DeviceDetectorService} from 'ngx-device-detector';
 import {CallBackComponent} from './call-back/call-back.component';
 
 
+
 @NgModule({
   declarations: [IndexComponent, HeaderComponent, CommentComponent
     , FilmComponent, ArticleComponent, TopMenuComponent,

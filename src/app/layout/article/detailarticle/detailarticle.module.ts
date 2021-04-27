@@ -8,15 +8,17 @@ import {ContentBodyComponent} from './content-body/content-body.component';
 import {ContentArchiveComponent} from './content-archive/content-archive.component';
 import {ContentCommentsComponent} from './content-comments/content-comments.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {ScrollPanelModule} from 'primeng/primeng';
 
 
 @NgModule({
   declarations: [DetailarticleComponent, ContentBodyComponent, ContentArchiveComponent, ContentCommentsComponent,],
-  imports: [
-    CommonModule,
-    DetailarticleRoutingModule,
-    LayoutModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        DetailarticleRoutingModule,
+        LayoutModule,
+        ReactiveFormsModule,
+        ScrollPanelModule
+    ]
 })
 export class DetailarticleModule { }

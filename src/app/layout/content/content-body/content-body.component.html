@@ -2,15 +2,29 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <mat-video title="My Tutorial Title" [autoplay]="true" [preload]="true" [fullscreen]="true" [download]="false" color="accent" spinner="spin" poster="image.jpg">
-        <source matVideoSource [src]="course['Episode'][0].videoUrl" type="video/mp4">
 
-      </mat-video>
-<!--      <video controls (click)="toggleVideo()"  #videoPlayer>-->
-<!--        <source [src]="course['Episode'][0].videoUrl" type="video/mp4" />-->
-<!--        Browser not supported-->
-<!--      </video>-->
-<!--      <img class="img-responsive col-xs-12" src="/assets/bootstrap/img/media.jpg" alt="">-->
+<!--      <vm-player autoplay muted>-->
+<!--        <vm-video poster="/media/poster.png" cross-origin>-->
+<!--          &lt;!&ndash; Why `data-src`? Lazy loading. You can always use `src` if you don't need it. &ndash;&gt;-->
+<!--          <source data-src="/media/video.mp4" type="video/mp4" />-->
+<!--          <track-->
+<!--            default-->
+<!--            kind="subtitles"-->
+<!--            src="/media/subs/en.vtt"-->
+<!--            srclang="en"-->
+<!--            label="English"-->
+<!--          />-->
+<!--        </vm-video>-->
+
+<!--        &lt;!&ndash; Loads the default Vime UI. &ndash;&gt;-->
+<!--        <vm-default-ui />-->
+<!--      </vm-player>-->
+
+      <video controls (click)="toggleVideo($event)"  #videoPlayer>
+        <source [src]="course['Episode'][0].videoUrl" type="video/mp4" />
+        Browser not supported
+      </video>
+
     </div>
   </div>
 </div>

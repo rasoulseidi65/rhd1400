@@ -9,9 +9,15 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ContentBodyComponent implements OnInit {
   @Input() data: any;
-  @ViewChild('videoPlayer', {static: true}) videoplayer: ElementRef;
+  // @ViewChild('videoPlayer', {static: true}) videoplayer: ElementRef;
+  videoPlayer: HTMLVideoElement;
   courseID: any;
   course: any;
+
+  @ViewChild('videoPlayer',{static:true})
+  set mainVideoEl(el: ElementRef) {
+    this.videoPlayer = el.nativeElement;
+  }
 
   constructor(private service: LayoutService,
               private route: ActivatedRoute) {
@@ -30,14 +36,14 @@ export class ContentBodyComponent implements OnInit {
     this.service.findCourse(data).subscribe((response) => {
       if (response['success'] === true) {
         this.course = response['data'];
-        console.log(this.course['Episode'][0].videoUrl);
+
       }
     });
 
   }
 
   toggleVideo(event: any) {
-    this.videoplayer.nativeElement.play();
+    this.videoPlayer.play();
   }
 
 }

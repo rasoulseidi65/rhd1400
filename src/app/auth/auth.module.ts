@@ -11,14 +11,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ToastModule} from 'primeng/toast';
 import {KeyFilterModule} from 'primeng/keyfilter';
 import {MessageModule} from 'primeng/message';
-import {CaptchaModule, RadioButtonModule} from 'primeng/primeng';
+import {CaptchaModule, CheckboxModule, RadioButtonModule} from 'primeng/primeng';
 import {MatRadioModule} from '@angular/material';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
 
 
 
 
 @NgModule({
-  declarations: [LoginComponent,RegisterComponent],
+  declarations: [LoginComponent,RegisterComponent, LoginAdminComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
@@ -32,7 +33,8 @@ import {MatRadioModule} from '@angular/material';
     RadioButtonModule,
     MatRadioModule,
     FormsModule,
-    CaptchaModule
+    CaptchaModule,
+    CheckboxModule
   ],
 
 })

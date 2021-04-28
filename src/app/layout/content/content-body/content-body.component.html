@@ -19,11 +19,13 @@
 <!--        &lt;!&ndash; Loads the default Vime UI. &ndash;&gt;-->
 <!--        <vm-default-ui />-->
 <!--      </vm-player>-->
+<div>
+  <video controls (click)="toggleVideo($event)"  #videoPlayer>
+    <source [src]="course['Episode'][0].videoUrl" type="video/mp4" />
+    Browser not supported
+  </video>
+</div>
 
-      <video controls (click)="toggleVideo($event)"  #videoPlayer>
-        <source [src]="course['Episode'][0].videoUrl" type="video/mp4" />
-        Browser not supported
-      </video>
 
     </div>
   </div>

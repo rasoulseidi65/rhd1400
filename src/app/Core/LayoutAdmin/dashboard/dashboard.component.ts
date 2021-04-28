@@ -5,6 +5,7 @@ import {map, shareReplay} from 'rxjs/operators';
 import {MenuItem} from 'primeng/api';
 import {UsersService} from '../../../auth/Users.service';
 import {Router} from '@angular/router';
+import {LocalStorageService} from '../../../auth/localStorageLogin/local-storage.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,8 +20,11 @@ export class DashboardComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver,private userService:UsersService,
-              private router:Router) {
+  constructor(private breakpointObserver: BreakpointObserver,
+              private userService: UsersService,
+              private router: Router,
+              private localstorage: LocalStorageService
+  ) {
   }
 
   ngOnInit(): void {
@@ -44,5 +48,10 @@ export class DashboardComponent implements OnInit {
         ]
       }
     ];
+  }
+
+  exitApp() {
+    this.localstorage.removeCurrentUser();
+    this.router.navigate(['/']);
   }
 }

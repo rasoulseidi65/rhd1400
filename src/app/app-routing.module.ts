@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {AuthGuard} from './auth/auth.guard';
 // import {AdminGuard} from './auth/Guard/admin.guard';
 import {UserGuard} from './auth/Guard/user.guard';
+import {AdminGuard} from './auth/Guard/admin.guard';
 
 
 
@@ -48,7 +49,7 @@ const routes: Routes = [
   {
     path: 'admin/panel',
     loadChildren: () => import('./Core/LayoutAdmin/layout-admin.module').then(m => m.LayoutAdminModule),
-    // canActivate:[AdminGuard]
+    canActivate:[AdminGuard]
   },
   {
     path: 'user/panel',

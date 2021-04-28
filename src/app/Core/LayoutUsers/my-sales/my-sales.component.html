@@ -10,7 +10,7 @@
               <thead>
               <tr>
                 <th>عنوان</th>
-                <th>تاریخ خرید</th>
+                <th>تاریخ فروش</th>
                 <th>ساعت</th>
                 <th>مبلغ</th>
                 <th>سهم شما</th>
@@ -23,8 +23,8 @@
                 <th *ngIf="item.course.length>0">{{item.course[0].title}}</th>
                 <th>{{item.date}}</th>
                 <th>{{item.time}}</th>
-                <th>{{item.price}}</th>
-                <th>{{item.price-(item.price*30)/100}}</th>
+                <th>{{item.price|number}} تومان</th>
+                <th>{{(item.price-(item.price*30)/100)|number}}تومان </th>
               </tr>
               </tbody>
             </table>

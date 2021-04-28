@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators,} from '@angular/forms';
-import { LayoutuserService } from '../layoutuser.service';
+import {LayoutuserService} from '../layoutuser.service';
 import {LocalStorageService} from '../../../auth/localStorageLogin/local-storage.service';
-
 
 
 @Component({
@@ -20,23 +19,33 @@ export class UserSettingComponent implements OnInit {
     state: '',
     city: '',
     address: '',
-    profile: ''
-  }
+    profile: '',
+    cardNumber: '',
+    accountNumber: '',
+    shabaNumber: ''
+  };
+
   constructor(private fb: FormBuilder,
               private service: LayoutuserService,
               private localstorage: LocalStorageService) {
   }
-  loadUserInfo(){
-    this.userInfo.firstName = this.localstorage.userJson[' firstName '],
-      this.userInfo.lastName = this.localstorage.userJson[' lastName '],
-      this.userInfo.mobile = this.localstorage.userJson[' mobile '],
-      this.userInfo.email = this.localstorage.userJson[' email '],
-      this.userInfo.state = this.localstorage.userJson[' state '],
-      this.userInfo.city = this.localstorage.userJson[' city '],
-      this.userInfo.address = this.localstorage.userJson[' address '],
-      this.userInfo.profile = this.localstorage.userJson[' profile ']
 
+  loadUserInfo() {
+    this.localstorage.getCurrentUser();
+
+    this.userInfo.firstName = this.localstorage.userJson['firstName'],
+      this.userInfo.lastName = this.localstorage.userJson['lastName'],
+      this.userInfo.mobile = this.localstorage.userJson['mobile'],
+      this.userInfo.email = this.localstorage.userJson['email'],
+      this.userInfo.state = this.localstorage.userJson['state'],
+      this.userInfo.city = this.localstorage.userJson['city'],
+      this.userInfo.address = this.localstorage.userJson['address'],
+      this.userInfo.profile = this.localstorage.userJson['profile'];
+    this.userInfo.shabaNumber = this.localstorage.userJson['shabaNumber'];
+    this.userInfo.accountNumber = this.localstorage.userJson['accountNumber'];
+    this.userInfo.cardNumber = this.localstorage.userJson['cardNumber'];
   }
+
   ngOnInit() {
     this.loadUserInfo();
     this.createUserForm();
@@ -51,14 +60,21 @@ export class UserSettingComponent implements OnInit {
       state: new FormControl('', Validators.required),
       city: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
-      profile: new FormControl('', Validators.required)
+      profile: new FormControl('', Validators.required),
+      cardNumber: new FormControl(''),
+      accountNumber: new FormControl(''),
+      shabaNumber: new FormControl('')
     });
   }
 
   onSubmit(x: any) {
-     this.service.UpdateUser(this.userForm.value, this.localstorage.userJson['_id']).subscribe((response)=>{
-       console.log(response);
-     });
+    this.service.UpdateUser(this.userForm.value, this.localstorage.userJson['_id']).subscribe((response) => {
+      if (response['success'] === true) {
+        this.loadUserInfo();
+        console.log(response);
+      }
+
+    });
   }
 
   onUpload(event) {
@@ -69,7 +85,7 @@ export class UserSettingComponent implements OnInit {
     this.service.uploadFile(formData).subscribe((response) => {
       console.log(response);
       if (response['success'] === true) {
-        this.userForm.get('image').setValue(response['imagePath']);
+        this.userForm.get('profile').setValue(response['imagePath']);
       } else {
         console.log(response);
       }

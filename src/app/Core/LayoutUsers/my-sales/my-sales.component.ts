@@ -21,7 +21,6 @@ export class MySalesComponent implements OnInit {
     this.service.mySales(this.localstorage.userJson['_id']).subscribe((result)=>{
       if (result['success'] === true){
         this.listbasket=result['data'];
-        console.log(this.listbasket)
       }
     });
   }

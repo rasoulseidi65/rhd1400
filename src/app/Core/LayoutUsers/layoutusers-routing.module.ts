@@ -22,7 +22,7 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     children:[{
-      path:'Counteruser' ,
+      path:'' ,
       component:CounteruserComponent
     }]
   },
@@ -91,14 +91,7 @@ const routes: Routes = [
       component: ReportsComponent
     }]
   },
-  {
-    path: '',
-    component:DashboardComponent,
-    children:[{
-      path: 'Counteruser',
-      component: CounteruserComponent
-    }]
-  },
+
   {
     path: '',
     component:DashboardComponent,

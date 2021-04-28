@@ -44,14 +44,15 @@ export class CartComponent implements OnInit {
     mobile: '',
     price: '',
     date: '',
-    time: ''
+    time: '',
+    statusProduct: ''
   };
 
   constructor(private serviceCart: CartService,
               private service: LayoutService,
               private localstorage: LocalStorageService,
               private route: Router,
-            ) {
+  ) {
   }
 
   ngOnInit(): void {
@@ -86,17 +87,24 @@ export class CartComponent implements OnInit {
 
   onPayment() {
     this.localstorage.getCurrentUser();
-    this.localstorage.getCurrentUser();
+
     if (this.localstorage.userJson != null) {
       this.payment.userID = this.localstorage.userJson['_id'];
       this.payment.mobile = this.localstorage.userJson['mobile'];
       this.payment.date = moment(Date.now()).locale('fa').format('YYYY/M/D');
       this.payment.time = moment(Date.now()).locale('fa').format('HH:mm:ss');
       this.payment.price = this.sumOfPrice.toString();
+      if (this.localstorage.userJson['type'] === 'user') {
+        this.payment.statusProduct = '0';
+      }
+      if (this.localstorage.userJson['type'] === 'teacher') {
+        this.payment.statusProduct = '1';
+      }
       let data = {
         product: JSON.parse(localStorage.getItem('cartList')),
         user: this.payment,
       };
+      console.log(data)
       this.service.onPayment(data).subscribe((response) => {
         let url = response['data'];
         document.location.href = url;

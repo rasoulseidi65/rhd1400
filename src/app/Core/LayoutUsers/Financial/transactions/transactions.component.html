@@ -33,11 +33,11 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <th>رسول</th>
-                <th>صیدی</th>
-                <th>test2</th>
-                <th>ادرس </th>
+              <tr *ngFor="let item of listPayment">
+                <th>{{item.refID}}</th>
+                <th>{{item.date}}</th>
+                <th>{{item.price}}</th>
+                <th>{{item.statusPayment}} </th>
               </tr>
               </tbody>
             </table>

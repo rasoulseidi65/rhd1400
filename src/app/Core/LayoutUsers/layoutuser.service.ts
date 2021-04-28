@@ -26,5 +26,14 @@ export class LayoutuserService {
   getbasket(id) {
     return this.http.get('http://api.hd724.com/api/v1/users/basketList/'+ id);
   }
+  displayPayment(id) {
+    return this.http.get('http://api.hd724.com/api/v1/users/displayPayment/'+ id);
+  }
+  myPurchases(id) {
+    return this.http.get('http://api.hd724.com/api/v1/users/myPurchases/'+ id);
+  }
+  mySales(id) {
+    return this.http.get('http://api.hd724.com/api/v1/users/mySales/'+ id);
+  }
 }
 

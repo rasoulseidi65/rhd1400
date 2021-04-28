@@ -111,7 +111,7 @@ const routes: Routes = [
     path:'',
     component:DashboardComponent,
     children:[{
-      path: 'course',
+      path: 'course/:id',
       component: CourseComponent
     }]
   },

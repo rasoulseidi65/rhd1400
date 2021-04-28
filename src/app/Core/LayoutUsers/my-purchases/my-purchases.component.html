@@ -23,7 +23,7 @@
               </thead>
               <tbody>
               <tr *ngFor="let item of listbasket">
-                <th><a routerLink="../course">{{item.refID}}</a></th>
+                <th><a [routerLink]="['../course',item.productID]">{{item.refID}}</a></th>
                 <th>{{item.date}}</th>
                 <th>{{item.time}}</th>
                 <th>{{item.price}}</th>

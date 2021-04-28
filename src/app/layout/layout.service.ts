@@ -58,4 +58,10 @@ export class LayoutService {
   updateViewCountCourse(data: any): any {
     return this.http.put('http://api.hd724.com/api/v1/users/viewCountCourse', data);
   }
+  findQuestion(id) {
+    return this.http.get('http://api.hd724.com/api/v1/admin/question/'+ id);
+  }
+  findHandout(id) {
+    return this.http.get('http://api.hd724.com/api/v1/admin/handout/'+ id);
+  }
 }

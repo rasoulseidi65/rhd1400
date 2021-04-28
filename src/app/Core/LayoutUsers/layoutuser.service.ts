@@ -35,5 +35,6 @@ export class LayoutuserService {
   mySales(id) {
     return this.http.get('http://api.hd724.com/api/v1/users/mySales/'+ id);
   }
+
 }
 

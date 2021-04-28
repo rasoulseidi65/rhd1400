@@ -30,7 +30,6 @@ export class LocalStorageService {
   }
 
   removeCurrentUser(): void {
-    // alert('del');
     localStorage.removeItem('currentUserHD');
     this.router.navigate(['/']);
 

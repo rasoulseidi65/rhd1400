@@ -22,4 +22,11 @@ export class UsersService {
   registerTeacher(data:any): Observable<Users[]> {
     return this.http.post<Users[]>('http://api.hd724.com/api/v1/teacher/register', data);
   }
+  registerAdmin(data:any): Observable<Users[]> {
+    return this.http.post<Users[]>('http://api.hd724.com/api/v1/admin/register', data);
+  }
+  loginAdmin(data:any): Observable<Users[]> {
+    console.log(data)
+    return this.http.post<Users[]>('http://api.hd724.com/api/v1/admin/login', data);
+  }
 }

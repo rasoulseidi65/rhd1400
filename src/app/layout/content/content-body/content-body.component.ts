@@ -9,15 +9,15 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ContentBodyComponent implements OnInit {
   @Input() data: any;
-  // @ViewChild('videoPlayer', {static: true}) videoplayer: ElementRef;
+  @ViewChild('videoPlayer', {static: true}) videoplayer: ElementRef;
   videoPlayer: HTMLVideoElement;
   courseID: any;
   course: any;
 
-  @ViewChild('videoPlayer',{static:true})
-  set mainVideoEl(el: ElementRef) {
-    this.videoPlayer = el.nativeElement;
-  }
+  // @ViewChild('videoPlayer',{static:true})
+  // set mainVideoEl(el: ElementRef) {
+  //   this.videoPlayer = el.nativeElement;
+  // }
 
   constructor(private service: LayoutService,
               private route: ActivatedRoute) {
@@ -43,7 +43,7 @@ export class ContentBodyComponent implements OnInit {
   }
 
   toggleVideo(event: any) {
-    this.videoPlayer.play();
+    this.videoplayer.nativeElement.play();
   }
 
 }

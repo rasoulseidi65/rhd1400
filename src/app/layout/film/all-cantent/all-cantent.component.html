@@ -20,7 +20,7 @@
               </a>
               <a routerLink="/detail">
                 <div class="panel-footer">
-                  <img class="img-responsive img-circle" src="/assets/bootstrap/img/default.png" alt="">
+                  <img class="img-responsive img-circle" [src]="item['CustomerUser'][0].profile" alt="">
                   <span class="pull-left" >{{item['CustomerUser'][0].firstName+' '+item['CustomerUser'][0].lastName}}</span>
                 </div>
               </a>

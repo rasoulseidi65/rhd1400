@@ -6,7 +6,7 @@
         <span class="panel-title"><i class="fas fa-chalkboard-teacher"></i>مدرس دوره</span>
       </div>
       <div class="panel-body">
-        <img class="img-circle img-responsive" src="/assets/bootstrap/img/default.png" alt=""><span>{{data['CustomerUser'][0]['firstName'] +' '+data['CustomerUser'][0]['lastName']}}</span>
+        <img class="img-circle img-responsive" [src]="data['CustomerUser'][0].profile" alt=""><span>{{data['CustomerUser'][0]['firstName'] +' '+data['CustomerUser'][0]['lastName']}}</span>
         <br><a class="panel-footer">اطلاعات بیشتر </a>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row row-film">
     <div class="caption">
-      <span>همه مطالب</span>
+      <span>دوره های آموزشی</span>
       <a class="pull-left" routerLink="/Courses/films">همه<i class="fas fa-angle-left"></i></a>
     </div>
     <div class="card-content">
@@ -11,7 +11,7 @@
             <div class="thumbnail thumbnail-body-film" (click)="updateViewCount(item._id,item.viewCount)">
               <a [routerLink]="['./detail',item._id]">
                 <div class="panel-heading">
-                  <img class="img-responsive" src="../../../../assets/bootstrap/img/box.jpg"  alt="">
+                  <img class="img-responsive" src="../../../../assets/bootstrap/img/box.jpg"  [alt]=item.title>
                   <a>{{item.price}}تومان</a>
                 </div>
                 <div class="panel-body">

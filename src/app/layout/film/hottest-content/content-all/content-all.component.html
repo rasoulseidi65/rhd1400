@@ -43,7 +43,7 @@
       <div class="thumbnail thumbnail-body-film">
         <a [routerLink]="['../../questionDettail',item._id,type]">
           <div class="panel-heading">
-            <img class="img-responsive" [src]="item.image"  alt="">
+            <img class="img-responsive" [src]="item.image"  [alt]=item.title>
           </div>
           <div class="panel-body">
             <a href="#"><span><i class="fa fa-circle"></i> {{item.title}}</span></a>

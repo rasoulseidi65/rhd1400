@@ -6,7 +6,7 @@
     <div class="col-sm-3" *ngFor="let item of listArticle">
       <div class="thumbnail thumbnail-body " [routerLink]="['../../home/detailArticle',item._id]">
         <div class="panel-heading">
-          <img class="img-responsive" src="{{item.image}}" alt="">
+          <img class="img-responsive" src="{{item.image}}" [alt]=item.title>
         </div>
         <div class="panel-body">
           <a [routerLink]="['../../home/detailArticle',item._id]"><span><i class="fa fa-circle"></i>{{item.title}}</span></a>

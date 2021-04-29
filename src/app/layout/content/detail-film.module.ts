@@ -14,20 +14,22 @@ import {PanelModule} from 'primeng/panel';
 import {DialogModule} from 'primeng/dialog';
 
 
+
 @NgModule({
   declarations: [ContentArchiveComponent,ContentBodyComponent,ContentCommentsComponent,ContentComponent],
-    imports: [
-        CommonModule,
-        DetailFilmRoutingModule,
-        LayoutModule,
-        ReactiveFormsModule,
-        ButtonModule,
-        FormsModule,
-        MessageModule,
-        PanelModule,
-        DialogModule,
+  imports: [
+    CommonModule,
+    DetailFilmRoutingModule,
+    LayoutModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    FormsModule,
+    MessageModule,
+    PanelModule,
+    DialogModule,
 
-    ],
+
+  ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],

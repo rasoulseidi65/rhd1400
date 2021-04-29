@@ -3,28 +3,42 @@
   <div class="row">
     <div class="col-md-12">
 
-<!--      <vm-player autoplay muted>-->
-<!--        <vm-video poster="/media/poster.png" cross-origin>-->
-<!--          &lt;!&ndash; Why `data-src`? Lazy loading. You can always use `src` if you don't need it. &ndash;&gt;-->
-<!--          <source data-src="/media/video.mp4" type="video/mp4" />-->
-<!--          <track-->
-<!--            default-->
-<!--            kind="subtitles"-->
-<!--            src="/media/subs/en.vtt"-->
-<!--            srclang="en"-->
-<!--            label="English"-->
-<!--          />-->
-<!--        </vm-video>-->
+<!--      <vg-player>-->
+<!--        <vg-overlay-play></vg-overlay-play>-->
+<!--        <vg-buffering></vg-buffering>-->
 
-<!--        &lt;!&ndash; Loads the default Vime UI. &ndash;&gt;-->
-<!--        <vm-default-ui />-->
-<!--      </vm-player>-->
-<div>
-  <video controls (click)="toggleVideo($event)"  #videoPlayer>
-    <source [src]="course['Episode'][0].videoUrl" type="video/mp4" />
-    Browser not supported
-  </video>
-</div>
+<!--        <vg-scrub-bar>-->
+<!--          <vg-scrub-bar-current-time></vg-scrub-bar-current-time>-->
+<!--          <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>-->
+<!--        </vg-scrub-bar>-->
+
+<!--        <vg-controls>-->
+<!--          <vg-play-pause></vg-play-pause>-->
+<!--          <vg-playback-button></vg-playback-button>-->
+
+<!--          <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>-->
+
+<!--          <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>-->
+
+<!--          <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>-->
+<!--          <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>-->
+
+<!--          <vg-track-selector></vg-track-selector>-->
+<!--          <vg-mute></vg-mute>-->
+<!--          <vg-volume></vg-volume>-->
+
+<!--          <vg-fullscreen></vg-fullscreen>-->
+<!--        </vg-controls>-->
+
+<!--        <video [src]="course['Episode'][0].videoUrl" [vgMedia]="media" #media id="singleVideo" preload="auto" crossorigin>-->
+<!--&lt;!&ndash;          <source [src]="course['Episode'][0].videoUrl" type="video/mp4">&ndash;&gt;-->
+<!--&lt;!&ndash;          <source [src]="course['Episode'][0].videoUrl" type="video/webm">&ndash;&gt;-->
+<!--&lt;!&ndash;          <source [src]="course['Episode'][0].videoUrl" type="video/ogg">&ndash;&gt;-->
+
+
+<!--        </video>-->
+<!--      </vg-player>-->
+
 
 
     </div>

@@ -41,6 +41,7 @@ import {AllCantentComponent} from './film/all-cantent/all-cantent.component';
 import {QuestionsArticalComponent} from './film/hottest-content/questions-artical/questions-artical.component';
 import {DeviceDetectorService} from 'ngx-device-detector';
 import {CallBackComponent} from './call-back/call-back.component';
+import { SloganComponent } from './slogan/slogan.component';
 
 
 
@@ -50,7 +51,7 @@ import {CallBackComponent} from './call-back/call-back.component';
     CenterMenuComponent, MenuComponent, FooterComponent,
     CartComponent, CooperationComponent, HottestContentComponent,
     MostDownloadsComponent, MostPopularContentComponent,
-    ContentAllComponent, AllCantentComponent, QuestionsArticalComponent, CallBackComponent],
+    ContentAllComponent, AllCantentComponent, QuestionsArticalComponent, CallBackComponent, SloganComponent],
   imports: [
     CommonModule,
     LayoutRoutingModule,

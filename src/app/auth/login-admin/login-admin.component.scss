@@ -1,0 +1,41 @@
+:host::ng-deep .p-md-offset-4{
+  margin: 0px auto;
+}
+:host::ng-deep .p-grid{
+  margin: 0px auto;
+}
+:host::ng-deep .p-md-offset-4 .p-col-12{
+  box-shadow: 0px 0px 10px 4px #dddddd;
+  margin: 10px auto;
+  border-radius: 10px;
+  direction: rtl;
+}
+:host::ng-deep .p-md-offset-4 .p-col-12  h5{
+  font-family: IRANSans_Bold;
+  font-size: 26px;
+  color: #EF2B2F;
+  font-weight: bold;
+  margin-top: 10px;
+}
+:host::ng-deep .p-md-offset-4 .p-col-12  span{
+  font-family: IRANSans_Light;
+  font-size: 20px;
+  color: #ffffff;
+}
+:host::ng-deep  .p-md-offset-4 .p-col-12 label.p-col-fixed {
+  font-family: IRANSans_Bold;
+  display: block;
+}
+:host::ng-deep  .p-md-offset-4 .p-col-12 label.p-col-fixed i{
+  font-size: 50px;
+  color: #EF2B2F;
+}
+:host::ng-deep .p-md-offset-4 .p-col-12 button {
+  border-radius: 1rem;
+  margin: 15px auto;
+  display:block ;
+  width: 100%;
+  background: #EF2B2F;
+  color: #ffffff;
+  border: none;
+}

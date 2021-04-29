@@ -1,0 +1,19 @@
+<div class=" p-grid p-text-center">
+  <div class="p-col-12 p-md-4 p-md-offset-4">
+    <img src="../../../assets/bootstrap/img/logo.png" alt="">
+    <div class="card p-col-12" >
+      <h5>HD724</h5>
+      <span style="color: #6d6e72">صفحه ورود به پنل ادمین</span>
+      <label for="firstname3" class="p-col-fixed"  ><i class="fa fa-user"></i></label>
+      <input id="firstname3" placeholder="شماره موبایل" type="text" pInputText  [(ngModel)]="admin.mobile">
+      <label for="lastname3" class="p-col-fixed" ><i class="fas fa-lock"></i></label>
+      <input type="password"  placeholder=" رمز ورود" id="lastname3" pPassword  [(ngModel)]="admin.password"/>
+
+      <button pButton pRipple  type="submit"
+              label="ورود به همراه دانش" class="p-button-rounded p-button-danger p-button-lg"
+      (click)="login()"></button>
+
+    </div>
+  </div>
+</div>
+<p-toast [style]="{marginTop: '80px',fontFamily:'IRANSans_Bold'}" position="top-center"></p-toast>

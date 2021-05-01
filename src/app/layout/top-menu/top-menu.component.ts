@@ -19,7 +19,7 @@ export class TopMenuComponent implements OnInit {
   sumOfPrice = 0;
   countBadge = 0;
   showCartList = true;
-
+  isLogged: boolean;
   constructor(private deviceService: DeviceDetectorService,
               private serviceCart: CartService,
               private route: Router,
@@ -27,6 +27,7 @@ export class TopMenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isLogged = this.localstorage.getCurrentUser();
     setInterval(() => {
       this.getAllPrice();
     }, 1000);
@@ -94,5 +95,9 @@ export class TopMenuComponent implements OnInit {
     if (this.deviceService.isDesktop() === true) {
       this.accountDropDown.nativeElement.classList.add('topbar-dropdown--opened');
     }
+  }
+  exitUser() {
+    this.localstorage.removeCurrentUser();
+    this.ngOnInit();
   }
 }

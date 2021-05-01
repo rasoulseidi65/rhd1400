@@ -709,3 +709,25 @@
 .btn{
   font-family: IRANSans_Bold;
 }
+
+.topbar-dropdown__body {
+  left: 0;
+}
+
+.topbar-dropdown__body {
+  position: absolute;
+  top: 100%;
+  visibility: hidden;
+  transform-origin: top;
+  transform: rotateX(60deg);
+  opacity: 0;
+  transition: transform .2s, opacity .2s, visibility 0s .2s;
+}
+
+.topbar-dropdown--opened .topbar-dropdown__body {
+  z-index: 1;
+  transition-delay: 0s,0s,0s;
+  opacity: 1;
+  visibility: visible;
+  transform: rotateX(0deg);
+}

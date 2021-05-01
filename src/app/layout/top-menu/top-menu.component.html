@@ -1,39 +1,76 @@
-
 <div class="container-fluid">
   <div id="top-menu-right" class="col-xs-8 col-md-8">
-      <nav class="navbar">
-          <div class="collapse navbar-collapse" id="top-menu">
-            <ul class="nav navbar-nav">
-              <li><a href="#">خانه</a></li>
-              <li><a routerLink="/support">پشتیبانی</a></li>
-              <li><a href="#">تبلیغات</a></li>
-              <li data-toggle="modal" data-target=".modal-custom-ozviat"><a routerLink="/auth/register"  >عضویت</a></li>
-              <li><a routerLink="/about">درباره ما</a></li>
-              <li><a routerLink="/contact">تماس با ما</a></li>
-            </ul>
-          </div>
-      </nav>
+    <nav class="navbar">
+      <div class="collapse navbar-collapse" id="top-menu">
+        <ul class="nav navbar-nav">
+          <li><a href="#">خانه</a></li>
+          <li><a routerLink="/support">پشتیبانی</a></li>
+          <li><a href="#">تبلیغات</a></li>
+          <li data-toggle="modal" data-target=".modal-custom-ozviat"><a routerLink="/auth/register">عضویت</a></li>
+          <li><a routerLink="/about">درباره ما</a></li>
+          <li><a routerLink="/contact">تماس با ما</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
   <div class="col-xs-12 col-sm-4 col-md-4 pull-left" id="top-menu-left">
     <div class="row row-top-menu-left">
       <ul class="nav navbar-nav pull-left">
         <li><a href="#"><span class="fa fa-search"></span>جستجو</a></li>
         <li><a routerLink="/teacher"><span class="fa fa-user"></span>مدرس شوید</a></li>
-        <li><a routerLink="/auth/login"><span class="fa fa-key"></span>ورود</a></li>
+        <!--        <li><a routerLink="/auth/login"><span class="fa fa-key"></span>ورود</a></li>-->
+        <li>
+          <div class="topbar__item">
+            <div #accountDropDown class="topbar-dropdown nav navbar-nav">
+              <a class="topbar-dropdown__btn"
+                 (mouseover)="openAccountDropDown()"
+                 (click)="toggleAccountDropDown()"
+                 (clickOutside)="closeAccountDropDown()">
 
+                <ul class="nav navbar-nav">
+                  <li style="list-style: none"><a routerLink="/auth/login"><span class="fa fa-key"></span>ورود</a></li>
+                </ul>
+              </a>
+              <div class="topbar-dropdown__body" (mouseleave)="closeAccountDropDown()">
+                <div class="menu menu--layout--topbar">
+                  <div class="menu__submenus-container"></div>
+                  <ul class="menu__list" style="width: 100%;">
+                    <li class="menu__item" style="width: 100%;" *ngIf="isLogged">
+                      <div class="menu__item-submenu-offset"></div>
+                      <a class="menu__item-link" [routerLink]="['/user/panel']">
+                        <i class="fa fa-user fa-1x" style="color:#777"></i>پنل کاربری</a>
+                    </li>
+                    <li class="menu__item" style="width: 100%" *ngIf="!isLogged">
+                      <div class="menu__item-submenu-offset"></div>
+                      <a class="menu__item-link" [routerLink]="['/auth/login']">
+                        <i class="fa fa-sign-in fa-1x ml-3" style="color:#777"></i>ورود/ثبت نام
+                      </a>
+                    </li>
+                    <li class="menu__item" style="width: 100%" (click)="exitUser()" *ngIf="isLogged">
+                      <div class="menu__item-submenu-offset"></div>
+                      <a class="menu__item-link"><i class="fa fa-power-off fa-1x ml-3" style="color:#777"></i>خروج</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </li>
         <div class="indicator" #basketDropDown (clickOutside)="closeBasketDropDown()"
              (mouseleave)="closeBasketDropDown()">
           <a class="indicator__button" (click)="toggleBasketDropDown()" (mouseover)="openBasketDropDown()">
               <span class="indicator__area">
               <ul class="nav navbar-nav">
-                <li><a href="#"><span class="fa fa-shopping-cart"><label class="countBadge">{{countBadge}}</label></span>فروشگاه</a></li>
+                <li><a href="#"><span class="fa fa-shopping-cart"><label
+                  class="countBadge">{{countBadge}}</label></span>فروشگاه</a></li>
               </ul>
               </span>
           </a>
           <div class="indicator__dropdown" style="max-height: 458px;">
             <div class="dropcart dropcart--style--dropdown">
               <div class="dropcart__body">
-                <div class="dropcart__products-list" >
+                <div class="dropcart__products-list">
                   <div class="dropcart__product" *ngFor="let item of cartlist">
                     <div class="product-image dropcart__product-image">
                       <a class="product-image__body">
@@ -67,7 +104,8 @@
                   </table>
                 </div>
                 <div class="dropcart__buttons">
-                  <button class="btn"  (click)="goPageCart()"  style="background-color: #03af8c;color: #ffffff;font-size: 14px"
+                  <button class="btn" (click)="goPageCart()"
+                          style="background-color: #03af8c;color: #ffffff;font-size: 14px"
                   >مشاهده سبد و تکمیل خرید
                   </button>
                 </div>

@@ -43,10 +43,11 @@ import { QuestionsComponent } from './questions/questions.component';
 import { HandoutComponent } from './handout/handout.component';
 import { GradeComponent } from './grade/grade.component';
 import { MajorComponent } from './major/major.component';
+import { SliderComponent } from './slider/slider.component';
 
 
 @NgModule({
-  declarations: [ DashboardComponent, ContentdashboardComponent, NewpaperComponent, PaperlistComponent, NewteacherComponent, TeacherlistComponent, NewcoursesComponent, ListcoursesComponent, UserslistComponent, EposideComponent, QuestionsComponent, HandoutComponent, GradeComponent, MajorComponent],
+  declarations: [ DashboardComponent, ContentdashboardComponent, NewpaperComponent, PaperlistComponent, NewteacherComponent, TeacherlistComponent, NewcoursesComponent, ListcoursesComponent, UserslistComponent, EposideComponent, QuestionsComponent, HandoutComponent, GradeComponent, MajorComponent, SliderComponent],
   imports: [
     CommonModule,
     MatSidenavModule,

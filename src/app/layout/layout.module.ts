@@ -42,6 +42,8 @@ import {QuestionsArticalComponent} from './film/hottest-content/questions-artica
 import {DeviceDetectorService} from 'ngx-device-detector';
 import {CallBackComponent} from './call-back/call-back.component';
 import { SloganComponent } from './slogan/slogan.component';
+import { Advertising1Component } from './advertising1/advertising1.component';
+import { Advertising2Component } from './advertising2/advertising2.component';
 
 
 
@@ -51,7 +53,7 @@ import { SloganComponent } from './slogan/slogan.component';
     CenterMenuComponent, MenuComponent, FooterComponent,
     CartComponent, CooperationComponent, HottestContentComponent,
     MostDownloadsComponent, MostPopularContentComponent,
-    ContentAllComponent, AllCantentComponent, QuestionsArticalComponent, CallBackComponent, SloganComponent],
+    ContentAllComponent, AllCantentComponent, QuestionsArticalComponent, CallBackComponent, SloganComponent, Advertising1Component, Advertising2Component],
   imports: [
     CommonModule,
     LayoutRoutingModule,

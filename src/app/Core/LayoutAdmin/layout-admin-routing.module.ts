@@ -14,6 +14,7 @@ import {QuestionsComponent} from './questions/questions.component';
 import {HandoutComponent} from './handout/handout.component';
 import {GradeComponent} from './grade/grade.component';
 import {MajorComponent} from './major/major.component';
+import {SliderComponent} from './slider/slider.component';
 
 
 const routes: Routes = [
@@ -120,6 +121,14 @@ const routes: Routes = [
     children: [{
       path: 'major',
       component: MajorComponent
+    }]
+  },
+  {
+    path: '',
+    component: DashboardComponent,
+    children: [{
+      path: 'slider',
+      component: SliderComponent
     }]
   }
 ];

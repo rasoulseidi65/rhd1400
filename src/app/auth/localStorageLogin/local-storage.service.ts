@@ -20,6 +20,7 @@ export class LocalStorageService {
 
   getCurrentUser(): boolean {
     this.userData = localStorage.getItem('currentUserHD');
+    console.log(this.userData)
     this.userJson = JSON.parse(this.userData);
     if (this.userData !== undefined && this.userData !== null) {
       this.userJson = JSON.parse(this.userData);

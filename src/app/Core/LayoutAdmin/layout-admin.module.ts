@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {LayoutAdminRoutingModule} from './layout-admin-routing.module';
@@ -47,7 +47,13 @@ import { SliderComponent } from './slider/slider.component';
 
 
 @NgModule({
-  declarations: [ DashboardComponent, ContentdashboardComponent, NewpaperComponent, PaperlistComponent, NewteacherComponent, TeacherlistComponent, NewcoursesComponent, ListcoursesComponent, UserslistComponent, EposideComponent, QuestionsComponent, HandoutComponent, GradeComponent, MajorComponent, SliderComponent],
+  declarations: [ DashboardComponent, ContentdashboardComponent,
+    NewpaperComponent, PaperlistComponent,
+    NewteacherComponent, TeacherlistComponent,
+    NewcoursesComponent, ListcoursesComponent,
+    UserslistComponent, EposideComponent,
+    QuestionsComponent, HandoutComponent,
+    GradeComponent, MajorComponent, SliderComponent],
   imports: [
     CommonModule,
     MatSidenavModule,
@@ -84,7 +90,9 @@ import { SliderComponent } from './slider/slider.component';
     MatSelectModule,
 
   ],
-
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
   exports: [DashboardComponent]
 })
 export class LayoutAdminModule {

@@ -63,3 +63,8 @@ input,textarea{font-family: IRANSans_Light;}
   font-family: IRANSans_Bold!important;
   background-color: #03af8c !important;
 }
+:host::ng-deep.ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
+  background-color: #03af8c !important;
+  border: 1px solid #03af8c !important;
+  color: #FFFFFF  !important;
+}

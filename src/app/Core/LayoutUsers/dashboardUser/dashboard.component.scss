@@ -65,7 +65,7 @@ mat-datepicker{
   background-color:  #03af8c !important;
   color:white;
 }
-::ng-deep.mat-calendar-body-today{
+:host::ng-deep.mat-calendar-body-today{
   background-color: #00C851!important;
   color:white;
 }
@@ -79,14 +79,14 @@ mat-datepicker{
   border-radius: 50%;
 }
 
- ::ng-deep.ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a .ui-accordion-toggle-icon{
+:host::ng-deep.ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a .ui-accordion-toggle-icon{
    float: left!important;
 }
-::ng-deep .ui-accordion .ui-accordion-header a .ui-accordion-toggle-icon {
+:host::ng-deep .ui-accordion .ui-accordion-header a .ui-accordion-toggle-icon {
   color: #FFFFFF;
   float: left;
 }
-::ng-deep.ui-accordion .ui-accordion-header a {
+:host::ng-deep.ui-accordion .ui-accordion-header a {
   color: #FFFFFF !important;
   background:none !important;
   //padding-bottom: 1em!important;
@@ -94,14 +94,17 @@ mat-datepicker{
   font-weight: 700;
   transition: background-color 0.2s;
 }
-::ng-deep.ui-accordion .ui-accordion-content {
+:host::ng-deep.x.ui-accordion .ui-accordion-content {
   background-color:#03af8c !important;
   border: none!important;
 }
-::ng-deep.ui-accordion .ui-accordion-header a .ui-accordion-toggle-icon {
+:host::ng-deep .ui-accordion .ui-accordion-content {
+  background-color:#03af8c !important;
+}
+:host::ng-deep.x.ui-accordion .ui-accordion-header a .ui-accordion-toggle-icon {
   color:#ffa331 !important;
 }
-::ng-deep.ui-accordion .ui-accordion-header a {
+:host::ng-deep.ui-accordion .ui-accordion-header a {
   padding: 0.571em 1em;
    border: none!important;
 }
@@ -120,11 +123,11 @@ mat-divider{
   color: #22a6b3 ;
 
 }
-::ng-deep.ui-accordion .ui-accordion-header {
+:host::ng-deep.ui-accordion .ui-accordion-header {
   margin-bottom: 4px!important;
   border-bottom: 1px solid #c7ecee!important;
 }
-::ng-deep.ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
+:host::ng-deep.ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
   background-color: #03af8c !important;
   border: 1px solid #03af8c !important;
   color: #FFFFFF  !important;
@@ -132,7 +135,7 @@ mat-divider{
 p-accordionTab{
   font-family: IRANSans_Light;
 }
-::ng-deep.ui-toolbar{
+:host::ng-deep.ui-toolbar{
   background:none !important;
 }
 :host::ng-deep.ui-menubar {
@@ -141,17 +144,17 @@ p-accordionTab{
   color:white!important;
   font-family: IRANSans_Bold;
 }
-::ng-deep.ui-menubar .ui-menuitem-link,.ui-menubar .ui-menuitem-link .ui-menuitem-text{
+:host::ng-deep.ui-menubar .ui-menuitem-link,.ui-menubar .ui-menuitem-link .ui-menuitem-text{
   color:white!important;
   background-color:#03af8c!important;
 }
-::ng-deep.ui-menubar .ui-menuitem-link .ui-menuitem-text{
+:host::ng-deep.ui-menubar .ui-menuitem-link .ui-menuitem-text{
   color:white!important;
 }
-::ng-deep.ui-menubar .ui-menuitem-link .ui-menuitem-icon{
+:host::ng-deep.ui-menubar .ui-menuitem-link .ui-menuitem-icon{
   color:white!important;
 }
-::ng-deep.ui-accordion .ui-accordion-content {
+:host::ng-deep.ui-accordion .ui-accordion-content {
   margin-top: -20px!important;
 }
 :host::ng-deep .ui-accordion .ui-accordion-header {

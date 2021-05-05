@@ -48,7 +48,7 @@ listslider:any[];
 }
   createform(): void {
     this.form = this.formBuilder.group({
-      link: new FormControl(
+      title: new FormControl(
         null
       ),
       tag: new FormControl(
@@ -67,7 +67,6 @@ listslider:any[];
 
   submitForm(): void {
     this.service.postSlider(this.form.value).subscribe((response) => {
-      console.log(response)
       if (response['success'] === true) {
         this.messageService.add({severity: 'success', summary: ' ثبت اطلاعات ', detail: response['data']});
 

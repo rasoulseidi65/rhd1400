@@ -1,5 +1,5 @@
 <owl-carousel-o [options]="customOptions">
   <ng-template carouselSlide *ngFor="let item of  listslider">
-    <img [src]="item.imageurl" alt="first slide" >
+    <img [src]="item.imageurl" [alt]="item.title">
   </ng-template>
 </owl-carousel-o>

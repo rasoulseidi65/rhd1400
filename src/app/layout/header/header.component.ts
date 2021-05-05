@@ -69,7 +69,6 @@ export class HeaderComponent implements OnInit {
     this.service.getSlider().subscribe((result) => {
       if (result['success'] === true){
         this.listslider = result['data'];
-        console.log(result)
       }
     });
   }

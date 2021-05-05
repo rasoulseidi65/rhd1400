@@ -45,9 +45,8 @@ export class NewpaperComponent implements OnInit {
   }
   onSubmit(value: string) {
     this.submitted = true;
-    console.log(this.userform.value)
     this.paperService.register(this.userform.value).subscribe((response) => {
-      console.log(response);
+
       if (response['success'] === true) {
         this.messageService.add({severity: 'success', summary: 'ثبت با موفقیت انجام شد', detail: 'مشخصات مقاله با موفقیت ثبت شد'});
 

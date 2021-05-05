@@ -2,6 +2,8 @@ import {Component, Injectable, OnInit} from '@angular/core';
 
 
 import {OwlOptions} from 'ngx-owl-carousel-o';
+import {FormBuilder} from "@angular/forms";
+import {AdminService} from "../../Core/LayoutAdmin/admin.service";
 
 
 @Component({
@@ -27,6 +29,7 @@ export class HeaderComponent implements OnInit {
   //     numVisible: 1
   //   }
   // ];
+  listslider:any[];
   customOptions: OwlOptions = {
     rtl: true,
     autoplay: true,
@@ -56,11 +59,19 @@ export class HeaderComponent implements OnInit {
       }
     }
   };
-  constructor() { }
+  constructor(public service: AdminService) { }
 
   ngOnInit(): void {
-
+      this.sliderget();
     // this.photoService.getImages().then(images =>{ this.images = images;  console.log(this.images)});
+  }
+  sliderget(){
+    this.service.getSlider().subscribe((result) => {
+      if (result['success'] === true){
+        this.listslider = result['data'];
+        console.log(result)
+      }
+    });
   }
 }
 

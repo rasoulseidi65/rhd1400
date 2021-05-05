@@ -55,4 +55,10 @@ export class AdminService {
   postSlider(data: any) {
     return this.http.post('http://api.hd724.com/api/v1/admin/slider/',data);
   }
+  getSlider() {
+    return this.http.get('http://api.hd724.com/api/v1/admin/slider');
+  }
+  deleteSlider(ID: any) {
+    return this.http.delete('http://api.hd724.com/api/v1/admin/slider/' + ID);
+  }
 }

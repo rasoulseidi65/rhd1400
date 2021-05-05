@@ -10,7 +10,7 @@ import { MessageService} from 'primeng/api';
   providers: [MessageService]
 })
 export class SliderComponent implements OnInit {
-
+listslider:any[];
   public form: FormGroup;
   errorMessages = {
     tag: [
@@ -29,8 +29,23 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
     this.createform();
+    this.sliderget();
   }
-
+  sliderget(){
+    this.service.getSlider().subscribe((result) => {
+      if (result['success'] === true){
+        this.listslider = result['data'];
+      }
+    });
+}
+  deleteslider(id){
+    this.service.deleteSlider(id).subscribe((result) => {
+      if (result['success'] === true){
+        this.messageService.add({severity: 'success', summary: ' تصویر مورد نظر با موفقیت حذف شد ', detail: 'حذف '});
+        this.sliderget();
+      }
+    });
+}
   createform(): void {
     this.form = this.formBuilder.group({
       link: new FormControl(

@@ -11,14 +11,22 @@ export class AppComponent implements OnInit {
   showMenu: boolean = true;
   pageTitle: string;
 
-  constructor(private router: Router, private title: Title, private  meta: Meta) {
+  constructor(private router: Router, private titleMeta: Title, private  meta: Meta) {
 
   }
 
   ngOnInit(): void {
     this.pageTitle = 'آکادمی همراه دانش';
-    // this.title.getTitle(this.pageTitle);
-    this.meta.addTag({keywords:'آکادمی آموزشی همراه دانش ، همراه دانش،'});
+    this.titleMeta.setTitle(this.pageTitle);
+    this.meta.addTags([
+          { charset: 'UTF-8' },
+          { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+          { name: 'date', content: '2020-02-10', scheme: 'YYYY-MM-DD' },
+          { name: 'keywords', content: 'Add SEO Meta in Angular.' },
+          { name: 'author', content: 'همراه دانش' },
+          { name: 'robots', content: 'index, follow' }
+        ]);
+    // this.meta.addTag({keywords:'آکادمی آموزشی همراه دانش ، همراه دانش،'});
 
   }
 }

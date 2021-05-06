@@ -13,6 +13,7 @@ export class ContentCommentsComponent implements OnInit {
 @Input() data: any;
   commentForm: FormGroup;
   listComment:any[];
+  listAnswer:any[];
   constructor(private route: ActivatedRoute,
                private service: LayoutService,
                private tf: FormBuilder) { }
@@ -20,9 +21,10 @@ id: any;
   ngOnInit(): void {
     setTimeout(()=>{
       this.listComment=this.data['Comment'];
-      console.log(this.listComment)
+      this.listAnswer=this.data['Comment'][0].answer;
+      console.log(this.listAnswer)
     },3000)
-   // console.log(this.data)
+   console.log(this.data)
     this.route.paramMap.subscribe(params => this.id = params.get('id'));
     this.listCommentForm();
   }

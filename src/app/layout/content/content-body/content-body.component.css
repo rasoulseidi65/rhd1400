@@ -8,13 +8,13 @@
   border-bottom: 1px solid #eeeeee;
   padding: 15px 0px 15px 15px;
 }
-.container-fluid .row-details-film .title-film span{
+.container-fluid .row-details-film .title-film h1{
   font-family:IRANSans_Bold;
   font-size: 18px;
   border-bottom: 1px solid #ffa331;
   padding: 13px 0px 13px 13px;
 }
-.container-fluid .row-details-film .title-film span i{
+.container-fluid .row-details-film .title-film h1 i{
   margin-left: 5px;
   color: #ffa331;
 }

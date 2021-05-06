@@ -6,7 +6,7 @@
         <ul class="media-list">
           <li class="media ">
             <div class="pull-right">
-              <a><img class=" media-object" src="/assets/bootstrap/img/default.png"></a>
+              <a><img class=" media-object" src="/assets/bootstrap/img/default.png" style="width: 50px;height: 50px"></a>
             </div>
             <div class="media-body" >
               <h4 class="media-heading">
@@ -15,46 +15,19 @@
               </h4>
               <p>{{item.text}}</p>
               <!--nested media object-->
-              <div class="media media-admin">
+              <div class="media media-admin" *ngFor="let item of listAnswer">
                 <div class="pull-right">
-                  <a><img class=" media-object" src="/assets/bootstrap/img/default.png"></a>
+                  <a><img class=" media-object" src="/assets/bootstrap/img/default.png" style="width: 50px;height: 50px"></a>
                 </div>
                 <div class="media-body">
-                  <h4 class="media-heading"><h6 class="pull-left">1367/31/06</h6>رسول صیدی پیری:</h4>
-                  <p style="color:#ff5000">سلام دوس عزیز این دوره مربوط به هیچ قشر خاصی یا فرد خاسی نیست باتید خود ما در این خسوس کار کنیم و زحمت بکشیم تا به اون چیزی که میخوایم برسم </p>
+                  <h4 class="media-heading"><h6 class="pull-left">{{item.date}}</h6>{{item.name}}</h4>
+                  <p style="color:#ff5000" [innerHTML]="item.replay"> </p>
                 </div>
               </div>
             </div>
           </li>
         </ul>
       </div>
-    </div>
-    <div class="col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-4">
-      <nav>
-        <ul class="pagination pagination-sm">
-          <li>
-            <a href="#" name="previous">
-              <span>&laquo;</span>
-            </a>
-          </li>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-          <li><a href="#">6</a></li>
-          <li><a href="#">7</a></li>
-          <li><a href="#">8</a></li>
-          <li><a href="#">9</a></li>
-          <li><a href="#">11</a></li>
-          <li><a href="#">12</a></li>
-          <li>
-            <a href="#" name="next">
-              <span>&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
     </div>
   </div>
 

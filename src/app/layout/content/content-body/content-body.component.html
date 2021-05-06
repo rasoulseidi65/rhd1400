@@ -54,7 +54,9 @@
     <div class="body-film col-xs-10 col-xs-offset-1" *ngFor="let item of data['Episode']">
       <div class="panel-heading panel-heading-film">
         <strong class="panel-title"><i class="fas fa-check-circle"></i>{{item.title}}</strong>
-        <a class="pull-left " href=""><i class="glyphicon glyphicon-download-alt text-muted"></i></a>
+        <a class="pull-left" target="_blank" [href]="item.videoUrl" *ngIf="item.type==='رایگان'"><i class="glyphicon glyphicon-download-alt"></i></a>
+        <a class="pull-left"  *ngIf="item.type!='رایگان'"><i class="glyphicon glyphicon-download-alt text-muted"></i></a>
+
         <span class="pull-left">{{item.time}}</span>
         <span class="pull-left">{{item.type}}</span>
       </div>

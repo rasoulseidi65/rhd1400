@@ -15,6 +15,7 @@ import {HandoutComponent} from './handout/handout.component';
 import {GradeComponent} from './grade/grade.component';
 import {MajorComponent} from './major/major.component';
 import {SliderComponent} from './slider/slider.component';
+import {ListcommentComponent} from "./comment/listcomment/listcomment.component";
 
 
 const routes: Routes = [
@@ -129,6 +130,14 @@ const routes: Routes = [
     children: [{
       path: 'slider',
       component: SliderComponent
+    }]
+  },
+  {
+    path: '',
+    component: DashboardComponent,
+    children: [{
+      path: 'listcomment',
+      component: ListcommentComponent
     }]
   }
 ];

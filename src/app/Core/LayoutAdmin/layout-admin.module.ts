@@ -18,7 +18,7 @@ import {
   DropdownModule, EditorModule,
   FieldsetModule, FileUploadModule, InputMaskModule, InputTextareaModule,
   InputTextModule, KeyFilterModule, MenubarModule,
-  MessageModule,
+  MessageModule, MultiSelectModule,
   OverlayPanelModule,
   PanelModule, PasswordModule,
   SplitButtonModule,
@@ -44,6 +44,8 @@ import { HandoutComponent } from './handout/handout.component';
 import { GradeComponent } from './grade/grade.component';
 import { MajorComponent } from './major/major.component';
 import { SliderComponent } from './slider/slider.component';
+import { ListcommentComponent } from './comment/listcomment/listcomment.component';
+
 
 
 @NgModule({
@@ -53,7 +55,7 @@ import { SliderComponent } from './slider/slider.component';
     NewcoursesComponent, ListcoursesComponent,
     UserslistComponent, EposideComponent,
     QuestionsComponent, HandoutComponent,
-    GradeComponent, MajorComponent, SliderComponent],
+    GradeComponent, MajorComponent, SliderComponent, ListcommentComponent],
   imports: [
     CommonModule,
     MatSidenavModule,
@@ -88,6 +90,7 @@ import { SliderComponent } from './slider/slider.component';
     TreeTableModule,
     FormsModule,
     MatSelectModule,
+    MultiSelectModule,
 
   ],
   schemas: [

@@ -26,6 +26,13 @@
   line-height: 2;
   font-size: 18px;
 }
+::ng-deep strong{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+}
+::ng-deep p{
+  font-family: IRANSans_Light;
+}
 /*.container-fluid .row-description-period ul{*/
 /*  margin-top: 10px;*/
 /*}*/

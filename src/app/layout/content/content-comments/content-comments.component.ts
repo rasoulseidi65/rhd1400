@@ -45,7 +45,6 @@ id: any;
     this.service.newComment(this.commentForm.value).subscribe((response) => {
       console.log(response);
       if (response['success'] === true){
-        alert("ok");
         // this.messageService.add({severity: 'success', summary: 'ثبت با موفقیت انجام شد', detail: 'کاربر عزیز نظر شما پس از تایید نمایش داده میشود با تشکر'});
       }
     });

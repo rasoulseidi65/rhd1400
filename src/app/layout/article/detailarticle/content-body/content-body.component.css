@@ -30,6 +30,10 @@
   font-family: IRANSans_Bold;
   font-size: 18px;
 }
+::ng-deep h1{
+  font-family: IRANSans_Bold;
+  font-size: 18px;
+}
 ::ng-deep p{
   font-family: IRANSans_Light;
 }

@@ -1,0 +1,34 @@
+::ng-deep .ui-card-content {
+  text-align: center;
+  font-family: IRANSans_Bold;
+}
+::ng-deep .ui-card-footer h5{
+  padding: 10px;
+}
+::ng-deep .ui-card-content:hover {
+  background-color: #009c7d;
+  color: #ffffff;
+}
+::ng-deep .ui-card-footer:before{
+  content: "همراه دانش";
+  width: 90px;
+  height: 25px;
+  background-color: #ff8700;
+  position: absolute;
+  border-radius: 35px;
+  padding: 0px;
+  color: #fff;
+  font-family: IRANSans_Bold;
+  text-align: center;
+  margin-top: 30px;
+}
+::ng-deep .ui-card.ui-widget.ui-widget-content.ui-corner-all {
+  margin-top: 10px;
+}
+::ng-deep .ui-card-body {
+  padding: 0px;
+}
+.ui-card-header img {
+  width: 100%;
+  height: 400px;
+}

@@ -46,6 +46,7 @@ import { Advertising1Component } from './advertising1/advertising1.component';
 import { Advertising2Component } from './advertising2/advertising2.component';
 import { Advertising3Component } from './advertising3/advertising3.component';
 import { EmploymentComponent } from './employment/employment.component';
+import { WorksamplesComponent } from './worksamples/worksamples.component';
 
 
 
@@ -55,7 +56,7 @@ import { EmploymentComponent } from './employment/employment.component';
     CenterMenuComponent, MenuComponent, FooterComponent,
     CartComponent, CooperationComponent, HottestContentComponent,
     MostDownloadsComponent, MostPopularContentComponent,
-    ContentAllComponent, AllCantentComponent, QuestionsArticalComponent, CallBackComponent, SloganComponent, Advertising1Component, Advertising2Component, Advertising3Component, EmploymentComponent],
+    ContentAllComponent, AllCantentComponent, QuestionsArticalComponent, CallBackComponent, SloganComponent, Advertising1Component, Advertising2Component, Advertising3Component, EmploymentComponent, WorksamplesComponent],
   imports: [
     CommonModule,
     LayoutRoutingModule,

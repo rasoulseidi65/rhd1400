@@ -8,6 +8,7 @@ import {ContentAllComponent} from './film/hottest-content/content-all/content-al
 import {QuestionsArticalComponent} from './film/hottest-content/questions-artical/questions-artical.component';
 import {CallBackComponent} from './call-back/call-back.component';
 import {EmploymentComponent} from "./employment/employment.component";
+import {WorksamplesComponent} from "./worksamples/worksamples.component";
 
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'employment',
     component:  EmploymentComponent
+  },
+  {
+    path: 'Worksamples',
+    component:  WorksamplesComponent
   },
 ];
 

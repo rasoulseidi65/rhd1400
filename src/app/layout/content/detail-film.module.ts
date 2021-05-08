@@ -12,24 +12,26 @@ import {ButtonModule} from 'primeng/button';
 import {MessageModule} from 'primeng/message';
 import {PanelModule} from 'primeng/panel';
 import {DialogModule} from 'primeng/dialog';
+import {ToastModule} from 'primeng/toast';
 
 
 
 @NgModule({
   declarations: [ContentArchiveComponent,ContentBodyComponent,ContentCommentsComponent,ContentComponent],
-  imports: [
-    CommonModule,
-    DetailFilmRoutingModule,
-    LayoutModule,
-    ReactiveFormsModule,
-    ButtonModule,
-    FormsModule,
-    MessageModule,
-    PanelModule,
-    DialogModule,
+    imports: [
+        CommonModule,
+        DetailFilmRoutingModule,
+        LayoutModule,
+        ReactiveFormsModule,
+        ButtonModule,
+        FormsModule,
+        MessageModule,
+        PanelModule,
+        DialogModule,
+        ToastModule,
 
 
-  ],
+    ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],

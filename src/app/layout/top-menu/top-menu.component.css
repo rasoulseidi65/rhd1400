@@ -731,3 +731,9 @@
   visibility: visible;
   transform: rotateX(0deg);
 }
+@media (max-width: 768px) {
+  .header{
+    display: none;
+  }
+
+}

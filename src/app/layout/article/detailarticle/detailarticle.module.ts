@@ -9,6 +9,7 @@ import {ContentArchiveComponent} from './content-archive/content-archive.compone
 import {ContentCommentsComponent} from './content-comments/content-comments.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ScrollPanelModule} from 'primeng/primeng';
+import {ToastModule} from 'primeng/toast';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {ScrollPanelModule} from 'primeng/primeng';
         DetailarticleRoutingModule,
         LayoutModule,
         ReactiveFormsModule,
-        ScrollPanelModule
+        ScrollPanelModule,
+        ToastModule
     ]
 })
 export class DetailarticleModule { }

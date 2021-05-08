@@ -104,7 +104,7 @@ export class CartComponent implements OnInit {
         product: JSON.parse(localStorage.getItem('cartList')),
         user: this.payment,
       };
-      console.log(data)
+
       this.service.onPayment(data).subscribe((response) => {
         let url = response['data'];
         document.location.href = url;

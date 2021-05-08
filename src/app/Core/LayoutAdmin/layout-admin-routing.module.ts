@@ -16,8 +16,6 @@ import {GradeComponent} from './grade/grade.component';
 import {MajorComponent} from './major/major.component';
 import {SliderComponent} from './slider/slider.component';
 import {ListcommentComponent} from "./comment/listcomment/listcomment.component";
-
-
 const routes: Routes = [
   {
     path: '',

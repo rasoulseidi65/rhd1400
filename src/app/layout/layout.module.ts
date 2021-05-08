@@ -19,9 +19,9 @@ import {
   ButtonModule,
   CardModule, DialogModule,
   InputTextareaModule, InputTextModule,
-  OrderListModule, PaginatorModule,
+  OrderListModule, PaginatorModule, PanelMenuModule,
   PanelModule,
-  SharedModule
+  SharedModule, SidebarModule
 } from 'primeng/primeng';
 import {ArticleComponent} from './article/article.component';
 import {CartComponent} from './cart/cart.component';
@@ -80,6 +80,8 @@ import { Advertising3Component } from './advertising3/advertising3.component';
     MatListModule,
     MatIconModule,
     DialogModule,
+    SidebarModule,
+    PanelMenuModule,
 
 
   ],

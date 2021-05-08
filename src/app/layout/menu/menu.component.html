@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid pc-header">
   <div class="col-md-8">
       <div class="row row-menu-right">
       <div class="navbar-header navbar-header-custom">
@@ -32,4 +32,35 @@
 </div>
 
 
-
+<!--mobile header-->
+<header class="container mobile-header">
+  <div class="row p-d-flex text-justify">
+    <div class="col">
+      <button (click)="showMobileMenu()" type="button" class="mobile-bar">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+    <div class="col  p-ml-auto row-center-menu">
+      <a [routerLink]="['/']" class=" text-center">
+        <h2>رایا همـراه دانـش</h2>
+      </a>
+    </div>
+    <div class="col mobile-icon">
+      <i class="fa fa-user p-ml-3"></i>
+      <i class="fa fa-shopping-cart"></i>
+    </div>
+  </div>
+</header>
+<!-- side MENU -->
+<p-sidebar class="menuSidebar" Scroll [(visible)]="displayMobileMenu" [blockScroll]="true"
+           [modal]="true"
+           position="right">
+  <div class=" text-center shoppingMe">
+<!--    <img height="60px" src="../../../../assets/images/other/logo.png">-->
+  </div>
+  <div class="d-flex flex-column">
+    <div class="mb-auto">
+      <p-panelMenu [model]="items" [style]="{'width':'100%'}"></p-panelMenu>
+    </div>
+  </div>
+</p-sidebar>

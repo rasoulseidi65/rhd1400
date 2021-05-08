@@ -12,7 +12,7 @@ export class ContentBodyComponent implements OnInit {
   @Input() data: any;
   articleID: any;
   article: any;
-  @ViewChild('dataContainer',{static:true}) dataContainer: ElementRef;
+
   constructor(private route: ActivatedRoute,private service: LayoutService) { }
 
   ngOnInit(): void {
@@ -24,8 +24,7 @@ export class ContentBodyComponent implements OnInit {
     this.service.findArticle(this.articleID).subscribe((response) => {
       if (response['success'] === true) {
         this.article = response['data'];
-        this.dataContainer.nativeElement.innerHTML = this.data.detail;
-        console.log(this.data)
+
       }
     });
   }

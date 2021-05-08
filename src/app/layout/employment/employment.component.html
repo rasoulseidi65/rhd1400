@@ -1,0 +1,131 @@
+<app-top-menu></app-top-menu>
+<app-center-menu></app-center-menu>
+<app-menu></app-menu>
+<div class="container continer-reg" style="padding: 0px;">
+  <div class="col-md-6">
+    <img class="img-rounded" src="../../../assets/bootstrap/img/employment.jpg" alt="اپلیکیشن">
+  </div>
+  <div class="col-md-6 text-center" >
+    <span>برای هر شخصی یک شغل مناسب هست کافیه رزومه خود را ارسال کنید</span>
+    <p>علی‌رغم وجود بیکاری زیاد در کل جهان و سیل عظیم افراد تحصیل‌ کرده که همواره جویای کار هستن،چندان آسان نیست اگه در هر حوزه ای تحصیل کرده اید و مهارتی دارید فرقی ندارد با نرم افزار خاصی سروکار دارید یا خلاقیت دارید میتوانید با ارسال رزومه خود به همراه دانش در پایین صفحه به هدف خود نزدیکتر شود و وقت خود را بیهوده از دست ندهید و همین الان اقدام نمایید و درامد عالی و فوق العاده درسترسی پیدا کتید. </p>
+    <strong>معرفی شرکت همراه دانش</strong>
+    <ul>
+      <li>تولید فیلم های اموزشی در تمام رشته ها دانشگاهی و غیر دانشگاهی</li>
+      <li>تولید انواع نرم افزار برای مبایل </li>
+      <li>طراحی انواع سایت خبری،آموزشی،نهاد دولتی،شرکتی،فروشگاهی و...</li>
+      <li>طراحی انواع نرم افزار های مالی حسابداری</li>
+
+    </ul>
+  </div>
+
+
+</div>
+<div class="container ">
+  <div class="row row-form">
+
+    <p-toast [style]="{marginTop: '80px',fontFamily:'IRANSans_Bold'}" position="top-center"></p-toast>
+    <form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
+      <p-panel header="ثبت نام اولیه مدرس">
+        <div class="p-fluid forms-grid">
+          <div class="row">
+            <div class="col-md-6 col-lg-6">
+              <div class="ui-g">
+                <div class="ui-g-3">
+                  <label>نام ونام خانوادگی:</label>
+
+                </div>
+                <div class="ui-g-6">
+                  <input pInputText style="width: 100%" type="text" formControlName="firstname" placeholder=""/>
+
+                </div>
+                <div class="ui-g-3">
+                  <p-message severity="error" text="نام و نام خانوادگی را وارد نمائید"
+                             *ngIf="!userform.controls['firstname'].valid&&userform.controls['firstname'].dirty"></p-message>
+
+                </div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-3">
+                  <label>ایمیل:</label>
+
+                </div>
+                <div class="ui-g-6">
+                  <input pInputText  style="width: 100%" type="text" formControlName="email" placeholder=""/>
+
+                </div>
+                <div class="ui-g-3">
+                  <p-message severity="error" text="ایمیل را به درستی وارد نمائید"
+                             *ngIf="!userform.controls['email'].valid&&userform.controls['email'].dirty"></p-message>
+
+                </div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-3">
+                  <label>شماره همراه:</label>
+
+                </div>
+                <div class="ui-g-6">
+                  <input pInputText style="width: 100%" type="text" formControlName="mobile" placeholder=""/>
+
+                </div>
+                <div class="ui-g-3">
+                  <p-message severity="error" text="شماره همراه را وارد نمائید"
+                             *ngIf="!userform.controls['mobile'].valid&&userform.controls['mobile'].dirty"></p-message>
+
+                </div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-3">
+                  <label>رمز ورود:</label>
+
+                </div>
+                <div class="ui-g-6"  >
+                  <input  pPassword  style="width: 100%"  formControlName="password" type="password"  promptLabel="رمز را وارد نمائید" weakLabel="ضعیف" mediumLabel="متوسط" strongLabel="قوی"/>
+
+                </div>
+                <div class="ui-g-3">
+                  <p-message severity="error" text="رمز را وارد نمائید"
+                             *ngIf="!userform.controls['password'].valid&&userform.controls['password'].dirty"></p-message>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-6 col-lg-6">
+              <div class="ui-g">
+                <div class="ui-g-2">
+                  <label>توضیحات:</label>
+                </div>
+                <div class="ui-g-10 ui-grid-col-12">
+                  <textarea rows="5" cols="30" pInputTextarea style="width: 100%"
+                            placeholder="لطفا توضیحات راجب مهارت و تخصصی در هر زمینه ای دارین به صور کامل شرح دهید"></textarea>
+                </div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-2"> <label>رزومه کاری:</label> </div>
+                <div class="ui-g-10 ui-grid-col-12">
+                  <p-fileUpload name="myfile[]" customUpload="true" (uploadHandler)="onUpload($event)"
+                                uploadLabel="آپلود رزومه"
+                                chooseLabel="انتخاب رزومه" cancelLabel="انصراف"></p-fileUpload>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:20px" *ngIf="submitted">
+            Form Submitted
+            <br>
+
+          </div>
+        </div>
+        <p-footer>
+
+          <button class="" pButton type="submit" icon="pi pi-check" label="ثبت نام" [disabled]="!userform.valid"></button>
+
+        </p-footer>
+      </p-panel>
+    </form>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

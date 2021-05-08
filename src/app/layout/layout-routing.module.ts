@@ -7,6 +7,7 @@ import {CartComponent} from './cart/cart.component';
 import {ContentAllComponent} from './film/hottest-content/content-all/content-all.component';
 import {QuestionsArticalComponent} from './film/hottest-content/questions-artical/questions-artical.component';
 import {CallBackComponent} from './call-back/call-back.component';
+import {EmploymentComponent} from "./employment/employment.component";
 
 
 const routes: Routes = [
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'call-back/:success',
     component:  CallBackComponent
+  },
+  {
+    path: 'employment',
+    component:  EmploymentComponent
   },
 ];
 

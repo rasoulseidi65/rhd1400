@@ -290,7 +290,7 @@
   color: #00c7a0;
 }
 :host::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover {
-  background: #fcf9f9!important;
+  /*background: #fcf9f9!important;*/
 }
 .box-counter__divider::after {
   content: '';
@@ -323,4 +323,9 @@ h2{
 }
 :host::ng-deep.ui-panelmenu .ui-menuitem-text {
   font-family: 'IRANSans_Bold';
+}
+:host::ng-deep.ui-panelmenu .ui-panelmenu-header > a {
+   border: none!important;
+  background-color: #fff!important;
+
 }

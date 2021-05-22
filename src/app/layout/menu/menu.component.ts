@@ -38,9 +38,18 @@ export class MenuComponent implements OnInit {
       {
         label: 'استخدامی',
         icon: 'pi pi-fw pi-question-circle',
-        command: event => this.route.navigate(['/faq'])
+        command: event => this.route.navigate(['/home/employment'])
       },
-
+      {
+        label: 'ثبت نام',
+        icon: 'pi pi-fw pi-user',
+        command: event => this.route.navigate(['/auth/register'])
+      },
+      {
+        label: 'ورود کاربر',
+        icon: 'pi pi-fw pi-user',
+        command: event => this.route.navigate(['/auth/login'])
+      },
       {
         label: 'درباره ما',
         icon: 'pi pi-fw pi-info-circle',

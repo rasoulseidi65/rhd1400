@@ -204,7 +204,12 @@
   text-decoration: none;
 }
 
-
+::ng-deep .mobile-header .text-justify i.fa.fa-shopping-cart {
+  background-color: #ff7800;
+  padding: 5px;
+  border-radius: 20px;
+  color: #fff;
+}
 
 
 
